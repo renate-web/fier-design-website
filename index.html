@@ -3,377 +3,125 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fierdesign — Interieur- & lichtontwerp</title>
+  <title>Fierdesign – Interieur- &amp; lichtontwerp</title>
   <meta name="description" content="Persoonlijk interieurontwerp met functie en stijl, en lichtontwerp dat daglicht en kunstlicht samenbrengt. Amsterdam.">
-  <!-- Testpagina: fictieve homepage, gebaseerd op fierdesign.nl -->
+  <meta property="og:title" content="Fierdesign – Interieur- &amp; lichtontwerp">
+  <meta property="og:description" content="Persoonlijk interieurontwerp met functie en stijl, en lichtontwerp dat daglicht en kunstlicht samenbrengt. Amsterdam.">
+  <link rel="icon" href="https://fierdesign.nl/wp-content/uploads/2024/04/cropped-icon-1-192x192.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --daglicht: #E7EAE6;
-      --schemer: #1E2836;
-      --messing: #B98F4A;
-      --lampgloed: #F4D49A;
-      --steen: #7D7B75;
-      --inkt: #23272C;
-      --serif: "Young Serif", Georgia, serif;
-      --sans: "Hanken Grotesk", system-ui, sans-serif;
-      --max: 72rem;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-
-    body {
-      margin: 0;
-      font-family: var(--sans);
-      font-size: 1.0625rem;
-      line-height: 1.6;
-      color: var(--inkt);
-      background: var(--daglicht);
-    }
-
-    a { color: inherit; }
-    a:focus-visible, button:focus-visible {
-      outline: 2px solid var(--messing);
-      outline-offset: 3px;
-    }
-
-    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
-
-    /* ---------- Navigatie ---------- */
-    .nav {
-      position: absolute; inset: 0 0 auto 0; z-index: 3;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 1.5rem;
-      max-width: var(--max); margin: 0 auto;
-    }
-    .logo {
-      font-family: var(--serif); font-size: 1.5rem; text-decoration: none;
-      color: var(--inkt);
-    }
-    .nav ul { display: flex; gap: 1.75rem; list-style: none; margin: 0; padding: 0; }
-    .nav ul a {
-      text-decoration: none; font-weight: 500; color: var(--lampgloed);
-      font-size: 0.95rem;
-    }
-    .nav ul a:hover { text-decoration: underline; text-underline-offset: 4px; }
-
-    /* ---------- Hero: daglicht | kunstlicht ---------- */
-    .hero {
-      position: relative;
-      min-height: 92vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      overflow: hidden;
-    }
-    .hero__dag {
-      background:
-        linear-gradient(160deg, #F3F4F0 0%, var(--daglicht) 55%, #D6DAD4 100%);
-    }
-    .hero__avond {
-      position: relative;
-      background: var(--schemer);
-      --lx: 55%; --ly: 38%;
-    }
-    /* De lichtvlek van een lamp; volgt de muis op de avondhelft */
-    .hero__avond::before {
-      content: "";
-      position: absolute; inset: 0;
-      background: radial-gradient(
-        circle at var(--lx) var(--ly),
-        rgba(244, 212, 154, 0.55) 0%,
-        rgba(244, 212, 154, 0.18) 22%,
-        rgba(30, 40, 54, 0) 48%
-      );
-      transition: background-position 0.2s;
-    }
-    .hero__kop {
-      position: absolute; z-index: 2;
-      left: 0; right: 0; top: 50%;
-      transform: translateY(-50%);
-      max-width: var(--max); margin: 0 auto; padding: 0 1.5rem;
-      pointer-events: none;
-    }
-    .hero h1 {
-      margin: 0;
-      font-family: var(--serif);
-      font-weight: 400;
-      font-size: clamp(3rem, 9vw, 7.5rem);
-      line-height: 0.98;
-      letter-spacing: -0.02em;
-      /* De kop loopt door van daglicht naar lamplicht */
-      background: linear-gradient(90deg, var(--inkt) 0 50%, var(--lampgloed) 50% 100%);
-      background-attachment: fixed;
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    .hero p {
-      margin: 2rem 0 0;
-      max-width: 26rem;
-      font-size: 1.15rem;
-      color: var(--inkt);
-    }
-    .hero__onderschrift {
-      position: absolute; bottom: 1.5rem; z-index: 2;
-      font-size: 0.875rem; color: var(--steen);
-    }
-    .hero__onderschrift--dag { left: 1.5rem; }
-    .hero__onderschrift--avond { right: 1.5rem; color: #9AA3AF; }
-
-    /* ---------- Diensten ---------- */
-    .diensten { padding: 7rem 0 5rem; }
-    .diensten__grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
-    }
-    .dienst h2 {
-      font-family: var(--serif); font-weight: 400;
-      font-size: clamp(1.9rem, 3.4vw, 2.6rem);
-      line-height: 1.1; margin: 0 0 1.25rem;
-    }
-    .dienst p { max-width: 34rem; margin: 0 0 1rem; }
-    .dienst--licht h2::before {
-      content: ""; display: inline-block;
-      width: 0.5em; height: 0.5em; border-radius: 50%;
-      background: var(--lampgloed);
-      box-shadow: 0 0 0 6px rgba(244, 212, 154, 0.35);
-      margin-right: 0.5em; vertical-align: 0.15em;
-    }
-    .dienst--interieur h2::before {
-      content: ""; display: inline-block;
-      width: 0.5em; height: 0.5em;
-      background: var(--steen);
-      margin-right: 0.5em; vertical-align: 0.15em;
-    }
-    .citaat {
-      margin: 6rem 0 0;
-      font-family: var(--serif);
-      font-size: clamp(1.6rem, 3.2vw, 2.4rem);
-      line-height: 1.25;
-      max-width: 40rem;
-      padding-left: 1.5rem;
-      border-left: 3px solid var(--messing);
-    }
-
-    /* ---------- Werkwijze (echte volgorde, dus genummerd) ---------- */
-    .werkwijze {
-      background: #DDE1DC;
-      padding: 5rem 0;
-    }
-    .werkwijze h2, .projecten h2 {
-      font-family: var(--serif); font-weight: 400;
-      font-size: clamp(1.9rem, 3.4vw, 2.6rem); margin: 0 0 2.5rem;
-    }
-    .stappen {
-      list-style: none; margin: 0; padding: 0;
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;
-      counter-reset: stap;
-    }
-    .stappen li { counter-increment: stap; }
-    .stappen li::before {
-      content: counter(stap);
-      display: block;
-      font-family: var(--serif);
-      font-size: 2.5rem; line-height: 1;
-      color: var(--messing);
-      margin-bottom: 0.75rem;
-    }
-    .stappen h3 { font-size: 1.05rem; font-weight: 600; margin: 0 0 0.4rem; }
-    .stappen p { margin: 0; font-size: 0.975rem; color: #4A4E52; }
-
-    /* ---------- Projecten ---------- */
-    .projecten { padding: 6rem 0; }
-    .projectlijst {
-      list-style: none; margin: 0; padding: 0;
-      columns: 2; column-gap: 4rem;
-    }
-    .projectlijst li { break-inside: avoid; border-top: 1px solid #C7CBC6; }
-    .projectlijst a {
-      display: block; padding: 0.9rem 0;
-      text-decoration: none;
-      font-family: var(--serif); font-size: 1.3rem;
-    }
-    .projectlijst a:hover { color: var(--messing); }
-
-    /* ---------- Over & contact ---------- */
-    .contact {
-      background: var(--schemer);
-      color: #E4E7EA;
-      padding: 6rem 0 3rem;
-    }
-    .contact__grid {
-      display: grid; grid-template-columns: 1.3fr 1fr; gap: 4rem; align-items: start;
-    }
-    .contact h2 {
-      font-family: var(--serif); font-weight: 400;
-      font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.1;
-      color: var(--lampgloed); margin: 0 0 1.25rem;
-    }
-    .contact p { max-width: 32rem; }
-    .knop {
-      display: inline-block; margin-top: 1rem;
-      padding: 0.85rem 1.6rem;
-      background: var(--lampgloed); color: var(--schemer);
-      text-decoration: none; font-weight: 600; border-radius: 999px;
-    }
-    .knop:hover { background: #F9E2B8; }
-    .gegevens { list-style: none; padding: 0; margin: 0; line-height: 2; }
-    .gegevens a { color: #E4E7EA; }
-    .voet {
-      margin-top: 5rem; padding-top: 1.5rem;
-      border-top: 1px solid rgba(228, 231, 234, 0.15);
-      display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem;
-      font-size: 0.85rem; color: #8E97A3;
-    }
-
-    /* ---------- Mobiel ---------- */
-    @media (max-width: 760px) {
-      .nav ul { display: none; }
-      .hero { grid-template-columns: 1fr; grid-template-rows: 1fr 1fr; min-height: 100vh; }
-      .hero h1 {
-        background: linear-gradient(180deg, var(--inkt) 0 50%, var(--lampgloed) 50% 100%);
-        background-attachment: fixed;
-        -webkit-background-clip: text; background-clip: text;
-      }
-      .hero p { display: none; }
-      .hero__onderschrift { display: none; }
-      .diensten__grid, .contact__grid { grid-template-columns: 1fr; gap: 3rem; }
-      .stappen { grid-template-columns: 1fr 1fr; }
-      .projectlijst { columns: 1; }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-
-  <header>
-    <nav class="nav" aria-label="Hoofdmenu">
-      <a class="logo" href="#">Fierdesign</a>
-      <ul>
-        <li><a href="#diensten">Interieur &amp; licht</a></li>
-        <li><a href="#projecten">Projecten</a></li>
-        <li><a href="#contact">Over mij</a></li>
-        <li><a href="#contact">Contact</a></li>
+  <a class="skip" href="#inhoud">Ga naar de inhoud</a>
+  <header class="kop">
+    <div class="wrap">
+      <a class="logo" href="index.html"><img src="https://fierdesign.nl/wp-content/uploads/2026/11/10.FD-BALKTEKST-LOGO.png" alt="Fierdesign – light &amp; interior concepts" width="815" height="253"></a>
+      <button class="menuknop" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+      <nav aria-label="Hoofdmenu">
+      <ul class="menu" id="menu">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="diensten.html">Diensten</a></li>
+        <li><a href="opdrachtgevers.html">Opdrachtgevers</a></li>
+        <li><a href="projecten.html">Projecten</a></li>
+        <li><a href="referenties.html">Referenties</a></li>
+        <li><a href="over-mij.html">Over mij</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
-    </nav>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section class="hero" aria-labelledby="hero-titel">
-      <div class="hero__dag"></div>
-      <div class="hero__avond" id="avond"></div>
+  <main id="inhoud">
+  <section class="hero" aria-labelledby="hero-titel">
+    <div class="hero__tekst">
+      <h1 id="hero-titel">Persoonlijk interieurontwerp met functie en stijl</h1>
+      <p>Interieur- en lichtontwerp in één hand, voor je woning of je bedrijfsruimte.</p>
+      <p style="margin-top:.5rem"><a class="knop" href="contact.html">Plan een kennismaking</a></p>
+    </div>
+    <div class="hero__beeld">
+<img src="https://fierdesign.nl/wp-content/uploads/2025/07/slider-7.jpg" alt="" class="zichtbaar" fetchpriority="high">
+<img src="https://fierdesign.nl/wp-content/uploads/2025/07/slider-5.jpg" alt="" loading="lazy">
+<img src="https://fierdesign.nl/wp-content/uploads/2025/07/slider-10.jpg" alt="" loading="lazy">
+<img src="https://fierdesign.nl/wp-content/uploads/2025/07/slider-9.jpg" alt="" loading="lazy">
+<img src="https://fierdesign.nl/wp-content/uploads/2025/07/slider-8.jpg" alt="" loading="lazy">
+<img src="https://fierdesign.nl/wp-content/uploads/2024/07/slider-2.jpg" alt="" loading="lazy">
+<img src="https://fierdesign.nl/wp-content/uploads/2024/07/slider-4.jpg" alt="" loading="lazy">
+    </div>
+  </section>
 
-      <div class="hero__kop">
-        <h1 id="hero-titel">Interieur<br>in het juiste licht</h1>
-        <p>Persoonlijk interieurontwerp met functie en stijl, en een lichtplan dat je ruimte overdag én ’s avonds laat kloppen.</p>
+  <section class="sectie" id="interieur">
+    <div class="wrap twee">
+      <div class="tekst">
+        <h2><span class="kenmerk kenmerk--interieur" aria-hidden="true"></span>Fierdesign interieurontwerp</h2>
+        <p>Bij Fierdesign sta jij als opdrachtgever op de eerste plaats: op basis van jouw wensen ontwerp ik je interieur, samen zetten we je eigen stijl neer. Dat kan een groot, maar ook een klein vraagstuk zijn.</p>
+        <p>Het proces naar het uiteindelijke ontwerp is minstens zo belangrijk als het resultaat. Met een helder stappenplan doorlopen we het proces naar jouw nieuwe interieur bij zowel residentiële als zakelijke ruimtes. Ik luister goed naar je wensen en vertaal dit naar een persoonlijk, functioneel én mooi ontwerp. Ook help ik je graag met de realisatie van het interieur, samen met mijn netwerk van professionals.</p>
+        <a class="lees" href="diensten.html#interieurontwerp">Zo werkt interieurontwerp</a>
       </div>
+      <div class="tekst" id="lichtontwerp">
+        <h2><span class="kenmerk kenmerk--licht" aria-hidden="true"></span>Fierdesign lichtontwerp</h2>
+        <p>Licht bepaalt niet alleen wat je ziet, maar ook wat je voelt. Het versterkt de beleving en emotie van een interieur. Tijdens het realiseren van verschillende interieurontwerpen ontdekte ik hoe essentieel licht is.</p>
+        <p>Daarom ben ik me verder gaan verdiepen in lichtontwerp. Na diverse opleidingen combineer ik nu interieur- en lichtontwerp. Met een doordachte balans tussen daglicht en kunstlicht creëert Fierdesign sfeer én functionaliteit, zowel binnen als buiten, met aandacht voor techniek, esthetiek en budget. Een goed lichtplan bespaart aanpassingen en oponthoud tijdens de bouw en zorgt ervoor dat de sfeer die je voor ogen had, ook precies zo wordt gerealiseerd.</p>
+        <a class="lees" href="diensten.html#lichtontwerp">Zo werkt lichtontwerp</a>
+      </div>
+    </div>
+    <div class="wrap" style="margin-top:5rem">
+      <blockquote class="citaat">Goed licht brengt sfeer en functionaliteit samen.</blockquote>
+    </div>
+  </section>
 
-      <span class="hero__onderschrift hero__onderschrift--dag">Daglicht</span>
-      <span class="hero__onderschrift hero__onderschrift--avond">Kunstlicht</span>
-    </section>
-
-    <section class="diensten" id="diensten">
-      <div class="wrap">
-        <div class="diensten__grid">
-          <article class="dienst dienst--interieur">
-            <h2>Interieurontwerp</h2>
-            <p>Een ontwerp op maat, voor je woning of je bedrijfsruimte. Jouw wensen staan voorop, en het proces is net zo belangrijk als het resultaat.</p>
-            <p>Ik werk met een helder stappenplan en help je ook bij de uitvoering, samen met een vast netwerk van vakmensen.</p>
-          </article>
-          <article class="dienst dienst--licht">
-            <h2>Lichtontwerp</h2>
-            <p>Licht bepaalt hoe een ruimte voelt. Ik combineer daglicht en kunstlicht, binnen en buiten, met oog voor techniek, sfeer en budget.</p>
-            <p>Een goed lichtplan vooraf voorkomt aanpassingen en vertraging tijdens de bouw.</p>
-          </article>
+  <section class="sectie sectie--diep" aria-labelledby="voorwie">
+    <div class="wrap">
+      <h2 id="voorwie">Voor wie ik werk</h2>
+      <div class="twee">
+        <div class="tekst">
+          <h3>Particulier</h3>
+          <p>Een verbouwing, een nieuwbouwwoning of één ruimte die niet lekker werkt: samen maken we van je huis een plek die echt bij je past.</p>
+          <a class="lees" href="opdrachtgevers.html#particulier">Meer voor particulieren</a>
         </div>
-
-        <blockquote class="citaat">Goed licht brengt sfeer en functionaliteit samen.</blockquote>
+        <div class="tekst">
+          <h3>Zakelijk</h3>
+          <p>Verhuurwoningen, vakantiehuizen en werkplekken die er goed uitzien, prettig voelen en tegen een stootje kunnen.</p>
+          <a class="lees" href="opdrachtgevers.html#zakelijk">Meer voor bedrijven</a>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="werkwijze" aria-labelledby="werkwijze-titel">
-      <div class="wrap">
-        <h2 id="werkwijze-titel">Zo werken we samen</h2>
-        <ol class="stappen">
-          <li>
-            <h3>Kennismaking</h3>
-            <p>We bespreken je wensen, je ruimte en je budget, het liefst ter plekke.</p>
-          </li>
-          <li>
-            <h3>Schetsontwerp</h3>
-            <p>Een eerste indeling, sfeer en lichtidee, om samen op te reageren.</p>
-          </li>
-          <li>
-            <h3>Definitief ontwerp</h3>
-            <p>Tekeningen, materialen, kleuren en een compleet lichtplan.</p>
-          </li>
-          <li>
-            <h3>Realisatie</h3>
-            <p>Ik stem af met de vakmensen en houd het overzicht tot de oplevering.</p>
-          </li>
-        </ol>
+  <section class="sectie" aria-labelledby="recent">
+    <div class="wrap">
+      <h2 id="recent">Recente projecten</h2>
+      <div class="raster">
+<a class="kaart" href="projecten/jaren-50-uitbouw-gezinswoning.html"><img src="https://fierdesign.nl/wp-content/uploads/2026/11/9.interieur-ontwerp-lichtplan-gezinswoning-amsterdam.jpg" alt="" loading="lazy"><span>Jaren ’50 uitbouw gezinswoning</span></a>
+<a class="kaart" href="projecten/uniek-wonen-in-een-school.html"><img src="https://fierdesign.nl/wp-content/uploads/2025/07/slider-5.jpg" alt="" loading="lazy"><span>Uniek wonen in een school</span></a>
+<a class="kaart" href="projecten/maatwerk-en-karakter-in-split-level-woning.html"><img src="https://fierdesign.nl/wp-content/uploads/2025/07/chiela-fierdesign-27mei-hogeresolutie28-1.jpg" alt="" loading="lazy"><span>Maatwerk en karakter in een split-level woning</span></a>
       </div>
-    </section>
-
-    <section class="projecten" id="projecten" aria-labelledby="projecten-titel">
-      <div class="wrap">
-        <h2 id="projecten-titel">Projecten</h2>
-        <ul class="projectlijst">
-          <li><a href="#">Jaren ’50 uitbouw gezinswoning</a></li>
-          <li><a href="#">Uniek wonen in een school</a></li>
-          <li><a href="#">Maatwerk split-level woning</a></li>
-          <li><a href="#">Jaren ’30 in een nieuw jasje</a></li>
-          <li><a href="#">Kleur in nieuwbouw</a></li>
-          <li><a href="#">Vakantiehuisje in de duinen</a></li>
-          <li><a href="#">Loft aan het water</a></li>
-          <li><a href="#">Wonen in een kapel</a></li>
-          <li><a href="#">Functionele blikvanger</a></li>
-          <li><a href="#">Duurzaam verbouwen</a></li>
-          <li><a href="#">Gezinswoning met smaak</a></li>
-        </ul>
-      </div>
-    </section>
+      <p style="margin-top:2rem"><a class="lees" href="projecten.html">Bekijk alle projecten</a></p>
+    </div>
+  </section>
   </main>
 
-  <footer class="contact" id="contact">
+  <footer class="voet">
     <div class="wrap">
-      <div class="contact__grid">
+      <div class="voet__raster">
         <div>
-          <h2>Heb je een interieurvraag? Ik denk graag met je mee.</h2>
-          <p>Fierdesign is onderdeel van Xoomlab, een coöperatie van architecten, interieurontwerpers, stedenbouwkundigen en bouwkundigen op het Cruquiuseiland in Amsterdam.</p>
-          <a class="knop" href="mailto:renate@fierdesign.nl">Stuur een e-mail</a>
+          <h2>Heb je een interieurvraag? Ik denk graag met je mee!</h2>
+          <p>Fierdesign maakt deel uit van <a href="https://xoomlab.nl">Xoomlab.nl</a>, een coöperatie van architecten, interieurontwerpers, stedenbouwkundigen en bouwkundigen, gevestigd op het Cruquiuseiland in Amsterdam.</p>
         </div>
-        <ul class="gegevens">
-          <li><a href="tel:+31628567546">+31 (0)6 28 56 75 46</a></li>
+        <ul>
           <li><a href="mailto:renate@fierdesign.nl">renate@fierdesign.nl</a></li>
-          <li>Cruquiuseiland, Amsterdam</li>
-          <li><a href="https://www.instagram.com/">Instagram</a> · <a href="https://www.linkedin.com/">LinkedIn</a></li>
+          <li><a href="tel:+31628567546">+31 (0)6 28 56 75 46</a></li>
+          <li><a href="https://www.instagram.com/fierdesign_interieur/">Instagram</a></li>
+          <li><a href="https://www.linkedin.com/in/renate-heeringa-popma-59689616/">LinkedIn</a></li>
         </ul>
       </div>
-      <div class="voet">
-        <span>© 2026 Fierdesign</span>
-        <span>KVK 34376208 &nbsp; BTW NL001449878B96</span>
+      <div class="voet__onder">
+        <span>© 2026 Fierdesign &nbsp; KVK 34376208 &nbsp; BTW NL001449878B96</span>
+        <a href="algemene-voorwaarden.html">Algemene voorwaarden</a>
       </div>
     </div>
   </footer>
-
-  <script>
-    // De lichtvlek volgt de muis op de avondhelft (niet bij 'verminderde beweging')
-    (function () {
-      var avond = document.getElementById('avond');
-      if (!avond) return;
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      avond.parentElement.addEventListener('pointermove', function (e) {
-        var r = avond.getBoundingClientRect();
-        var x = ((e.clientX - r.left) / r.width) * 100;
-        var y = ((e.clientY - r.top) / r.height) * 100;
-        if (x < 0 || x > 100 || y < 0 || y > 100) return;
-        avond.style.setProperty('--lx', x + '%');
-        avond.style.setProperty('--ly', y + '%');
-      });
-    })();
-  </script>
+  <script src="assets/site.js"></script>
 </body>
 </html>
