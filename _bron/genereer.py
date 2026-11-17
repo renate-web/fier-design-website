@@ -4,8 +4,10 @@ import os, sys, html
 
 UIT = sys.argv[1]
 U = "https://fierdesign.nl/wp-content/uploads/"
-LOGO = U + "2026/11/10.FD-BALKTEKST-LOGO.png"
-ICOON = U + "2024/04/cropped-icon-1-192x192.png"
+LOGO = "assets/logo/fd-logo-kop.svg"            # compact logo uit het briefhoofd (Illustrator-huisstijl)
+LOGO_LICHT = "assets/logo/fd-woordmerk-licht.svg"  # linnen woordmerk voor de zwarte voet
+ICOON = "assets/logo/fd-monogram.svg"
+ICOON_PNG = U + "2024/04/cropped-icon-1-192x192.png"
 
 MENU = [
     ("index.html", "Home"),
@@ -36,17 +38,17 @@ def pagina(pad, titel, beschrijving, inhoud, actief=None):
   <meta name="description" content="{e(beschrijving)}">
   <meta property="og:title" content="{e(titel)}">
   <meta property="og:description" content="{e(beschrijving)}">
-  <link rel="icon" href="{ICOON}">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="{r}{ICOON}" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="{ICOON_PNG}">
+  <link rel="preconnect" href="https://use.typekit.net" crossorigin>
+  <link rel="stylesheet" href="https://use.typekit.net/ioi2olt.css">
   <link rel="stylesheet" href="{r}assets/style.css">
 </head>
 <body>
   <a class="skip" href="#inhoud">Ga naar de inhoud</a>
   <header class="kop">
     <div class="wrap">
-      <a class="logo" href="{r}index.html"><img src="{LOGO}" alt="Fierdesign – light &amp; interior concepts" width="815" height="253"></a>
+      <a class="logo" href="{r}index.html"><img src="{r}{LOGO}" alt="Fierdesign – light &amp; interior concepts" width="147" height="48"></a>
       <button class="menuknop" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
       <nav aria-label="Hoofdmenu">
       <ul class="menu" id="menu">
@@ -62,6 +64,7 @@ def pagina(pad, titel, beschrijving, inhoud, actief=None):
 
   <footer class="voet">
     <div class="wrap">
+      <img class="voet__logo" src="{r}{LOGO_LICHT}" alt="" width="150" height="35">
       <div class="voet__raster">
         <div>
           <h2>Heb je een interieurvraag? Ik denk graag met je mee!</h2>
