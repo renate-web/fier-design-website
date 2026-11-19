@@ -434,13 +434,11 @@ pagina("diensten.html", "Diensten: lichtontwerp en interieurontwerp – Fierdesi
       </div>
 
       <h3 style="margin-top:4rem">Het stappenplan voor een lichtplan</h3>
-      <ol class="stappen">
-        <li><h3>Intake en lichtanalyse</h3><p>We bespreken je wensen en het gebruik van elke ruimte. Ik bekijk plattegronden, de interieurstijl en hoe het daglicht binnenvalt.</p></li>
-        <li><h3>Lichtconcept</h3><p>Een eerste ontwerp met lichtzones en -lagen, de posities van de lichtpunten en het type armaturen, voor overdag en ’s avonds.</p></li>
-        <li><h3>Presentatie en bijsturen</h3><p>We lopen het concept samen door: sfeer, lichtniveaus, techniek en budget. Jouw feedback verwerk ik in het ontwerp.</p></li>
-        <li><h3>Definitief lichtplan</h3><p>Lichtplan met schakel- en dimgroepen, en een armaturenlijst met lichtkleur en specificaties, zodat iedereen weet wat waar komt.</p></li>
-        <li><h3>Afstemming met de installateur</h3><p>Ik draag het plan over aan je installateur en aannemer en beantwoord vragen tijdens de bouw, zodat het lichtplan goed wordt uitgevoerd.</p></li>
-        <li><h3>Oplevering en afstellen</h3><p>Spots richten, dimniveaus en lichtscènes instellen: pas dan klopt het licht precies zoals bedoeld.</p></li>
+      <ol class="stappen stappen--vier">
+        <li><h3>Plattegrond</h3><p>We kijken naar de indeling van de ruimte. Het startpunt is een gedetailleerde plattegrond op schaal.</p></li>
+        <li><h3>Schets en vlekkenplan</h3><p>Ik analyseer de ruimte en maak met jouw input een schetsmatig lichtplan. Het schetsontwerp vertaalt je wensen, en er is ruimte voor overleg.</p></li>
+        <li><h3>Lichtplan en presentatie</h3><p>Het lichtplan wordt uitgewerkt, zodat je een goed beeld krijgt van hoe het licht beleefd gaat worden. De gekozen armaturen breng ik in overzicht.</p></li>
+        <li><h3>Offerte en realisatie</h3><p>Na goedkeuring van het lichtplan volgt een passende offerte. Na je akkoord verzorgen we de levering en ondersteunen we je bij eventuele vragen.</p></li>
       </ol>
       <p style="margin-top:3rem"><a class="knop" href="contact.html">Vraag een lichtplan aan</a></p>
     </div>
@@ -454,7 +452,7 @@ pagina("diensten.html", "Diensten: lichtontwerp en interieurontwerp – Fierdesi
           <p>Bij Fierdesign sta jij als opdrachtgever op de eerste plaats. Op basis van jouw wensen ontwerp ik je interieur, en samen zetten we je eigen stijl neer. Dat kan een groot of juist een klein vraagstuk zijn, voor je woning of je bedrijfsruimte.</p>
           <p>Ik luister goed naar je wensen en vertaal die naar een persoonlijk, functioneel én mooi ontwerp. Met 3D-tekeningen zie je vooraf hoe het wordt, zodat kiezen makkelijker wordt. Ook help ik je graag met de realisatie, samen met mijn netwerk van professionals.</p>
         </div>
-        <img src="{U}2025/07/chiela-fierdesign-27mei-hogeresolutie37.jpg" alt="Interieur met maatwerk in een split-level woning" loading="lazy">
+        <img src="{U}2025/07/chiela-fierdesign-27mei-hogeresolutie37.jpg" alt="Interieur met maatwerk in een split-level woning" loading="lazy" class="beeld--lager">
       </div>
       <h3 style="margin-top:4rem">Het stappenplan voor interieurontwerp</h3>
       <ol class="stappen">

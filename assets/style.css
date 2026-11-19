@@ -222,3 +222,7 @@ p { margin: 0 0 1rem; }
 .wissel__stippen span { width: .5rem; height: .5rem; border-radius: 50%; border: 1px solid currentColor; opacity: .7; }
 .wissel__stippen span.actief { background: currentColor; opacity: 1; }
 @media (prefers-reduced-motion: reduce) { .wissel__beeld { transition: none; } }
+.stappen--vier { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 1000px) { .stappen--vier { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .stappen--vier { grid-template-columns: 1fr; } }
+.twee--beeld img.beeld--lager { aspect-ratio: 1 / 1; object-position: center; } /* minder hoog: stukje van boven- en onderkant eraf */
