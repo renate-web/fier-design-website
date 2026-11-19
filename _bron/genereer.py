@@ -437,7 +437,7 @@ pagina("diensten.html", "Diensten: lichtontwerp en interieurontwerp – Fierdesi
         <li><h3>Plattegrond</h3><p>We kijken naar de indeling van de ruimte. Het startpunt is een gedetailleerde plattegrond op schaal.</p></li>
         <li><h3>Concept lichtontwerp</h3><p>Ik analyseer de ruimte en maak met jouw input een schetsmatig lichtplan. Het schetsontwerp vertaalt je wensen, en er is ruimte voor overleg.</p></li>
         <li><h3>Definitief lichtontwerp</h3><p>Het lichtplan wordt uitgewerkt, zodat je een goed beeld krijgt van hoe het licht beleefd gaat worden. De gekozen armaturen breng ik in overzicht.</p></li>
-        <li><h3>Offerte en realisatie</h3><p>Na goedkeuring van het lichtplan volgt een passende offerte. Na je akkoord verzorgen we de levering en ondersteunen we je bij eventuele vragen.</p></li>
+        <li><h3>Offerte en realisatie</h3><p>Na goedkeuring van het lichtplan volgt een passende offerte van het armaturenvoorstel. Na je akkoord kunnen we desgewenst levering en projectbegeleiding verzorgen.</p></li>
       </ol>
       <p style="margin-top:3rem"><a class="knop" href="contact.html">Vraag een lichtplan aan</a></p>
     </div>
