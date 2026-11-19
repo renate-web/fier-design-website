@@ -12,7 +12,7 @@ ICOON_PNG = U + "2024/04/cropped-icon-1-192x192.png"
 MENU = [
     ("index.html", "Home"),
     ("diensten.html", "Diensten"),
-    ("opdrachtgevers.html", "Opdrachtgevers"),
+    ("opdrachtgevers.html", "Voor wie"),
     ("projecten.html", "Projecten"),
     ("referenties.html", "Referenties"),
     ("over-mij.html", "Over mij"),
@@ -469,11 +469,11 @@ pagina("diensten.html", "Diensten: lichtontwerp en interieurontwerp – Fierdesi
   </section>""", "diensten.html")
 
 # ------------------------------------------------------------------ opdrachtgevers (voorbeeldteksten)
-pagina("opdrachtgevers.html", "Opdrachtgevers: particulier en zakelijk – Fierdesign",
+pagina("opdrachtgevers.html", "Voor wie: particulier en zakelijk – Fierdesign",
        "Licht- en interieurontwerp voor particulieren en bedrijven: woningen, verbouwingen, verhuurwoningen en werkplekken.",
        f"""  <!-- Voorbeeldteksten: nog door Renate aan te passen -->
   <section class="paginakop"><div class="wrap">
-    <h1>Opdrachtgevers</h1>
+    <h1>Voor wie</h1>
     <p>Ik werk voor mensen die thuis willen wonen zoals het bij ze past, en voor bedrijven die een ruimte willen die werkt en indruk maakt.</p>
   </div></section>
 
