@@ -338,10 +338,10 @@ slides = "\n".join(
     f'<img src="{U + s}" alt=""{" class=\"zichtbaar\" fetchpriority=\"high\"" if i == 0 else " loading=\"lazy\""}>'
     for i, s in enumerate(SLIDES))
 
-pagina("index.html", "Fierdesign – Licht- & interieurontwerp", "Licht- en interieurontwerp, persoonlijk en doordacht: lichtontwerp dat daglicht en kunstlicht samenbrengt, en een persoonlijk interieur. Amsterdam.",
+pagina("index.html", "Fierdesign – Licht- & interieurontwerp", "Licht- en interieurontwerp, stijlvol en doordacht: lichtontwerp dat daglicht en kunstlicht samenbrengt, en een persoonlijk interieur. Amsterdam.",
        f"""  <section class="hero" aria-labelledby="hero-titel">
     <div class="hero__tekst">
-      <h1 id="hero-titel">Licht- en interieurontwerp, persoonlijk en doordacht</h1>
+      <h1 id="hero-titel">Licht- en interieurontwerp, stijlvol en doordacht</h1>
       <p>Een lichtplan, een interieurontwerp of beide, voor je woning of bedrijfsruimte.</p>
       <p style="margin-top:.5rem"><a class="knop" href="contact.html">Plan een kennismaking</a></p>
     </div>
