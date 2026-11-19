@@ -22,6 +22,25 @@
   }, 6000);
 })();
 
+// Beeldwissel (bijv. lichtplan op Diensten): wisselt rustig, klik vergroot
+(function () {
+  document.querySelectorAll('.wissel').forEach(function (w) {
+    var beelden = w.querySelectorAll('.wissel__beeld');
+    var stippen = w.querySelectorAll('.wissel__stippen span');
+    if (beelden.length < 2) return;
+    var i = 0;
+    if (stippen[0]) stippen[0].classList.add('actief');
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    setInterval(function () {
+      beelden[i].classList.remove('zichtbaar');
+      if (stippen[i]) stippen[i].classList.remove('actief');
+      i = (i + 1) % beelden.length;
+      beelden[i].classList.add('zichtbaar');
+      if (stippen[i]) stippen[i].classList.add('actief');
+    }, 5000);
+  });
+})();
+
 // Lightbox voor projectgalerijen
 (function () {
   var knoppen = Array.prototype.slice.call(document.querySelectorAll('[data-groot]'));

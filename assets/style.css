@@ -211,3 +211,14 @@ p { margin: 0 0 1rem; }
   .sectie { padding: 3.5rem 0; }
   .paginakop { padding: 3.5rem 0 2rem; }
 }
+
+/* ---------- Beeldwissel (Diensten · lichtontwerp) ---------- */
+.wissel { position: relative; aspect-ratio: 1.42; background: var(--wit); }
+.wissel__beeld { position: absolute; inset: 0; padding: 0; border: 0; background: none; cursor: zoom-in; opacity: 0; pointer-events: none; transition: opacity 1.2s ease; }
+.wissel__beeld.zichtbaar { opacity: 1; pointer-events: auto; }
+.wissel__beeld img { width: 100%; height: 100%; object-fit: contain; aspect-ratio: auto; }
+.twee--beeld .wissel__beeld img { aspect-ratio: auto; object-fit: contain; }
+.wissel__stippen { position: absolute; left: 0; right: 0; bottom: -1.75rem; display: flex; justify-content: center; gap: .5rem; }
+.wissel__stippen span { width: .5rem; height: .5rem; border-radius: 50%; border: 1px solid currentColor; opacity: .7; }
+.wissel__stippen span.actief { background: currentColor; opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .wissel__beeld { transition: none; } }

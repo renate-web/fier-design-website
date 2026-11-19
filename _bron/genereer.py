@@ -399,6 +399,22 @@ pagina("index.html", "Fierdesign – Licht- & interieurontwerp", "Licht- en inte
   </section>""", "index.html")
 
 # ------------------------------------------------------------------ diensten
+LICHTBEELDEN = [
+    ("lichtplan-1-stappenplan.jpg", "Stappenplan lichtplan: plattegrond, schets en vlekkenplan, lichtplan en presentatie, offerte en realisatie"),
+    ("lichtplan-2-moodboard.jpg", "Moodboard met armaturen voor een lichtplan"),
+    ("lichtplan-3-lichtplan.jpg", "Lichtplan op de plattegrond met de gekozen armaturen L01 tot en met L09"),
+    ("lichtplan-4-schakelplan.jpg", "Schakelplan met schakelgroepen en bedieningspunten"),
+]
+lichtwissel = (
+    '        <div class="wissel" aria-label="Voorbeelden uit een lichtplan">\n'
+    + "\n".join(
+        f'          <button type="button" class="wissel__beeld{" zichtbaar" if i == 0 else ""}" data-groot="assets/beeld/{f}">'
+        f'<img src="assets/beeld/{f}" alt="{e(alt)}"{"" if i == 0 else " loading=\"lazy\""}></button>'
+        for i, (f, alt) in enumerate(LICHTBEELDEN))
+    + '\n          <div class="wissel__stippen" aria-hidden="true">'
+    + "".join("<span></span>" for _ in LICHTBEELDEN)
+    + '</div>\n        </div>')
+
 pagina("diensten.html", "Diensten: lichtontwerp en interieurontwerp – Fierdesign",
        "Lichtontwerp en interieurontwerp volgens een helder stappenplan, van kennismaking tot oplevering.",
        f"""  <section class="paginakop"><div class="wrap">
@@ -414,7 +430,7 @@ pagina("diensten.html", "Diensten: lichtontwerp en interieurontwerp – Fierdesi
           <p>Licht bepaalt niet alleen wat je ziet, maar ook wat je voelt. Met een doordachte balans tussen daglicht en kunstlicht creëert Fierdesign sfeer én functionaliteit, binnen en buiten, met aandacht voor techniek, esthetiek en budget.</p>
           <p>Een lichtplan maak je het best vroeg, vóór de installateur de leidingen trekt. Dat bespaart aanpassingen en oponthoud tijdens de bouw, en zorgt dat de sfeer die je voor ogen had ook precies zo wordt gerealiseerd. Ik werk daarbij graag samen met je architect, aannemer en installateur.</p>
         </div>
-        <img src="{U}2024/04/2B.-LICHTZONES-1-1024x698.jpg" alt="Voorbeeld van een lichtzoneplan" loading="lazy" style="aspect-ratio:auto">
+{lichtwissel}
       </div>
 
       <h3 style="margin-top:4rem">Licht in lagen</h3>
