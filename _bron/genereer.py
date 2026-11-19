@@ -400,7 +400,6 @@ pagina("index.html", "Fierdesign – Licht- & interieurontwerp", "Licht- en inte
 
 # ------------------------------------------------------------------ diensten
 LICHTBEELDEN = [
-    ("lichtplan-1-stappenplan.jpg", "Stappenplan lichtplan: plattegrond, schets en vlekkenplan, lichtplan en presentatie, offerte en realisatie"),
     ("lichtplan-2-moodboard.jpg", "Moodboard met keukenverlichting, wandlampen, een hanglamp en traptreden met licht"),
     ("lichtplan-3-lichtplan.jpg", "Lichtplan op de plattegrond met de gekozen armaturen L01 tot en met L09"),
     ("lichtplan-4-schakelplan.jpg", "Schakelplan met schakelgroepen en bedieningspunten"),
