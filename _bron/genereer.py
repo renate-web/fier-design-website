@@ -452,7 +452,7 @@ pagina("diensten.html", "Diensten: lichtontwerp en interieurontwerp – Fierdesi
           <p>Ik luister goed naar je wensen en vertaal die naar een persoonlijk, functioneel én mooi ontwerp. Met 3D-tekeningen zie je vooraf hoe het wordt, zodat kiezen makkelijker wordt. Ook help ik je graag met de realisatie, samen met mijn netwerk van professionals.</p>
           <h3 style="margin-top:2rem;margin-bottom:.75rem">Fierdesign en Xoomlab</h3>
           <p>Voor grotere verbouwingsplannen, zoals een uitbouw of het aanpassen van de indeling en constructie van je woning, biedt Fierdesign extra mogelijkheden dankzij de samenwerking binnen Xoomlab. Hierdoor kunnen we ook verder kijken dan het interieur alleen. Denk aan het uitwerken van constructieve tekeningen en begeleiding bij vergunningaanvragen. Zo komen interieur, architectuur en techniek samen in één goed doordacht plan.</p>
-          <p><a href="https://xoomlab.nl">Xoomlab</a> is een coöperatie van architecten, interieurontwerpers, stedenbouwkundigen en bouwkundigen, gevestigd op het Cruquiuseiland in Amsterdam.</p>
+          <p><a href="https://xoomlab.nl">Xoomlab</a> is een coöperatie van architecten, interieurontwerpers, stedenbouwkundigen en bouwkundigen.</p>
         </div>
         <img src="{U}2025/07/chiela-fierdesign-27mei-hogeresolutie37.jpg" alt="Interieur met maatwerk in een split-level woning" loading="lazy" class="beeld--lager">
       </div>
