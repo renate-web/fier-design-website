@@ -226,3 +226,6 @@ p { margin: 0 0 1rem; }
 @media (max-width: 1000px) { .stappen--vier { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 600px) { .stappen--vier { grid-template-columns: 1fr; } }
 .twee--beeld img.beeld--lager { aspect-ratio: 1 / 1; object-position: center; } /* minder hoog: stukje van boven- en onderkant eraf */
+/* Plan of tekening als beeld (geen uitsnede, klik vergroot) */
+.beeld-plan { display: block; width: 100%; padding: 0; border: 0; background: var(--wit); cursor: zoom-in; }
+.twee .beeld-plan img { width: 100%; height: auto; aspect-ratio: auto; object-fit: contain; }

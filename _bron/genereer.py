@@ -512,7 +512,7 @@ pagina("opdrachtgevers.html", "Voor wie: particulier en zakelijk – Fierdesign"
           <p>Via Xoomlab werk ik samen met architecten, bouwkundigen en stedenbouwkundigen, zodat ook grotere projecten in één team worden opgepakt.</p>
           <a class="lees" href="projecten/vakantiehuisje-in-de-duinen.html">Bekijk: Vakantiehuisje in de duinen</a>
         </div>
-        <img src="{U}2024/12/Flierefluiter-05102024-YRHE-14.jpg" alt="Vakantiewoning in de duinen" loading="lazy">
+        <button type="button" class="beeld-plan" data-groot="assets/beeld/lichtontwerp-horeca.jpg"><img src="assets/beeld/lichtontwerp-horeca.jpg" alt="Lichtontwerp voor een restaurant: plattegrond met zones, spots, tafelverlichting, ambient light en ledstrip onder de bar" loading="lazy"></button>
       </div>
     </section>
   </div>""", "opdrachtgevers.html")
