@@ -322,10 +322,10 @@ def kaarten(slugs, r=""):
         for s in slugs)
 
 
-pagina("projecten.html", "Projecten – Fierdesign", "Interieur- en lichtontwerpen van Fierdesign: woningen, verbouwingen en verhuurpanden.",
+pagina("projecten.html", "Projecten – Fierdesign", "Licht- en interieurontwerpen van Fierdesign: woningen, verbouwingen en verhuurpanden.",
        f"""  <section class="paginakop"><div class="wrap">
     <h1>Projecten</h1>
-    <p>Van een uitbouw uit de jaren ’50 tot wonen in een kapel: een selectie van interieur- en lichtontwerpen.</p>
+    <p>Van een uitbouw uit de jaren ’50 tot wonen in een kapel: een selectie van licht- en interieurontwerpen.</p>
   </div></section>
   <section class="sectie" style="padding-top:0"><div class="wrap raster">
 {kaarten([p['slug'] for p in P])}
@@ -338,11 +338,11 @@ slides = "\n".join(
     f'<img src="{U + s}" alt=""{" class=\"zichtbaar\" fetchpriority=\"high\"" if i == 0 else " loading=\"lazy\""}>'
     for i, s in enumerate(SLIDES))
 
-pagina("index.html", "Fierdesign – Interieur- & lichtontwerp", "Persoonlijk interieurontwerp met functie en stijl, en lichtontwerp dat daglicht en kunstlicht samenbrengt. Amsterdam.",
+pagina("index.html", "Fierdesign – Licht- & interieurontwerp", "Licht- en interieurontwerp, persoonlijk en doordacht: lichtontwerp dat daglicht en kunstlicht samenbrengt, en een persoonlijk interieur. Amsterdam.",
        f"""  <section class="hero" aria-labelledby="hero-titel">
     <div class="hero__tekst">
-      <h1 id="hero-titel">Persoonlijk interieurontwerp met functie en stijl</h1>
-      <p>Interieur- en lichtontwerp in één hand, voor je woning of je bedrijfsruimte.</p>
+      <h1 id="hero-titel">Licht- en interieurontwerp, persoonlijk en doordacht</h1>
+      <p>Daglicht, kunstlicht en interieur in één ontwerp, voor je woning of je bedrijfsruimte.</p>
       <p style="margin-top:.5rem"><a class="knop" href="contact.html">Plan een kennismaking</a></p>
     </div>
     <div class="hero__beeld">
@@ -361,7 +361,7 @@ pagina("index.html", "Fierdesign – Interieur- & lichtontwerp", "Persoonlijk in
       <div class="tekst" id="lichtontwerp">
         <h2><span class="kenmerk kenmerk--licht" aria-hidden="true"></span>Fierdesign lichtontwerp</h2>
         <p>Licht bepaalt niet alleen wat je ziet, maar ook wat je voelt. Het versterkt de beleving en emotie van een interieur. Tijdens het realiseren van verschillende interieurontwerpen ontdekte ik hoe essentieel licht is.</p>
-        <p>Daarom ben ik me verder gaan verdiepen in lichtontwerp. Na diverse opleidingen combineer ik nu interieur- en lichtontwerp. Met een doordachte balans tussen daglicht en kunstlicht creëert Fierdesign sfeer én functionaliteit, zowel binnen als buiten, met aandacht voor techniek, esthetiek en budget. Een goed lichtplan bespaart aanpassingen en oponthoud tijdens de bouw en zorgt ervoor dat de sfeer die je voor ogen had, ook precies zo wordt gerealiseerd.</p>
+        <p>Daarom ben ik me verder gaan verdiepen in lichtontwerp. Na diverse opleidingen combineer ik nu licht- en interieurontwerp. Met een doordachte balans tussen daglicht en kunstlicht creëert Fierdesign sfeer én functionaliteit, zowel binnen als buiten, met aandacht voor techniek, esthetiek en budget. Een goed lichtplan bespaart aanpassingen en oponthoud tijdens de bouw en zorgt ervoor dat de sfeer die je voor ogen had, ook precies zo wordt gerealiseerd.</p>
         <a class="lees" href="diensten.html#lichtontwerp">Zo werkt lichtontwerp</a>
       </div>
     </div>
@@ -403,7 +403,7 @@ pagina("diensten.html", "Diensten: interieurontwerp en lichtontwerp – Fierdesi
        "Interieurontwerp en lichtontwerp volgens een helder stappenplan, van kennismaking tot oplevering.",
        f"""  <section class="paginakop"><div class="wrap">
     <h1>Diensten</h1>
-    <p>Interieur en licht horen bij elkaar. Je kunt ze los bij me afnemen, maar ze werken het best samen: dan klopt de sfeer overdag én ’s avonds.</p>
+    <p>Licht en interieur horen bij elkaar. Je kunt ze los bij me afnemen, maar ze werken het best samen: dan klopt de sfeer overdag én ’s avonds.</p>
   </div></section>
 
   <section class="sectie" id="interieurontwerp" aria-labelledby="io-titel">
@@ -462,7 +462,7 @@ pagina("diensten.html", "Diensten: interieurontwerp en lichtontwerp – Fierdesi
 
 # ------------------------------------------------------------------ opdrachtgevers (voorbeeldteksten)
 pagina("opdrachtgevers.html", "Opdrachtgevers: particulier en zakelijk – Fierdesign",
-       "Interieur- en lichtontwerp voor particulieren en bedrijven: woningen, verbouwingen, verhuurwoningen en werkplekken.",
+       "Licht- en interieurontwerp voor particulieren en bedrijven: woningen, verbouwingen, verhuurwoningen en werkplekken.",
        f"""  <!-- Voorbeeldteksten: nog door Renate aan te passen -->
   <section class="paginakop"><div class="wrap">
     <h1>Opdrachtgevers</h1>
@@ -538,7 +538,7 @@ refs = "\n".join(f"""    <article class="referentie">
         <footer>{e(n)}</footer>
       </div>
     </article>""" for s, n, t in REF)
-pagina("referenties.html", "Referenties – Fierdesign", "Wat opdrachtgevers zeggen over het interieur- en lichtontwerp van Fierdesign.",
+pagina("referenties.html", "Referenties – Fierdesign", "Wat opdrachtgevers zeggen over het licht- en interieurontwerp van Fierdesign.",
        f"""  <section class="paginakop"><div class="wrap"><h1>Referenties</h1></div></section>
   <section class="sectie" style="padding-top:0"><div class="wrap">
 {refs}
