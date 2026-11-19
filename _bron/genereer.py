@@ -342,7 +342,7 @@ pagina("index.html", "Fierdesign – Licht- & interieurontwerp", "Licht- en inte
        f"""  <section class="hero" aria-labelledby="hero-titel">
     <div class="hero__tekst">
       <h1 id="hero-titel">Licht- en interieurontwerp, persoonlijk en doordacht</h1>
-      <p>Daglicht, kunstlicht en interieur in één ontwerp, voor je woning of je bedrijfsruimte.</p>
+      <p>Een lichtplan, een interieurontwerp of beide, voor je woning of bedrijfsruimte.</p>
       <p style="margin-top:.5rem"><a class="knop" href="contact.html">Plan een kennismaking</a></p>
     </div>
     <div class="hero__beeld">
