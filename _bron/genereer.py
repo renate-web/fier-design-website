@@ -352,17 +352,17 @@ pagina("index.html", "Fierdesign – Licht- & interieurontwerp", "Licht- en inte
 
   <section class="sectie" id="interieur">
     <div class="wrap twee">
-      <div class="tekst">
-        <h2><span class="kenmerk kenmerk--interieur" aria-hidden="true"></span>Fierdesign interieurontwerp</h2>
-        <p>Bij Fierdesign sta jij als opdrachtgever op de eerste plaats: op basis van jouw wensen ontwerp ik je interieur, samen zetten we je eigen stijl neer. Dat kan een groot, maar ook een klein vraagstuk zijn.</p>
-        <p>Het proces naar het uiteindelijke ontwerp is minstens zo belangrijk als het resultaat. Met een helder stappenplan doorlopen we het proces naar jouw nieuwe interieur bij zowel residentiële als zakelijke ruimtes. Ik luister goed naar je wensen en vertaal dit naar een persoonlijk, functioneel én mooi ontwerp. Ook help ik je graag met de realisatie van het interieur, samen met mijn netwerk van professionals.</p>
-        <a class="lees" href="diensten.html#interieurontwerp">Zo werkt interieurontwerp</a>
-      </div>
       <div class="tekst" id="lichtontwerp">
-        <h2><span class="kenmerk kenmerk--licht" aria-hidden="true"></span>Fierdesign lichtontwerp</h2>
+        <h2><span class="kenmerk kenmerk--licht" aria-hidden="true"></span>Lichtontwerp</h2>
         <p>Licht bepaalt niet alleen wat je ziet, maar ook wat je voelt. Het versterkt de beleving en emotie van een interieur. Tijdens het realiseren van verschillende interieurontwerpen ontdekte ik hoe essentieel licht is.</p>
         <p>Daarom ben ik me verder gaan verdiepen in lichtontwerp. Na diverse opleidingen combineer ik nu licht- en interieurontwerp. Met een doordachte balans tussen daglicht en kunstlicht creëert Fierdesign sfeer én functionaliteit, zowel binnen als buiten, met aandacht voor techniek, esthetiek en budget. Een goed lichtplan bespaart aanpassingen en oponthoud tijdens de bouw en zorgt ervoor dat de sfeer die je voor ogen had, ook precies zo wordt gerealiseerd.</p>
         <a class="lees" href="diensten.html#lichtontwerp">Zo werkt lichtontwerp</a>
+      </div>
+      <div class="tekst">
+        <h2><span class="kenmerk kenmerk--interieur" aria-hidden="true"></span>Interieurontwerp</h2>
+        <p>Bij Fierdesign sta jij als opdrachtgever op de eerste plaats: op basis van jouw wensen ontwerp ik je interieur, samen zetten we je eigen stijl neer. Dat kan een groot, maar ook een klein vraagstuk zijn.</p>
+        <p>Het proces naar het uiteindelijke ontwerp is minstens zo belangrijk als het resultaat. Met een helder stappenplan doorlopen we het proces naar jouw nieuwe interieur bij zowel residentiële als zakelijke ruimtes. Ik luister goed naar je wensen en vertaal dit naar een persoonlijk, functioneel én mooi ontwerp. Ook help ik je graag met de realisatie van het interieur, samen met mijn netwerk van professionals.</p>
+        <a class="lees" href="diensten.html#interieurontwerp">Zo werkt interieurontwerp</a>
       </div>
     </div>
     <div class="wrap" style="margin-top:5rem">
@@ -399,34 +399,12 @@ pagina("index.html", "Fierdesign – Licht- & interieurontwerp", "Licht- en inte
   </section>""", "index.html")
 
 # ------------------------------------------------------------------ diensten
-pagina("diensten.html", "Diensten: interieurontwerp en lichtontwerp – Fierdesign",
-       "Interieurontwerp en lichtontwerp volgens een helder stappenplan, van kennismaking tot oplevering.",
+pagina("diensten.html", "Diensten: lichtontwerp en interieurontwerp – Fierdesign",
+       "Lichtontwerp en interieurontwerp volgens een helder stappenplan, van kennismaking tot oplevering.",
        f"""  <section class="paginakop"><div class="wrap">
     <h1>Diensten</h1>
-    <p>Licht en interieur horen bij elkaar. Je kunt ze los bij me afnemen, maar ze werken het best samen: dan klopt de sfeer overdag én ’s avonds.</p>
+    <p>Een lichtplan, een interieurontwerp of beide: stijlvol en doordacht, voor je woning of bedrijfsruimte.</p>
   </div></section>
-
-  <section class="sectie" id="interieurontwerp" aria-labelledby="io-titel">
-    <div class="wrap">
-      <div class="twee twee--beeld">
-        <div class="tekst">
-          <h2 id="io-titel"><span class="kenmerk kenmerk--interieur" aria-hidden="true"></span>Interieurontwerp</h2>
-          <p>Bij Fierdesign sta jij als opdrachtgever op de eerste plaats. Op basis van jouw wensen ontwerp ik je interieur, en samen zetten we je eigen stijl neer. Dat kan een groot of juist een klein vraagstuk zijn, voor je woning of je bedrijfsruimte.</p>
-          <p>Ik luister goed naar je wensen en vertaal die naar een persoonlijk, functioneel én mooi ontwerp. Met 3D-tekeningen zie je vooraf hoe het wordt, zodat kiezen makkelijker wordt. Ook help ik je graag met de realisatie, samen met mijn netwerk van professionals.</p>
-        </div>
-        <img src="{U}2025/07/chiela-fierdesign-27mei-hogeresolutie37.jpg" alt="Interieur met maatwerk in een split-level woning" loading="lazy">
-      </div>
-      <h3 style="margin-top:4rem">Het stappenplan voor interieurontwerp</h3>
-      <ol class="stappen">
-        <li><h3>Kennismaking</h3><p>We bespreken je wensen, je manier van leven, de ruimte en je budget, het liefst bij jou ter plekke.</p></li>
-        <li><h3>Concept en moodboard</h3><p>Een eerste richting voor sfeer, kleur en materiaal, als basis voor alle keuzes die volgen.</p></li>
-        <li><h3>Indelingsplan</h3><p>Functies, looproutes en meubelopstelling: elke plek krijgt een logische plaats. Maatwerk teken ik waar het nodig is.</p></li>
-        <li><h3>Materialisatie en kleur</h3><p>Vloeren, wanden, tegels en kleuren, uitgewerkt in 3D-tekeningen, zodat je het eindbeeld al ziet.</p></li>
-        <li><h3>Definitief ontwerp</h3><p>Tekeningen, maatwerkdetails en een overzicht met meubels, lampen en materialen, klaar voor offertes.</p></li>
-        <li><h3>Realisatie</h3><p>Ik breng je in contact met vakmensen uit mijn netwerk, stem af op de bouw en adviseer over de afwerkingsdetails.</p></li>
-      </ol>
-    </div>
-  </section>
 
   <section class="sectie sectie--avond" id="lichtontwerp" aria-labelledby="lo-titel">
     <div class="wrap">
@@ -457,6 +435,28 @@ pagina("diensten.html", "Diensten: interieurontwerp en lichtontwerp – Fierdesi
         <li><h3>Oplevering en afstellen</h3><p>Spots richten, dimniveaus en lichtscènes instellen: pas dan klopt het licht precies zoals bedoeld.</p></li>
       </ol>
       <p style="margin-top:3rem"><a class="knop" href="contact.html">Vraag een lichtplan aan</a></p>
+    </div>
+  </section>
+
+  <section class="sectie" id="interieurontwerp" aria-labelledby="io-titel">
+    <div class="wrap">
+      <div class="twee twee--beeld">
+        <div class="tekst">
+          <h2 id="io-titel"><span class="kenmerk kenmerk--interieur" aria-hidden="true"></span>Interieurontwerp</h2>
+          <p>Bij Fierdesign sta jij als opdrachtgever op de eerste plaats. Op basis van jouw wensen ontwerp ik je interieur, en samen zetten we je eigen stijl neer. Dat kan een groot of juist een klein vraagstuk zijn, voor je woning of je bedrijfsruimte.</p>
+          <p>Ik luister goed naar je wensen en vertaal die naar een persoonlijk, functioneel én mooi ontwerp. Met 3D-tekeningen zie je vooraf hoe het wordt, zodat kiezen makkelijker wordt. Ook help ik je graag met de realisatie, samen met mijn netwerk van professionals.</p>
+        </div>
+        <img src="{U}2025/07/chiela-fierdesign-27mei-hogeresolutie37.jpg" alt="Interieur met maatwerk in een split-level woning" loading="lazy">
+      </div>
+      <h3 style="margin-top:4rem">Het stappenplan voor interieurontwerp</h3>
+      <ol class="stappen">
+        <li><h3>Kennismaking</h3><p>We bespreken je wensen, je manier van leven, de ruimte en je budget, het liefst bij jou ter plekke.</p></li>
+        <li><h3>Concept en moodboard</h3><p>Een eerste richting voor sfeer, kleur en materiaal, als basis voor alle keuzes die volgen.</p></li>
+        <li><h3>Indelingsplan</h3><p>Functies, looproutes en meubelopstelling: elke plek krijgt een logische plaats. Maatwerk teken ik waar het nodig is.</p></li>
+        <li><h3>Materialisatie en kleur</h3><p>Vloeren, wanden, tegels en kleuren, uitgewerkt in 3D-tekeningen, zodat je het eindbeeld al ziet.</p></li>
+        <li><h3>Definitief ontwerp</h3><p>Tekeningen, maatwerkdetails en een overzicht met meubels, lampen en materialen, klaar voor offertes.</p></li>
+        <li><h3>Realisatie</h3><p>Ik breng je in contact met vakmensen uit mijn netwerk, stem af op de bouw en adviseer over de afwerkingsdetails.</p></li>
+      </ol>
     </div>
   </section>""", "diensten.html")
 

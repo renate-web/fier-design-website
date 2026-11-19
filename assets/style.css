@@ -108,8 +108,9 @@ p { margin: 0 0 1rem; }
 }
 
 .kenmerk { display: inline-block; width: .5em; height: .5em; margin-right: .5em; vertical-align: .15em; }
-.kenmerk--licht { border-radius: 50%; background: var(--linnen); box-shadow: inset 0 0 0 1px var(--zwart); }
-.kenmerk--interieur { background: var(--zwart); }
+.kenmerk--licht { background: var(--zwart); }
+.kenmerk--interieur { background: var(--linnen); }
+.sectie--avond .kenmerk--licht { box-shadow: inset 0 0 0 1px var(--linnen); } /* zwart blokje blijft zichtbaar op zwart */
 
 .lees { display: inline-block; margin-top: .5rem; font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--zwart); }
 .lees:hover { border-bottom-width: 2px; }
