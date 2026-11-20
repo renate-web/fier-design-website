@@ -664,7 +664,7 @@ pagina("over-mij.html", "Over Fierdesign – licht- en interieurontwerp", "Fierd
         <p>Fierdesign ontwerpt licht en interieur voor woningen, horeca en bedrijfsruimtes. Licht en interieur komen bij mij samen in één ontwerp: een doordachte indeling, passende materialen en een lichtplan dat de ruimte overdag én ’s avonds laat kloppen.</p>
         <p>Ik ben Renate, licht- en interieurontwerper en oprichter van Fierdesign. De naam verwijst naar mijn Friese roots.</p>
       </div>
-      <img src="{U}2025/07/RENATE-vensterbank_lowres.jpg" alt="Renate Heeringa Popma, licht- en interieurontwerper van Fierdesign" loading="lazy">
+      <img class="over__portret" src="assets/beeld/over/renate-portret-2026.jpg" alt="Renate Heeringa Popma, licht- en interieurontwerper van Fierdesign" width="1024" height="1280">
     </div>
   </section>
   <section class="sectie sectie--diep">
