@@ -80,7 +80,6 @@ def pagina(pad, titel, beschrijving, inhoud, actief=None):
       <div class="voet__raster">
         <div>
           <h2>Heb je een licht- of interieurvraag? Ik denk graag met je mee!</h2>
-          <p>Fierdesign maakt deel uit van <a href="https://xoomlab.nl">Xoomlab.nl</a>, een coöperatie van architecten, interieurontwerpers, stedenbouwkundigen en bouwkundigen, gevestigd op het Cruquiuseiland in Amsterdam.</p>
         </div>
         <ul>
           <li><a href="mailto:renate@fierdesign.nl">renate@fierdesign.nl</a></li>
@@ -563,9 +562,7 @@ pagina("diensten.html", "Diensten: lichtontwerp en interieurontwerp – Fierdesi
           <h2 id="io-titel"><span class="kenmerk kenmerk--interieur" aria-hidden="true"></span>Interieurontwerp</h2>
           <p>Bij Fierdesign sta jij als opdrachtgever op de eerste plaats. Op basis van jouw wensen ontwerp ik je interieur, en samen zetten we je eigen stijl neer. Dat kan een groot of juist een klein vraagstuk zijn, voor je woning of je bedrijfsruimte.</p>
           <p>Ik luister goed naar je wensen en vertaal die naar een persoonlijk, functioneel én mooi ontwerp. Met 3D-tekeningen zie je vooraf hoe het wordt, zodat kiezen makkelijker wordt. Ook help ik je graag met de realisatie, samen met mijn netwerk van professionals.</p>
-          <h3 style="margin-top:2rem;margin-bottom:.75rem">Fierdesign en Xoomlab</h3>
-          <p>Voor grotere verbouwingsplannen, zoals een uitbouw of het aanpassen van de indeling en constructie van je woning, biedt Fierdesign extra mogelijkheden dankzij de samenwerking binnen Xoomlab. Hierdoor kunnen we ook verder kijken dan het interieur alleen. Denk aan het uitwerken van constructieve tekeningen en begeleiding bij vergunningaanvragen. Zo komen interieur, architectuur en techniek samen in één goed doordacht plan.</p>
-          <p><a href="https://xoomlab.nl">Xoomlab</a> is een coöperatie van architecten, interieurontwerpers, stedenbouwkundigen en bouwkundigen.</p>
+          <p>Voor grotere verbouwingen, zoals een uitbouw of een nieuwe indeling, werk ik samen met de architecten en bouwkundigen van <a href="https://xoomlab.nl">Xoomlab</a>, bijvoorbeeld voor constructieve tekeningen en vergunningaanvragen.</p>
         </div>
         <img src="{U}2025/07/chiela-fierdesign-27mei-hogeresolutie37.jpg" alt="Interieur met maatwerk in een split-level woning" loading="lazy" class="beeld--lager">
       </div>
@@ -622,7 +619,6 @@ pagina("opdrachtgevers.html", "Voor wie: particulier en zakelijk – Fierdesign"
             <li>Winkels en horeca</li>
             <li>Lichtplannen in samenwerking met architect en installateur</li>
           </ul>
-          <p>Via Xoomlab werk ik samen met architecten, bouwkundigen en stedenbouwkundigen, zodat ook grotere projecten in één team worden opgepakt.</p>
           <a class="lees" href="projecten/vakantiehuisje-in-de-duinen.html">Bekijk: Vakantiehuisje in de duinen</a>
         </div>
         <img src="assets/beeld/zakelijk-gordijnen-zitbank.jpg" alt="Zakelijke ruimte met linnen gordijnen, een zitbank en lijnverlichting" loading="lazy">
