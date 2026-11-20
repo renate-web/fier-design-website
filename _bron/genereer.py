@@ -131,7 +131,7 @@ Het lichtplan is opgebouwd in lagen: basisverlichting, het uitlichten van de rui
 
 De opdracht is uiteindelijk aan een andere partij gegund, dus dit ontwerp is niet gebouwd. Ik laat het toch graag zien, omdat het goed toont hoe ik van een eerste idee tot een compleet lichtplan kom.""",
      [SP + f for f in ("impressie-1-restaurant.jpg", "impressie-2-restaurant-avond.jpg", "impressie-3-paviljoen-duinen.jpg",
-                       "impressie-4-paviljoen-strand.jpg", "impressie-5-terras.jpg")],
+                       "impressie-5-terras.jpg")],
      [SP + f for f in ("ontwerp-1-concept.jpg", "ontwerp-2-gevels.jpg", "ontwerp-3-brainstorm.jpg", "ontwerp-4-lichtbeeld.jpg",
                        "ontwerp-5-lichtplan.jpg", "ontwerp-6-inspiratie-plafond.jpg", "ontwerp-7-eyecatcher-zonnelamp.jpg")],
      doel="zakelijk",
