@@ -313,13 +313,13 @@ P.remove(_rb)
 EV = "assets/beeld/projecten/eventruimte/"
 proj("eventruimte-met-gordijnen-en-licht", "Flexibele eventruimte met gordijnen en licht", EV + "resultaat-1.jpg",
      "Gordijnen die de ruimte verdelen, het geluid dempen en het licht verzachten.",
-     """Voor een bedrijf ontwierp ik een multifunctionele eventruimte: een plek voor presentaties, bijeenkomsten en evenementen, die akoestisch prettig is, slimme opbergruimte heeft en een sfeervol lichteffect.
+     """Voor een zakelijke opdrachtgever ontwierp Fierdesign een multifunctionele eventruimte voor presentaties, bijeenkomsten en evenementen. Het programma van eisen: goede akoestiek, voldoende opbergruimte en een sfeervol lichteffect.
 
-In verschillende opties onderzochten we de indeling: waar komt de garderobe, hoe scherm je de keuken en de opbergruimte af, en hoe blijft de ruimte flexibel in gebruik? De oplossing zit in gordijnen. Rondom hangen gordijnen in een naturel kleur, op rails aan pendels onder het open plafond. Ze dempen het geluid, verdelen de ruimte en kunnen open of dicht, afhankelijk van het gebruik.
+In meerdere varianten is de indeling onderzocht: de plaats van de garderobe, het afschermen van keuken en opbergruimte, en het behoud van flexibiliteit in gebruik. Gordijnen bleken de oplossing. Rondom hangen gordijnen in een naturel tint, op rails aan pendels onder het open plafond. Ze verbeteren de akoestiek, delen de ruimte in en kunnen per gebruikssituatie open of dicht.
 
-In het ontwerp zorgt een ledstrook achter de transparante vitrage ervoor dat de gordijnen zacht oplichten. Zo krijgt de zakelijke ruimte een warme, rustige uitstraling.
+Het ontwerp voorziet in een ledstrook achter de transparante vitrage, waardoor de gordijnen zacht oplichten. Dat geeft de ruimte een warme, rustige en professionele uitstraling.
 
-Ik heb ook de uitvoering begeleid, van de keuze van de stof tot het ophangen van de rails en de gordijnen.""",
+Fierdesign begeleidde ook de uitvoering, van de stofkeuze tot de montage van rails en gordijnen.""",
      [EV + f"resultaat-{x}.jpg" for x in ("1", "2", "3", "4", "5", "6-stof")],
      [EV + f for f in ("ontwerp-1-optie-1.jpg", "ontwerp-2-garderobe.jpg", "ontwerp-3-plattegrond.jpg", "ontwerp-4-interieurconcept.jpg",
                        "ontwerp-5-gordijnen-led.jpg", "ontwerp-6-gordijnen-3d.jpg", "ontwerp-7-gordijnen-open-dicht.jpg",
