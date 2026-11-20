@@ -55,8 +55,9 @@ p { margin: 0 0 1rem; }
   backdrop-filter: blur(6px);
   border-bottom: 0.5px solid var(--lijn);
 }
-.kop .wrap { display: flex; align-items: center; justify-content: space-between; min-height: 4.5rem; gap: 1.5rem; }
-.logo img { height: 3.25rem; width: auto; }
+.kop .wrap { display: flex; align-items: center; justify-content: space-between; min-height: 5.25rem; gap: 1.5rem; }
+.logo img { height: 4rem; width: auto; }
+@media (max-width: 560px) { .logo img { height: 3.5rem; } }
 .menu { display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0; }
 .menu a { text-decoration: none; font-weight: 500; font-size: 0.95rem; padding: .25rem 0; border-bottom: 2px solid transparent; }
 .menu a:hover { border-bottom-color: var(--linnen); }
@@ -73,7 +74,7 @@ p { margin: 0 0 1rem; }
 }
 
 /* ---------- Hero (home): linnen vlak met tekst | foto's ---------- */
-.hero { display: grid; grid-template-columns: 5fr 6fr; min-height: calc(100vh - 4.5rem); }
+.hero { display: grid; grid-template-columns: 5fr 6fr; min-height: calc(100vh - 5.25rem); }
 .hero__tekst { background: var(--linnen); display: flex; flex-direction: column; justify-content: center; padding: 4rem 3rem 4rem max(1.5rem, calc((100vw - var(--max)) / 2 + 1.5rem)); }
 .hero__tekst p { font-size: 1.15rem; max-width: 28rem; margin-top: 1.75rem; }
 .hero__beeld { position: relative; overflow: hidden; background: var(--zwart); }
