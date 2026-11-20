@@ -288,16 +288,16 @@ Omdat het een jaren ’90 architectonische bouwstijl is, met strakke lijnen, heb
 
 RB = "assets/beeld/projecten/restaurant-brouwerij/"
 proj("lichtplan-restaurant-brouwerij", "Colour Boost: lichtplan voor een restaurant met brouwerij", RB + "impressie-1-hal-neon.jpg",
-     "De verwondering van mijn kinderen bij een prisma voor het raam werd het startpunt van dit project.",
-     """Colour Boost is mijn afstudeerproject aan de Lighting Design Academy: een lichtplan voor een restaurant met brouwerij in een voormalige industriehal in het Hamerkwartier in Amsterdam-Noord. Ik werkte het concept uit voor de binnen- en de buitenruimte, maakte lichtberekeningen in DIALux en 3D-visualisaties.
+     "Daglicht dat door gekleurde daklichten valt: een regenboog in de hal, levendig, speels en ongedwongen.",
+     """Colour Boost is mijn afstudeerproject aan de Lighting Design Academy. Ik werkte het concept uit voor de binnen- en de buitenruimte, maakte lichtberekeningen in DIALux en 3D-visualisaties.
 
-De zon schijnt door het ‘kleine diamantje’ dat gewoon voor het raam hangt, en de kleuren van de regenboog weerkaatsen op de vloer. De verwondering van mijn kinderen, toen ze zagen hoe het zonlicht door het prisma die kleuren maakte, werd het startpunt van dit project.
+Wanneer natuurlijk ‘wit’ licht door een prisma valt, wordt het gebroken en opgesplitst in verschillende kleuren. Dit natuurlijke verschijnsel vormt de basis van het zichtbare lichtspectrum, zoals we dat ook bij een regenboog zien.
 
-Natuur: licht dat door een prisma valt, wordt gebroken in verschillende kleuren. Dat natuurlijke verschijnsel is de basis van het zichtbare lichtspectrum, zoals in een regenboog. Met respect voor de natuurlijke elementen ontstaat een vrolijke, ongedwongen sfeer.
+De natuurlijke elementen passen goed bij de natuurlijke producten en de speelse en ongedwongen sfeer van de locatie. Kleur staat symbool voor diversiteit, levendigheid en dynamische belevingen.
 
-Kleur: kleur staat voor diversiteit en dynamiek. Verschillende bieren, gerechten en sferen komen hier samen.
+In een voormalige industriehal in Amsterdam komen een brouwerij, een restaurant en een groot terras samen. Voor deze plek maakte ik een lichtplan dat past bij het karakter van de zaak: vrienden, bier, eten, kunst en muziek, kleurrijk en no-nonsense.
 
-Het lichtplan deelt de hoge hal op in zones: kleine en grote tafels, een sharing table, de bar en de Prisma room met podium, waar gegeten, gedanst en gedraaid wordt. Spots op rails geven het algemene licht en zijn makkelijk te richten. Oplaadbare tafellampjes zorgen voor sfeer aan tafel en een ledstrip onder het bartop laat de bar ’s avonds gloeien. Op het terras zorgen gekleurde lichtbuizen, tafellampjes en lichtkunst voor dezelfde sfeer buiten.
+Door kleurfilters toe te voegen aan de daklichten ontstaat er een kleurrijk effect door middel van het invallende daglicht. Het lichtplan deelt de hoge hal op in zones: kleine en grote tafels, een sharing table, de bar en de Prisma room met podium, waar gegeten, gedanst en gedraaid wordt. Spots op rails geven het algemene licht en zijn makkelijk te richten. Oplaadbare tafellampjes zorgen voor sfeer aan tafel en een ledstrip onder het bartop laat de bar ’s avonds gloeien. Op het terras zorgen gekleurde lichtbuizen, tafellampjes en lichtkunst voor dezelfde sfeer buiten.
 
 Door een wisseling van eigenaren is het plan helaas niet gerealiseerd.""",
      [RB + f for f in ("impressie-1-hal-neon.jpg", "impressie-2-bar.jpg", "impressie-3-bar-avond.jpg", "impressie-4-vol.jpg")],
