@@ -331,7 +331,7 @@ Ik heb ook de uitvoering begeleid, van de keuze van de stof tot het ophangen van
      video=dict(titel="Het ontwerp in 3D", tekst="Een korte animatie door het 3D-model van de eventruimte.",
                 bestand=EV + "ontwerp-3d-animatie.mp4", poster=EV + "ontwerp-3d-animatie-poster.jpg"))
 
-# Volgorde: de eventruimte staat direct vóór het strandpaviljoen.
+# Volgorde: de eventruimte staat helemaal achteraan.
 _ev = next(p for p in P if p["slug"] == "eventruimte-met-gordijnen-en-licht")
 P.remove(_ev)
 
@@ -340,7 +340,7 @@ _sp = next(p for p in P if p["slug"] == "lichtontwerp-strandpaviljoen")
 P.remove(_sp)
 P.insert(next(i for i, p in enumerate(P) if p["slug"] == "wonen-in-een-kapel"), _sp)
 P.append(_rb)  # helemaal onderaan
-P.insert(P.index(_sp), _ev)
+P.append(_ev)  # helemaal achteraan
 
 PS = {p["slug"]: p for p in P}
 
