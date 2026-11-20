@@ -712,7 +712,7 @@ pagina("contact.html", "Contact – Fierdesign", "Neem contact op met Fierdesign
         <p style="margin-top:2rem;color:var(--steen)">Fierdesign is gevestigd bij Xoomlab op het Cruquiuseiland in Amsterdam.</p>
         <p style="margin-top:2rem"><a class="knop" href="mailto:renate@fierdesign.nl?subject=Interieurvraag">Stuur een e-mail</a></p>
       </div>
-      <img src="assets/beeld/over/renate-bank-project.jpg" alt="Renate van Fierdesign" loading="lazy">
+      <img src="{U}2025/07/renate_werk_zw2.jpg" alt="Renate van Fierdesign aan het werk" loading="lazy">
     </div>
   </section>""", "contact.html")
 
