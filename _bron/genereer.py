@@ -287,19 +287,19 @@ Omdat het een jaren ’90 architectonische bouwstijl is, met strakke lijnen, heb
       "2024/04/IMG_3738-rotated.jpeg", "2024/04/IMG_3730-rotated.jpeg", "2024/04/IMG_4623-1.jpeg", "2024/04/006A.jpeg"])
 
 RB = "assets/beeld/projecten/restaurant-brouwerij/"
-proj("lichtplan-restaurant-brouwerij", "Lichtconcept voor restaurant & brouwerij", RB + "impressie-0-hal-daklicht-bar.jpg",
+proj("lichtplan-restaurant-brouwerij", "Lichtontwerp voor een restaurant in een brouwerij", RB + "impressie-0-hal-daklicht-bar.jpg",
      "Daglicht dat door gekleurde daklichten valt: een natuurlijk effect van kleur, levendig, speels en ongedwongen.",
-     """Colour Boost is mijn afstudeerproject aan de Lighting Design Academy. Ik werkte het concept uit voor de binnen- en de buitenruimte, maakte lichtberekeningen in DIALux en 3D-visualisaties.
+     """Colour Boost is mijn afstudeerproject aan de Lighting Design Academy. Voor dit project ontwikkelde ik een lichtconcept voor zowel de binnen- als buitenruimte, inclusief lichtberekeningen in DIALux en 3D-visualisaties.
 
-Wanneer natuurlijk ‘wit’ licht door een prisma valt, wordt het gebroken en opgesplitst in verschillende kleuren. Dit natuurlijke verschijnsel vormt de basis van het zichtbare lichtspectrum, zoals we dat ook bij een regenboog zien.
+Wanneer wit daglicht door een prisma valt, wordt het gebroken in verschillende kleuren. Dit natuurlijke verschijnsel vormt de basis van het zichtbare lichtspectrum, zoals we dat ook kennen van een regenboog.
 
-De natuurlijke elementen passen goed bij de natuurlijke producten en de speelse en ongedwongen sfeer van de locatie. Kleur staat symbool voor diversiteit, levendigheid en dynamische belevingen.
+Deze bijzondere werking van licht en kleur vormde de inspiratie voor het ontwerp. De natuurlijke elementen sluiten aan bij de ambachtelijke producten en de speelse, ongedwongen sfeer van de locatie.
 
-In een voormalige industriehal in Amsterdam komen een brouwerij, een restaurant en een groot terras samen. Voor deze plek maakte ik een lichtplan dat past bij het karakter van de zaak: vrienden, bier, eten, kunst en muziek, kleurrijk en no-nonsense.
+In een voormalige industriële hal in Amsterdam komen een brouwerij, restaurant en ruim terras samen. Een plek waar vrienden, bier, eten, kunst en muziek samenkomen. Kleurrijk, levendig en no-nonsense.
 
-Door kleurfilters toe te voegen aan de daklichten ontstaat er een kleurrijk effect door middel van het invallende daglicht. Het lichtplan deelt de hoge hal op in zones: kleine en grote tafels, een sharing table, de bar en de Prisma room met podium, waar gegeten, gedanst en gedraaid wordt. Spots op rails geven het algemene licht en zijn makkelijk te richten. Oplaadbare tafellampjes zorgen voor sfeer aan tafel en een ledstrip onder het bartop laat de bar ’s avonds gloeien. Op het terras zorgen gekleurde lichtbuizen, tafellampjes en lichtkunst voor dezelfde sfeer buiten.
+Het lichtplan versterkt dit karakter. Door kleurfilters toe te passen in de daklichten ontstaat een verrassend kleurenspel op de vloer, waarbij het invallende daglicht gedurende de dag voor een steeds veranderende beleving zorgt.
 
-Door een wisseling van eigenaren is het plan helaas niet gerealiseerd. Met dit ontwerp heb ik de opleiding wel met een mooi resultaat afgerond.""",
+Door een wisseling van eigenaren is het ontwerp helaas niet gerealiseerd. Met dit ontwerp heb ik de opleiding wel met een mooi resultaat afgerond.""",
      [RB + f for f in ("impressie-0-hal-daklicht-bar.jpg", "impressie-1-hal-neon.jpg", "impressie-2-bar.jpg", "impressie-3-bar-avond.jpg", "impressie-4-vol.jpg")],
      [RB + f for f in ("ontwerp-01-zones.jpg", "ontwerp-03-moodboard-prisma.jpg",
                        "ontwerp-04-schets-gekleurd-daglicht.jpg", "ontwerp-06-plattegrond-doorsnede.jpg",
