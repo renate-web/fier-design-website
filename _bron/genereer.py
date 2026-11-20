@@ -278,9 +278,9 @@ Na goedkeuring van de plannen mocht ik aan de slag met de realisatie, zowel de v
 hg = "2024/04/Amsterdam-Hengelstraat-by-Lilian-{}.jpg"
 proj("gezinswoning-met-smaak", "Gezinswoning met smaak", "2024/04/IMG_7433-scaled.jpg",
      "De mix van natuurlijke elementen en moderne accenten zorgt voor een smaakvol geheel.",
-     """De gezinswoning was toe aan een nieuw gezicht, maar waar begin je dan? Bij de aankoop van ons nieuwe huis dachten we gaandeweg te gaan verbouwen. Wel hadden we een extra slaapkamer nodig en de badkamer en keuken waren niet onze smaak. Na wat onderzoek hebben we besloten de verbouwing meteen goed aan te pakken: slopen, verduurzamen en optimale functionaliteit voor een gezin van 5 personen.
+     """Voor een gezin van vijf was de nieuw gekochte woning toe aan een nieuw gezicht. Het plan was om gaandeweg te verbouwen, maar er was een extra slaapkamer nodig en de badkamer en keuken pasten niet bij de smaak van de bewoners. Samen besloten we de verbouwing meteen goed aan te pakken: slopen, verduurzamen en de indeling optimaal laten werken voor het hele gezin.
 
-Omdat het een jaren ’90 architectonische bouwstijl is, met strakke lijnen, hebben we bewust natuurlijke elementen toegevoegd in wand- en vloerafwerking. De keuken is verplaatst voor zoveel mogelijk natuurlijke lichtinval. De mix van natuurlijke elementen en moderne accenten zorgt samen met het lichtplan en een verfijnd kleurenschema voor een rustgevende en uitnodigende sfeer. Het resultaat is mede door de fijne aannemer helemaal naar tevredenheid uitgepakt.""",
+De woning heeft een jaren ’90-architectuur met strakke lijnen. Daarom heb ik bewust natuurlijke elementen toegevoegd in de wand- en vloerafwerking. De keuken is verplaatst, zodat er zoveel mogelijk daglicht binnenvalt. De mix van natuurlijke materialen en moderne accenten zorgt samen met het lichtplan en een verfijnd kleurenschema voor een rustgevende, uitnodigende sfeer. Dankzij een fijne samenwerking met de aannemer is het resultaat helemaal naar tevredenheid uitgepakt.""",
      ["2024/04/IMG_7433-scaled.jpg"] + [hg.format(x) for x in ("9", "2", "21-v3", "25", "10a", "15", "18-v2-1")] +
      ["2024/04/IMG_7432-scaled.jpg", "2024/04/IMG_8189-scaled.jpg", "2024/04/IMG_7442-scaled.jpg"],
      [],
