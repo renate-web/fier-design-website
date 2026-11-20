@@ -101,10 +101,40 @@ def alinea(t):
 P = []  # (slug, titel, kaartbeeld, quote, tekst, resultaat, ontwerp, voor, voorna, opdrachtgever)
 
 
-def proj(slug, titel, kaart, quote, tekst, resultaat, ontwerp=(), voor=(), voorna=(), doel="particulier"):
-    P.append(dict(slug=slug, titel=titel, kaart=U + kaart, quote=quote, tekst=tekst,
-                  resultaat=[U + x for x in resultaat], ontwerp=[U + x for x in ontwerp],
-                  voor=[U + x for x in voor], voorna=[(U + a, U + b) for a, b in voorna], doel=doel))
+def _pad(x):
+    # Eigen beelden in de repository beginnen met "assets/"; de rest komt (nog) van de oude WordPress-site.
+    return x if x.startswith("assets/") else U + x
+
+
+def bron(x, r=""):
+    # Relatief pad naar een eigen beeld vanaf een pagina op diepte r ("" of "../"); externe URL's blijven gelijk.
+    return x if x.startswith("http") else r + x
+
+
+def proj(slug, titel, kaart, quote, tekst, resultaat, ontwerp=(), voor=(), voorna=(), doel="particulier",
+         ontwerp_intro="Concept, moodboards, indelings- en lichtplannen: zo kwam het ontwerp stap voor stap tot stand.",
+         resultaat_titel="Het resultaat"):
+    P.append(dict(slug=slug, titel=titel, kaart=_pad(kaart), quote=quote, tekst=tekst,
+                  resultaat=[_pad(x) for x in resultaat], ontwerp=[_pad(x) for x in ontwerp],
+                  voor=[_pad(x) for x in voor], voorna=[(_pad(a), _pad(b)) for a, b in voorna], doel=doel,
+                  ontwerp_intro=ontwerp_intro, resultaat_titel=resultaat_titel))
+
+
+SP = "assets/beeld/projecten/strandpaviljoen/"
+proj("lichtontwerp-strandpaviljoen", "Lichtontwerp voor een strandpaviljoen", SP + "impressie-1-restaurant.jpg",
+     "De zon als inspiratie- en energiebron.",
+     """Voor een nieuw strandpaviljoen tussen de duinen en de zee maakte ik het lichtontwerp. Het concept van het paviljoen is dat het meebeweegt met de weersomstandigheden. Het lichtontwerp volgt dat idee: natuur en duurzaamheid spelen de hoofdrol.
+
+De zon was de inspiratie. Het licht volgt de verandering van de zon gedurende de dag: met verschillende lichtscènes verandert het kleurbeeld mee met het natuurlijke licht, van helder overdag tot warm en gedimd bij zonsondergang. Het paviljoen zelf wordt subtiel uitgelicht, zodat het landschap de hoofdrol blijft spelen.
+
+Het lichtplan is opgebouwd in lagen: basisverlichting, het uitlichten van de ruimte en een eyecatcher. Boven het restaurant zweeft een golvende plafondinstallatie die het licht speels door de ruimte verdeelt, naar de kernwaarde ‘play of brilliance’ van lichtontwerper Richard Kelly. Eyecatchende armaturen die worden opgeladen door de zon onderstrepen het duurzame karakter van het ontwerp.""",
+     [SP + f for f in ("impressie-1-restaurant.jpg", "impressie-2-restaurant-avond.jpg", "impressie-3-paviljoen-duinen.jpg",
+                       "impressie-4-paviljoen-strand.jpg", "impressie-5-terras.jpg")],
+     [SP + f for f in ("ontwerp-1-concept.jpg", "ontwerp-2-gevels.jpg", "ontwerp-3-brainstorm.jpg", "ontwerp-4-lichtbeeld.jpg",
+                       "ontwerp-5-lichtplan.jpg", "ontwerp-6-inspiratie-plafond.jpg", "ontwerp-7-eyecatcher-zonnelamp.jpg")],
+     doel="zakelijk",
+     resultaat_titel="Impressies",
+     ontwerp_intro="Van concept en brainstorm tot lichtbeeld, lichtplan en eyecatcher: zo kwam het lichtontwerp stap voor stap tot stand.")
 
 
 g50 = "2026/11/{}.interieur-ontwerp-lichtplan-gezinswoning-amsterdam.jpg"
@@ -257,9 +287,9 @@ Omdat het een jaren ’90 architectonische bouwstijl is, met strakke lijnen, heb
 PS = {p["slug"]: p for p in P}
 
 
-def galerij(beelden, titel):
+def galerij(beelden, titel, r="../"):
     knoppen = "\n".join(
-        f'<button type="button" data-groot="{b}"><img src="{b}" alt="{e(titel)}, foto {i + 1}" loading="lazy" decoding="async"></button>'
+        f'<button type="button" data-groot="{bron(b, r)}"><img src="{bron(b, r)}" alt="{e(titel)}, foto {i + 1}" loading="lazy" decoding="async"></button>'
         for i, b in enumerate(beelden))
     return f'<div class="galerij">\n{knoppen}\n</div>'
 
@@ -267,14 +297,14 @@ def galerij(beelden, titel):
 for p in P:
     blokken = [f"""  <section class="sectie" aria-labelledby="resultaat">
     <div class="wrap">
-      <h2 id="resultaat">Het resultaat</h2>
+      <h2 id="resultaat">{p['resultaat_titel']}</h2>
       {galerij(p['resultaat'][1:] or p['resultaat'], p['titel'])}
     </div>
   </section>"""]
     if p["voorna"]:
         paren = "\n".join(
-            f'<figure><img src="{v}" alt="{e(p["titel"])}: voor" loading="lazy"><figcaption>Voor</figcaption></figure>'
-            f'<figure><img src="{n}" alt="{e(p["titel"])}: na" loading="lazy"><figcaption>Na</figcaption></figure>'
+            f'<figure><img src="{bron(v, '../')}" alt="{e(p["titel"])}: voor" loading="lazy"><figcaption>Voor</figcaption></figure>'
+            f'<figure><img src="{bron(n, '../')}" alt="{e(p["titel"])}: na" loading="lazy"><figcaption>Na</figcaption></figure>'
             for v, n in p["voorna"])
         blokken.append(f"""  <section class="sectie sectie--diep" aria-labelledby="voorna">
     <div class="wrap">
@@ -286,7 +316,7 @@ for p in P:
         blokken.append(f"""  <section class="sectie sectie--diep" aria-labelledby="ontwerp">
     <div class="wrap">
       <h2 id="ontwerp">Uit het ontwerpproces</h2>
-      <p class="tekst">Concept, moodboards, indelings- en lichtplannen: zo kwam het ontwerp stap voor stap tot stand.</p>
+      <p class="tekst">{e(p['ontwerp_intro'])}</p>
       {galerij(p['ontwerp'], p['titel'] + ' – ontwerp')}
     </div>
   </section>""")
@@ -299,7 +329,7 @@ for p in P:
   </section>""")
     inhoud = f"""  <article>
   <header class="projectkop">
-    <img src="{p['resultaat'][0]}" alt="{e(p['titel'])}" fetchpriority="high">
+    <img src="{bron(p['resultaat'][0], '../')}" alt="{e(p['titel'])}" fetchpriority="high">
     <div class="wrap">
       <a class="terug" href="../projecten.html">← Alle projecten</a>
       <h1>{e(p['titel'])}</h1>
@@ -318,7 +348,7 @@ for p in P:
 
 def kaarten(slugs, r=""):
     return "\n".join(
-        f'<a class="kaart" href="{r}projecten/{s}.html"><img src="{PS[s]["kaart"]}" alt="" loading="lazy"><span>{e(PS[s]["titel"])}</span></a>'
+        f'<a class="kaart" href="{r}projecten/{s}.html"><img src="{bron(PS[s]["kaart"], r)}" alt="" loading="lazy"><span>{e(PS[s]["titel"])}</span></a>'
         for s in slugs)
 
 
@@ -539,7 +569,7 @@ REF = [
      "Het sparren met Renate over het interieur en lichtplan heeft ons enorm geholpen. We wilden zelf de regie houden, en dankzij het heldere stappenplan van Fierdesign konden we onze ideeën vertalen naar een concrete aanpak en de juiste uitvoerende partijen. Het lichtplan, met prachtig gekozen armaturen, heeft ons woongenot zowel functioneel als esthetisch echt verrijkt. We zijn heel blij met het resultaat en de inspiratie die Renate ons heeft gegeven!"),
 ]
 refs = "\n".join(f"""    <article class="referentie">
-      <a href="projecten/{s}.html"><img src="{PS[s]['kaart']}" alt="{e(PS[s]['titel'])}" loading="lazy"></a>
+      <a href="projecten/{s}.html"><img src="{bron(PS[s]['kaart'])}" alt="{e(PS[s]['titel'])}" loading="lazy"></a>
       <div>
         <h2 style="font-size:1.6rem;margin-bottom:1rem"><a href="projecten/{s}.html" style="text-decoration:none">{e(PS[s]['titel'])}</a></h2>
         <blockquote>{alinea(t)}</blockquote>
