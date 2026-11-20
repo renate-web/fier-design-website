@@ -287,7 +287,7 @@ Omdat het een jaren ’90 architectonische bouwstijl is, met strakke lijnen, heb
       "2024/04/IMG_3738-rotated.jpeg", "2024/04/IMG_3730-rotated.jpeg", "2024/04/IMG_4623-1.jpeg", "2024/04/006A.jpeg"])
 
 RB = "assets/beeld/projecten/restaurant-brouwerij/"
-proj("lichtplan-restaurant-brouwerij", "Lichtontwerp voor een restaurant in een brouwerij", RB + "impressie-0-hal-daklicht-bar.jpg",
+proj("lichtplan-restaurant-brouwerij", "Lichtconcept voor een restaurant in een brouwerij", RB + "impressie-0-hal-daklicht-bar.jpg",
      "Daglicht dat door gekleurde daklichten valt: een natuurlijk effect van kleur, speels en ongedwongen.",
      """Colour Boost is mijn afstudeerproject aan de Lighting Design Academy. Voor dit project ontwikkelde ik een lichtconcept voor zowel de binnen- als buitenruimte, inclusief lichtberekeningen in DIALux en 3D-visualisaties.
 
