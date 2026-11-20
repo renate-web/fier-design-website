@@ -286,10 +286,32 @@ Omdat het een jaren ’90 architectonische bouwstijl is, met strakke lijnen, heb
      ["2024/04/IMG_5183-scaled.jpg", "2024/04/IMG_4780-scaled.jpg", "2024/04/IMG_5386-scaled.jpg",
       "2024/04/IMG_3738-rotated.jpeg", "2024/04/IMG_3730-rotated.jpeg", "2024/04/IMG_4623-1.jpeg", "2024/04/006A.jpeg"])
 
+RB = "assets/beeld/projecten/restaurant-brouwerij/"
+proj("lichtplan-restaurant-brouwerij", "Lichtplan voor een restaurant met brouwerij", RB + "impressie-1-hal-neon.jpg",
+     "Licht dat breekt zoals in een prisma: kleurrijk, speels en zonder poespas.",
+     """In een voormalige industriehal in het Hamerkwartier in Amsterdam-Noord komen een brouwerij, een restaurant en een groot terras samen. Voor deze plek maakte ik een lichtplan dat past bij het karakter van de zaak: vrienden, bier, eten, kunst en muziek, kleurrijk en no-nonsense.
+
+Het prisma werd het concept. Zoals wit licht in een prisma uiteenvalt in alle kleuren van de regenboog, zo krijgt de hal een speels kleurenspel: een glazen dak in regenboogtinten, gekleurd licht op de wanden en neonteksten die de sfeer bepalen.
+
+Het lichtplan deelt de hoge hal op in zones: kleine en grote tafels, een sharing table, de bar en de Prisma room met podium, waar gegeten, gedanst en gedraaid wordt. Spots op rails geven het algemene licht en zijn makkelijk te richten. Oplaadbare tafellampjes zorgen voor sfeer aan tafel en een ledstrip onder het bartop laat de bar ’s avonds gloeien. Op het terras zorgen gekleurde lichtbuizen, tafellampjes en lichtkunst voor dezelfde sfeer buiten.""",
+     [RB + f for f in ("impressie-1-hal-neon.jpg", "impressie-2-bar.jpg", "impressie-3-bar-avond.jpg", "impressie-4-vol.jpg")],
+     [RB + f for f in ("ontwerp-01-zones.jpg", "ontwerp-02-kernwaarden.jpg", "ontwerp-03-moodboard-prisma.jpg",
+                       "ontwerp-04-moodboard-kleur.jpg", "ontwerp-05-moodboard-neon.jpg", "ontwerp-06-plattegrond-doorsnede.jpg",
+                       "ontwerp-07-lichtschetsen.jpg", "ontwerp-08-lichtplan-restaurant.jpg", "ontwerp-09-lichtplan-terras.jpg",
+                       "ontwerp-10-lichtberekening-1.jpg", "ontwerp-11-lichtberekening-2.jpg")],
+     doel="zakelijk",
+     resultaat_titel="Impressies van het ontwerp",
+     ontwerp_intro="Van zones en kernwaarden via moodboards en lichtschetsen naar het lichtplan voor restaurant en terras, en een lichtberekening van de hal.")
+
+# Volgorde: het restaurant staat direct na het strandpaviljoen.
+_rb = next(p for p in P if p["slug"] == "lichtplan-restaurant-brouwerij")
+P.remove(_rb)
+
 # Volgorde: het strandpaviljoen staat tussen "Loft aan het water" en "Wonen in een kapel".
 _sp = next(p for p in P if p["slug"] == "lichtontwerp-strandpaviljoen")
 P.remove(_sp)
 P.insert(next(i for i, p in enumerate(P) if p["slug"] == "wonen-in-een-kapel"), _sp)
+P.insert(P.index(_sp) + 1, _rb)
 
 PS = {p["slug"]: p for p in P}
 
