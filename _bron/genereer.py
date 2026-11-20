@@ -424,7 +424,7 @@ def kaarten(slugs, r=""):
 pagina("projecten.html", "Projecten – Fierdesign", "Licht- en interieurontwerpen van Fierdesign: woningen, verbouwingen en verhuurpanden.",
        f"""  <section class="paginakop"><div class="wrap">
     <h1>Projecten</h1>
-    <p>Van een uitbouw uit de jaren ’50 tot wonen in een kapel: een selectie van licht- en interieurontwerpen.</p>
+    <p>Van eerste schets en lichtconcept tot de oplevering: licht- en interieurontwerpen voor particuliere en zakelijke opdrachtgevers.</p>
   </div></section>
   <section class="sectie" style="padding-top:0"><div class="wrap raster">
 {kaarten([p['slug'] for p in P])}
