@@ -327,9 +327,7 @@ Fierdesign begeleidde ook de uitvoering, van de stofkeuze tot de montage van rai
      [EV + f"uitvoering-{x}.jpg" for x in range(1, 6)],
      doel="zakelijk",
      ontwerp_intro="Van indelingsopties en garderobe via het interieurconcept naar het gordijnplan met ledverlichting en de bevestiging aan het plafond.",
-     voor_titel="Tijdens de uitvoering",
-     video=dict(titel="Het ontwerp in 3D", tekst="Een korte animatie door het 3D-model van de eventruimte.",
-                bestand=EV + "ontwerp-3d-animatie.mp4", poster=EV + "ontwerp-3d-animatie-poster.jpg"))
+     voor_titel="Tijdens de uitvoering")
 
 # Volgorde: de eventruimte staat helemaal achteraan.
 _ev = next(p for p in P if p["slug"] == "eventruimte-met-gordijnen-en-licht")
