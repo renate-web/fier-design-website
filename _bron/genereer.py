@@ -677,7 +677,7 @@ pagina("over-mij.html", "Over Fierdesign – licht- en interieurontwerp", "Fierd
   </section>
   <section class="sectie sectie--diep">
     <div class="wrap twee twee--beeld">
-      <img src="{U}2025/07/renate_werk_zw2.jpg" alt="Renate aan het werk" loading="lazy">
+      <img src="assets/beeld/over/werk-moodboard-materialen.jpg" alt="Werken met stalen, kleuren en een moodboard" loading="lazy">
       <div class="tekst">
         <h2>Achtergrond</h2>
         <p>Mijn ontwerpachtergrond ligt in de mode. Na de hbo-opleiding aan Modeacademie Charles Montaigne (nu AMFI) in Amsterdam rondde ik aan de kunstacademie in Arnhem de master Modevormgeving en Strategie af. Daarna werkte ik ruim vijftien jaar als modeontwerper voor uiteenlopende merken.</p>
@@ -694,7 +694,7 @@ pagina("over-mij.html", "Over Fierdesign – licht- en interieurontwerp", "Fierd
         <p>Fierdesign maakt deel uit van Xoomlab, een coöperatie van architecten, interieurontwerpers, stedenbouwkundigen en bouwkundigen. Daardoor kan ik ook grotere en complexere projecten in een vertrouwd team oppakken.</p>
         <blockquote class="citaat" style="margin-top:3rem">Een interieur zonder licht is onzichtbaar.</blockquote>
       </div>
-      <img src="{U}2025/07/543A8880-Verbeterd-NR.jpg" alt="" loading="lazy">
+      <img src="assets/beeld/over/renate-keuken-project.jpg" alt="Renate in een project met spots en ledverlichting" loading="lazy">
     </div>
   </section>""", "over-mij.html")
 
@@ -712,7 +712,7 @@ pagina("contact.html", "Contact – Fierdesign", "Neem contact op met Fierdesign
         <p style="margin-top:2rem;color:var(--steen)">Fierdesign is gevestigd bij Xoomlab op het Cruquiuseiland in Amsterdam.</p>
         <p style="margin-top:2rem"><a class="knop" href="mailto:renate@fierdesign.nl?subject=Interieurvraag">Stuur een e-mail</a></p>
       </div>
-      <img src="{U}2025/07/BRANDINGSHOOT-Renate-by-Lilian-9.jpg" alt="Renate van Fierdesign" loading="lazy">
+      <img src="assets/beeld/over/renate-bank-project.jpg" alt="Renate van Fierdesign" loading="lazy">
     </div>
   </section>""", "contact.html")
 
