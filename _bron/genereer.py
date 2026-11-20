@@ -287,7 +287,7 @@ Omdat het een jaren ’90 architectonische bouwstijl is, met strakke lijnen, heb
       "2024/04/IMG_3738-rotated.jpeg", "2024/04/IMG_3730-rotated.jpeg", "2024/04/IMG_4623-1.jpeg", "2024/04/006A.jpeg"])
 
 RB = "assets/beeld/projecten/restaurant-brouwerij/"
-proj("lichtplan-restaurant-brouwerij", "Colour Boost: lichtplan voor een restaurant met brouwerij", RB + "impressie-0-hal-daklicht-bar.jpg",
+proj("lichtplan-restaurant-brouwerij", "Lichtconcept voor restaurant & brouwerij", RB + "impressie-0-hal-daklicht-bar.jpg",
      "Daglicht dat door gekleurde daklichten valt: een regenboog in de hal, levendig, speels en ongedwongen.",
      """Colour Boost is mijn afstudeerproject aan de Lighting Design Academy. Ik werkte het concept uit voor de binnen- en de buitenruimte, maakte lichtberekeningen in DIALux en 3D-visualisaties.
 
@@ -309,7 +309,7 @@ Door een wisseling van eigenaren is het plan helaas niet gerealiseerd.""",
      resultaat_titel="3D-visualisaties",
      ontwerp_intro="Van zones, concept en schetsen naar het lichtplan voor binnen en buiten, en lichtberekeningen van de hal in DIALux.")
 
-# Volgorde: het restaurant staat direct na het strandpaviljoen.
+# Volgorde: het restaurant staat helemaal onderaan.
 _rb = next(p for p in P if p["slug"] == "lichtplan-restaurant-brouwerij")
 P.remove(_rb)
 
@@ -317,7 +317,7 @@ P.remove(_rb)
 _sp = next(p for p in P if p["slug"] == "lichtontwerp-strandpaviljoen")
 P.remove(_sp)
 P.insert(next(i for i, p in enumerate(P) if p["slug"] == "wonen-in-een-kapel"), _sp)
-P.insert(P.index(_sp) + 1, _rb)
+P.append(_rb)  # helemaal onderaan
 
 PS = {p["slug"]: p for p in P}
 
