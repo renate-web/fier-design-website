@@ -301,13 +301,13 @@ Door kleurfilters toe te voegen aan de daklichten ontstaat er een kleurrijk effe
 
 Door een wisseling van eigenaren is het plan helaas niet gerealiseerd.""",
      [RB + f for f in ("impressie-1-hal-neon.jpg", "impressie-2-bar.jpg", "impressie-3-bar-avond.jpg", "impressie-4-vol.jpg")],
-     [RB + f for f in ("ontwerp-01-zones.jpg", "ontwerp-02-kernwaarden.jpg", "ontwerp-03-moodboard-prisma.jpg",
-                       "ontwerp-04-moodboard-kleur.jpg", "ontwerp-05-moodboard-neon.jpg", "ontwerp-06-plattegrond-doorsnede.jpg",
+     [RB + f for f in ("ontwerp-01-zones.jpg", "ontwerp-03-moodboard-prisma.jpg",
+                       "ontwerp-04-schets-gekleurd-daglicht.jpg", "ontwerp-06-plattegrond-doorsnede.jpg",
                        "ontwerp-07-lichtschetsen.jpg", "ontwerp-08-lichtplan-restaurant.jpg", "ontwerp-09-lichtplan-terras.jpg",
                        "ontwerp-10-lichtberekening-1.jpg", "ontwerp-11-lichtberekening-2.jpg")],
      doel="zakelijk",
      resultaat_titel="3D-visualisaties",
-     ontwerp_intro="Van zones en kernwaarden via moodboards en lichtschetsen naar het lichtplan voor binnen en buiten, en lichtberekeningen van de hal in DIALux.")
+     ontwerp_intro="Van zones, concept en schetsen naar het lichtplan voor binnen en buiten, en lichtberekeningen van de hal in DIALux.")
 
 # Volgorde: het restaurant staat direct na het strandpaviljoen.
 _rb = next(p for p in P if p["slug"] == "lichtplan-restaurant-brouwerij")
