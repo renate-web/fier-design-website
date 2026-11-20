@@ -286,6 +286,11 @@ Omdat het een jaren ’90 architectonische bouwstijl is, met strakke lijnen, heb
      ["2024/04/IMG_5183-scaled.jpg", "2024/04/IMG_4780-scaled.jpg", "2024/04/IMG_5386-scaled.jpg",
       "2024/04/IMG_3738-rotated.jpeg", "2024/04/IMG_3730-rotated.jpeg", "2024/04/IMG_4623-1.jpeg", "2024/04/006A.jpeg"])
 
+# Volgorde: het strandpaviljoen staat tussen "Loft aan het water" en "Wonen in een kapel".
+_sp = next(p for p in P if p["slug"] == "lichtontwerp-strandpaviljoen")
+P.remove(_sp)
+P.insert(next(i for i, p in enumerate(P) if p["slug"] == "wonen-in-een-kapel"), _sp)
+
 PS = {p["slug"]: p for p in P}
 
 
