@@ -144,9 +144,10 @@ p { margin: 0 0 1rem; }
 
 /* ---------- Opdrachtgevers ---------- */
 .doelgroep + .doelgroep { margin-top: 6rem; }
+.sectie.doelgroep + .sectie.doelgroep { margin-top: 0; }
 .doelgroep ul { padding-left: 1.1rem; margin: 0 0 1.25rem; }
 .doelgroep li { margin-bottom: .35rem; }
-.doelgroep:nth-child(even) .twee > :first-child { order: 2; }
+.doelgroep--omgekeerd .twee > :first-child { order: 2; }
 
 /* ---------- Projecten ---------- */
 .raster { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem 1.75rem; }
@@ -203,7 +204,7 @@ p { margin: 0 0 1rem; }
   .hero__tekst { padding: 3.5rem 1.5rem; }
   .hero__beeld { min-height: 60vh; }
   .twee, .voet__raster, .referentie { grid-template-columns: 1fr; gap: 2rem; }
-  .doelgroep:nth-child(even) .twee > :first-child { order: 0; }
+  .doelgroep--omgekeerd .twee > :first-child { order: 0; }
   .raster { grid-template-columns: 1fr 1fr; }
   .stappen { grid-template-columns: 1fr 1fr; }
   .lagen { grid-template-columns: 1fr 1fr; }

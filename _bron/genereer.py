@@ -587,8 +587,8 @@ pagina("opdrachtgevers.html", "Voor wie: particulier en zakelijk – Fierdesign"
     <p>Ik werk voor mensen die thuis willen wonen zoals het bij ze past, en voor bedrijven die een ruimte willen die werkt en indruk maakt.</p>
   </div></section>
 
-  <div class="wrap" style="padding-bottom:5rem">
-    <section class="doelgroep" id="particulier" aria-labelledby="part-titel">
+  <section class="sectie sectie--avond doelgroep" id="particulier" aria-labelledby="part-titel">
+    <div class="wrap">
       <div class="twee twee--beeld">
         <div class="tekst">
           <h2 id="part-titel">Particulier</h2>
@@ -605,9 +605,11 @@ pagina("opdrachtgevers.html", "Voor wie: particulier en zakelijk – Fierdesign"
         </div>
         <img src="{U}2026/11/7.interieur-ontwerp-lichtplan-gezinswoning-amsterdam.jpg" alt="Gezinswoning met kookeiland en lichtplan" loading="lazy">
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="doelgroep" id="zakelijk" aria-labelledby="zak-titel">
+  <section class="sectie doelgroep doelgroep--omgekeerd" id="zakelijk" aria-labelledby="zak-titel">
+    <div class="wrap">
       <div class="twee twee--beeld">
         <div class="tekst">
           <h2 id="zak-titel">Zakelijk</h2>
@@ -623,8 +625,8 @@ pagina("opdrachtgevers.html", "Voor wie: particulier en zakelijk – Fierdesign"
         </div>
         <img src="assets/beeld/zakelijk-gordijnen-zitbank.jpg" alt="Zakelijke ruimte met linnen gordijnen, een zitbank en lijnverlichting" loading="lazy">
       </div>
-    </section>
-  </div>""", "opdrachtgevers.html")
+    </div>
+  </section>""", "opdrachtgevers.html")
 
 # ------------------------------------------------------------------ referenties
 REF = [
