@@ -621,7 +621,7 @@ pagina("opdrachtgevers.html", "Voor wie: particulier en zakelijk – Fierdesign"
             <li>Winkels en horeca</li>
             <li>Lichtplannen in samenwerking met architect en installateur</li>
           </ul>
-          <a class="lees" href="projecten/vakantiehuisje-in-de-duinen.html">Bekijk: Vakantiehuisje in de duinen</a>
+          <a class="lees" href="projecten/eventruimte-met-gordijnen-en-licht.html">Bekijk: Flexibele eventruimte met gordijnen en licht</a>
         </div>
         <img src="assets/beeld/zakelijk-gordijnen-zitbank.jpg" alt="Zakelijke ruimte met linnen gordijnen, een zitbank en lijnverlichting" loading="lazy">
       </div>
