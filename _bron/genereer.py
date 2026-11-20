@@ -22,6 +22,18 @@ MENU = [
 e = html.escape
 
 
+import hashlib as _hl
+_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+def _versie(f):
+    # korte hash van het bestand, zodat browsers na een wijziging de nieuwe versie ophalen
+    try:
+        return _hl.md5(open(os.path.join(_root, f), "rb").read()).hexdigest()[:8]
+    except OSError:
+        return "1"
+VERSIE_CSS = _versie("assets/style.css")
+VERSIE_JS = _versie("assets/site.js")
+
+
 def pagina(pad, titel, beschrijving, inhoud, actief=None):
     diepte = pad.count("/")
     r = "../" * diepte
@@ -42,7 +54,7 @@ def pagina(pad, titel, beschrijving, inhoud, actief=None):
   <link rel="apple-touch-icon" href="{ICOON_PNG}">
   <link rel="preconnect" href="https://use.typekit.net" crossorigin>
   <link rel="stylesheet" href="https://use.typekit.net/ioi2olt.css">
-  <link rel="stylesheet" href="{r}assets/style.css">
+  <link rel="stylesheet" href="{r}assets/style.css?v={VERSIE_CSS}">
 </head>
 <body>
   <a class="skip" href="#inhoud">Ga naar de inhoud</a>
@@ -83,7 +95,7 @@ def pagina(pad, titel, beschrijving, inhoud, actief=None):
       </div>
     </div>
   </footer>
-  <script src="{r}assets/site.js"></script>
+  <script src="{r}assets/site.js?v={VERSIE_JS}"></script>
 </body>
 </html>
 """

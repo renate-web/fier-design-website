@@ -236,4 +236,4 @@ p { margin: 0 0 1rem; }
 .projectvideo { display: block; width: 100%; max-width: 60rem; height: auto; margin-top: 1.5rem; background: #000; }
 
 /* ---------- Over Fierdesign: portret in verhouding tot de korte introtekst ---------- */
-.twee--beeld img.over__portret { width: 100%; height: auto; max-width: 22rem; justify-self: center; aspect-ratio: 4 / 5; object-position: center top; }
+.twee--beeld img.over__portret { width: 100%; height: auto; max-width: 16rem; justify-self: center; aspect-ratio: 4 / 5; object-position: center top; }
