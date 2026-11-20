@@ -287,7 +287,7 @@ Omdat het een jaren ’90 architectonische bouwstijl is, met strakke lijnen, heb
       "2024/04/IMG_3738-rotated.jpeg", "2024/04/IMG_3730-rotated.jpeg", "2024/04/IMG_4623-1.jpeg", "2024/04/006A.jpeg"])
 
 RB = "assets/beeld/projecten/restaurant-brouwerij/"
-proj("lichtplan-restaurant-brouwerij", "Colour Boost: lichtplan voor een restaurant met brouwerij", RB + "impressie-1-hal-neon.jpg",
+proj("lichtplan-restaurant-brouwerij", "Colour Boost: lichtplan voor een restaurant met brouwerij", RB + "impressie-0-hal-daklicht-bar.jpg",
      "Daglicht dat door gekleurde daklichten valt: een regenboog in de hal, levendig, speels en ongedwongen.",
      """Colour Boost is mijn afstudeerproject aan de Lighting Design Academy. Ik werkte het concept uit voor de binnen- en de buitenruimte, maakte lichtberekeningen in DIALux en 3D-visualisaties.
 
@@ -300,7 +300,7 @@ In een voormalige industriehal in Amsterdam komen een brouwerij, een restaurant 
 Door kleurfilters toe te voegen aan de daklichten ontstaat er een kleurrijk effect door middel van het invallende daglicht. Het lichtplan deelt de hoge hal op in zones: kleine en grote tafels, een sharing table, de bar en de Prisma room met podium, waar gegeten, gedanst en gedraaid wordt. Spots op rails geven het algemene licht en zijn makkelijk te richten. Oplaadbare tafellampjes zorgen voor sfeer aan tafel en een ledstrip onder het bartop laat de bar ’s avonds gloeien. Op het terras zorgen gekleurde lichtbuizen, tafellampjes en lichtkunst voor dezelfde sfeer buiten.
 
 Door een wisseling van eigenaren is het plan helaas niet gerealiseerd.""",
-     [RB + f for f in ("impressie-1-hal-neon.jpg", "impressie-2-bar.jpg", "impressie-3-bar-avond.jpg", "impressie-4-vol.jpg")],
+     [RB + f for f in ("impressie-0-hal-daklicht-bar.jpg", "impressie-1-hal-neon.jpg", "impressie-2-bar.jpg", "impressie-3-bar-avond.jpg", "impressie-4-vol.jpg")],
      [RB + f for f in ("ontwerp-01-zones.jpg", "ontwerp-03-moodboard-prisma.jpg",
                        "ontwerp-04-schets-gekleurd-daglicht.jpg", "ontwerp-06-plattegrond-doorsnede.jpg",
                        "ontwerp-07-lichtschetsen.jpg", "ontwerp-08-lichtplan-restaurant.jpg", "ontwerp-09-lichtplan-terras.jpg",
