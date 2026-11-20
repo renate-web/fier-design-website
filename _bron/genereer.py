@@ -113,11 +113,11 @@ def bron(x, r=""):
 
 def proj(slug, titel, kaart, quote, tekst, resultaat, ontwerp=(), voor=(), voorna=(), doel="particulier",
          ontwerp_intro="Concept, moodboards, indelings- en lichtplannen: zo kwam het ontwerp stap voor stap tot stand.",
-         resultaat_titel="Het resultaat", voor_titel="Voor en tijdens de verbouwing", video=None):
+         resultaat_titel="Het resultaat", voor_titel="Voor en tijdens de verbouwing", video=None, label=None):
     P.append(dict(slug=slug, titel=titel, kaart=_pad(kaart), quote=quote, tekst=tekst,
                   resultaat=[_pad(x) for x in resultaat], ontwerp=[_pad(x) for x in ontwerp],
                   voor=[_pad(x) for x in voor], voorna=[(_pad(a), _pad(b)) for a, b in voorna], doel=doel,
-                  ontwerp_intro=ontwerp_intro, resultaat_titel=resultaat_titel, voor_titel=voor_titel, video=video))
+                  ontwerp_intro=ontwerp_intro, resultaat_titel=resultaat_titel, voor_titel=voor_titel, video=video, label=label))
 
 
 SP = "assets/beeld/projecten/strandpaviljoen/"
@@ -135,6 +135,7 @@ De opdracht is uiteindelijk aan een andere partij gegund, dus dit ontwerp is nie
      [SP + f for f in ("ontwerp-1-concept.jpg", "ontwerp-2-gevels.jpg", "ontwerp-3-brainstorm.jpg", "ontwerp-4-lichtbeeld.jpg",
                        "ontwerp-5-lichtplan.jpg", "ontwerp-6-inspiratie-plafond.jpg", "ontwerp-7-eyecatcher-zonnelamp.jpg")],
      doel="zakelijk",
+     label="Concept",
      resultaat_titel="Impressies van het ontwerp",
      ontwerp_intro="Van concept en brainstorm tot lichtbeeld, lichtplan en eyecatcher: zo kwam het lichtontwerp stap voor stap tot stand.")
 
@@ -302,6 +303,7 @@ Door een wisseling van eigenaren is het ontwerp helaas niet gerealiseerd. Met di
                        "ontwerp-07-lichtschetsen.jpg", "ontwerp-08-lichtplan-restaurant.jpg", "ontwerp-09-lichtplan-terras.jpg",
                        "ontwerp-10-lichtberekening-1.jpg", "ontwerp-11-lichtberekening-2.jpg",
                        "ontwerp-12-dialux-lichtsterkte.jpg", "ontwerp-13-dialux-bovenaanzicht.jpg")],
+     label="Concept",
      doel="zakelijk",
      resultaat_titel="3D-visualisaties",
      ontwerp_intro="Van zones, concept en schetsen naar het lichtplan voor binnen en buiten, en lichtberekeningen van de hal in DIALux.")
@@ -415,7 +417,9 @@ for p in P:
 
 def kaarten(slugs, r=""):
     return "\n".join(
-        f'<a class="kaart" href="{r}projecten/{s}.html"><img src="{bron(PS[s]["kaart"], r)}" alt="" loading="lazy"><span>{e(PS[s]["titel"])}</span></a>'
+        f'<a class="kaart" href="{r}projecten/{s}.html"><img src="{bron(PS[s]["kaart"], r)}" alt="" loading="lazy">'
+        + (f'<em class="kaart__label">{e(PS[s]["label"])}</em>' if PS[s]["label"] else "")
+        + f'<span>{e(PS[s]["titel"])}</span></a>'
         for s in slugs)
 
 

@@ -150,7 +150,8 @@ p { margin: 0 0 1rem; }
 
 /* ---------- Projecten ---------- */
 .raster { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem 1.75rem; }
-.kaart { text-decoration: none; display: block; }
+.kaart { text-decoration: none; display: block; position: relative; }
+.kaart__label { position: absolute; top: .75rem; left: .75rem; background: rgba(255, 255, 255, .92); color: #222; font-family: var(--sans); font-size: .78rem; letter-spacing: .02em; padding: .3rem .65rem; border-radius: 2px; }
 .kaart img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: var(--linnen); }
 .kaart span { display: block; font-family: var(--sans); font-size: 1rem; margin-top: .8rem; line-height: 1.25; }
 .kaart:hover span { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .2em; }
