@@ -288,7 +288,7 @@ Omdat het een jaren ’90 architectonische bouwstijl is, met strakke lijnen, heb
 
 RB = "assets/beeld/projecten/restaurant-brouwerij/"
 proj("lichtplan-restaurant-brouwerij", "Lichtconcept voor restaurant & brouwerij", RB + "impressie-0-hal-daklicht-bar.jpg",
-     "Daglicht dat door gekleurde daklichten valt: een regenboog in de hal, levendig, speels en ongedwongen.",
+     "Daglicht dat door gekleurde daklichten valt: het natuurlijke effect van kleur, levendig, speels en ongedwongen.",
      """Colour Boost is mijn afstudeerproject aan de Lighting Design Academy. Ik werkte het concept uit voor de binnen- en de buitenruimte, maakte lichtberekeningen in DIALux en 3D-visualisaties.
 
 Wanneer natuurlijk ‘wit’ licht door een prisma valt, wordt het gebroken en opgesplitst in verschillende kleuren. Dit natuurlijke verschijnsel vormt de basis van het zichtbare lichtspectrum, zoals we dat ook bij een regenboog zien.
