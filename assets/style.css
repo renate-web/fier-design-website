@@ -230,3 +230,6 @@ p { margin: 0 0 1rem; }
 /* Plan of tekening als beeld (geen uitsnede, klik vergroot) */
 .beeld-plan { display: block; width: 100%; padding: 0; border: 0; background: var(--wit); cursor: zoom-in; }
 .twee .beeld-plan img { width: 100%; height: auto; aspect-ratio: auto; object-fit: contain; }
+
+/* ---------- Projectvideo ---------- */
+.projectvideo { display: block; width: 100%; max-width: 60rem; height: auto; margin-top: 1.5rem; background: #000; }

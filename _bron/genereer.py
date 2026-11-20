@@ -113,11 +113,11 @@ def bron(x, r=""):
 
 def proj(slug, titel, kaart, quote, tekst, resultaat, ontwerp=(), voor=(), voorna=(), doel="particulier",
          ontwerp_intro="Concept, moodboards, indelings- en lichtplannen: zo kwam het ontwerp stap voor stap tot stand.",
-         resultaat_titel="Het resultaat"):
+         resultaat_titel="Het resultaat", voor_titel="Voor en tijdens de verbouwing", video=None):
     P.append(dict(slug=slug, titel=titel, kaart=_pad(kaart), quote=quote, tekst=tekst,
                   resultaat=[_pad(x) for x in resultaat], ontwerp=[_pad(x) for x in ontwerp],
                   voor=[_pad(x) for x in voor], voorna=[(_pad(a), _pad(b)) for a, b in voorna], doel=doel,
-                  ontwerp_intro=ontwerp_intro, resultaat_titel=resultaat_titel))
+                  ontwerp_intro=ontwerp_intro, resultaat_titel=resultaat_titel, voor_titel=voor_titel, video=video))
 
 
 SP = "assets/beeld/projecten/strandpaviljoen/"
@@ -310,11 +310,37 @@ Door een wisseling van eigenaren is het ontwerp helaas niet gerealiseerd. Met di
 _rb = next(p for p in P if p["slug"] == "lichtplan-restaurant-brouwerij")
 P.remove(_rb)
 
+EV = "assets/beeld/projecten/eventruimte/"
+proj("eventruimte-met-gordijnen-en-licht", "Flexibele eventruimte met gordijnen en licht", EV + "resultaat-1.jpg",
+     "Gordijnen die de ruimte verdelen, het geluid dempen en het licht verzachten.",
+     """Voor een bedrijf ontwierp ik een multifunctionele eventruimte: een plek voor presentaties, bijeenkomsten en evenementen, die akoestisch prettig is, slimme opbergruimte heeft en een sfeervol lichteffect.
+
+In verschillende opties onderzochten we de indeling: waar komt de garderobe, hoe scherm je de keuken en de opbergruimte af, en hoe blijft de ruimte flexibel in gebruik? De oplossing zit in gordijnen. Rondom hangen gordijnen in een naturel kleur, op rails aan pendels onder het open plafond. Ze dempen het geluid, verdelen de ruimte en kunnen open of dicht, afhankelijk van het gebruik.
+
+In het ontwerp zorgt een ledstrook achter de transparante vitrage ervoor dat de gordijnen zacht oplichten. Zo krijgt de zakelijke ruimte een warme, rustige uitstraling.
+
+Ik heb ook de uitvoering begeleid, van de keuze van de stof tot het ophangen van de rails en de gordijnen.""",
+     [EV + f"resultaat-{x}.jpg" for x in ("1", "2", "3", "4", "5", "6-stof")],
+     [EV + f for f in ("ontwerp-1-optie-1.jpg", "ontwerp-2-garderobe.jpg", "ontwerp-3-plattegrond.jpg", "ontwerp-4-interieurconcept.jpg",
+                       "ontwerp-5-gordijnen-led.jpg", "ontwerp-6-gordijnen-3d.jpg", "ontwerp-7-gordijnen-open-dicht.jpg",
+                       "ontwerp-8-bevestiging.jpg")],
+     [EV + f"uitvoering-{x}.jpg" for x in range(1, 6)],
+     doel="zakelijk",
+     ontwerp_intro="Van indelingsopties en garderobe via het interieurconcept naar het gordijnplan met ledverlichting en de bevestiging aan het plafond.",
+     voor_titel="Tijdens de uitvoering",
+     video=dict(titel="Het ontwerp in 3D", tekst="Een korte animatie door het 3D-model van de eventruimte.",
+                bestand=EV + "ontwerp-3d-animatie.mp4", poster=EV + "ontwerp-3d-animatie-poster.jpg"))
+
+# Volgorde: de eventruimte staat direct vóór het strandpaviljoen.
+_ev = next(p for p in P if p["slug"] == "eventruimte-met-gordijnen-en-licht")
+P.remove(_ev)
+
 # Volgorde: het strandpaviljoen staat tussen "Loft aan het water" en "Wonen in een kapel".
 _sp = next(p for p in P if p["slug"] == "lichtontwerp-strandpaviljoen")
 P.remove(_sp)
 P.insert(next(i for i, p in enumerate(P) if p["slug"] == "wonen-in-een-kapel"), _sp)
 P.append(_rb)  # helemaal onderaan
+P.insert(P.index(_sp), _ev)
 
 PS = {p["slug"]: p for p in P}
 
@@ -352,10 +378,21 @@ for p in P:
       {galerij(p['ontwerp'], p['titel'] + ' – ontwerp')}
     </div>
   </section>""")
+    if p["video"]:
+        v = p["video"]
+        blokken.append(f"""  <section class="sectie" aria-labelledby="video">
+    <div class="wrap">
+      <h2 id="video">{e(v['titel'])}</h2>
+      <p class="tekst">{e(v['tekst'])}</p>
+      <video class="projectvideo" controls muted playsinline preload="none" poster="{bron(v['poster'], '../')}">
+        <source src="{bron(v['bestand'], '../')}" type="video/mp4">
+      </video>
+    </div>
+  </section>""")
     if p["voor"]:
         blokken.append(f"""  <section class="sectie" aria-labelledby="voor">
     <div class="wrap">
-      <h2 id="voor">Voor en tijdens de verbouwing</h2>
+      <h2 id="voor">{e(p['voor_titel'])}</h2>
       {galerij(p['voor'], p['titel'] + ' – voor')}
     </div>
   </section>""")
