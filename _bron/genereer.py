@@ -304,7 +304,8 @@ Door een wisseling van eigenaren is het plan helaas niet gerealiseerd. Met dit o
      [RB + f for f in ("ontwerp-01-zones.jpg", "ontwerp-03-moodboard-prisma.jpg",
                        "ontwerp-04-schets-gekleurd-daglicht.jpg", "ontwerp-06-plattegrond-doorsnede.jpg",
                        "ontwerp-07-lichtschetsen.jpg", "ontwerp-08-lichtplan-restaurant.jpg", "ontwerp-09-lichtplan-terras.jpg",
-                       "ontwerp-10-lichtberekening-1.jpg", "ontwerp-11-lichtberekening-2.jpg")],
+                       "ontwerp-10-lichtberekening-1.jpg", "ontwerp-11-lichtberekening-2.jpg",
+                       "ontwerp-12-dialux-lichtsterkte.jpg", "ontwerp-13-dialux-bovenaanzicht.jpg")],
      doel="zakelijk",
      resultaat_titel="3D-visualisaties",
      ontwerp_intro="Van zones, concept en schetsen naar het lichtplan voor binnen en buiten, en lichtberekeningen van de hal in DIALux.")
