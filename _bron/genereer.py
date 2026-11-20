@@ -121,19 +121,21 @@ def proj(slug, titel, kaart, quote, tekst, resultaat, ontwerp=(), voor=(), voorn
 
 
 SP = "assets/beeld/projecten/strandpaviljoen/"
-proj("lichtontwerp-strandpaviljoen", "Lichtontwerp voor een strandpaviljoen", SP + "impressie-1-restaurant.jpg",
+proj("lichtontwerp-strandpaviljoen", "Lichtconcept voor een strandpaviljoen", SP + "impressie-1-restaurant.jpg",
      "De zon als inspiratie- en energiebron.",
-     """Voor een nieuw strandpaviljoen tussen de duinen en de zee maakte ik het lichtontwerp. Het concept van het paviljoen is dat het meebeweegt met de weersomstandigheden. Het lichtontwerp volgt dat idee: natuur en duurzaamheid spelen de hoofdrol.
+     """Voor een pitch voor een nieuw strandpaviljoen tussen de duinen en de zee maakte ik het lichtontwerp. Het concept van het paviljoen is dat het meebeweegt met de weersomstandigheden. Het lichtontwerp volgt dat idee: natuur en duurzaamheid spelen de hoofdrol.
 
 De zon was de inspiratie. Het licht volgt de verandering van de zon gedurende de dag: met verschillende lichtscènes verandert het kleurbeeld mee met het natuurlijke licht, van helder overdag tot warm en gedimd bij zonsondergang. Het paviljoen zelf wordt subtiel uitgelicht, zodat het landschap de hoofdrol blijft spelen.
 
-Het lichtplan is opgebouwd in lagen: basisverlichting, het uitlichten van de ruimte en een eyecatcher. Boven het restaurant zweeft een golvende plafondinstallatie die het licht speels door de ruimte verdeelt, naar de kernwaarde ‘play of brilliance’ van lichtontwerper Richard Kelly. Eyecatchende armaturen die worden opgeladen door de zon onderstrepen het duurzame karakter van het ontwerp.""",
+Het lichtplan is opgebouwd in lagen: basisverlichting, het uitlichten van de ruimte en een eyecatcher. Boven het restaurant zweeft een golvende plafondinstallatie die het licht speels door de ruimte verdeelt, naar de kernwaarde ‘play of brilliance’ van lichtontwerper Richard Kelly. Eyecatchende armaturen die worden opgeladen door de zon onderstrepen het duurzame karakter van het ontwerp.
+
+De opdracht is uiteindelijk aan een andere partij gegund, dus dit ontwerp is niet gebouwd. Ik laat het toch graag zien, omdat het goed toont hoe ik van een eerste idee tot een compleet lichtplan kom.""",
      [SP + f for f in ("impressie-1-restaurant.jpg", "impressie-2-restaurant-avond.jpg", "impressie-3-paviljoen-duinen.jpg",
                        "impressie-4-paviljoen-strand.jpg", "impressie-5-terras.jpg")],
      [SP + f for f in ("ontwerp-1-concept.jpg", "ontwerp-2-gevels.jpg", "ontwerp-3-brainstorm.jpg", "ontwerp-4-lichtbeeld.jpg",
                        "ontwerp-5-lichtplan.jpg", "ontwerp-6-inspiratie-plafond.jpg", "ontwerp-7-eyecatcher-zonnelamp.jpg")],
      doel="zakelijk",
-     resultaat_titel="Impressies",
+     resultaat_titel="Impressies van het ontwerp",
      ontwerp_intro="Van concept en brainstorm tot lichtbeeld, lichtplan en eyecatcher: zo kwam het lichtontwerp stap voor stap tot stand.")
 
 
