@@ -742,7 +742,7 @@ pagina("interieurontwerp.html", "Interieurontwerp – Fierdesign light & interio
             <li>Winkels en horeca</li>
             <li>Lichtplannen in samenwerking met architect en installateur</li>
           </ul>
-          <a class="lees" href="projecten/eventruimte-met-gordijnen-en-licht.html">Bekijk: Flexibele eventruimte met gordijnen en licht</a>
+          <a class="lees" href="projecten/lichtontwerp-strandpaviljoen.html">Bekijk: Lichtconcept voor een strandpaviljoen</a>
         </div>
         <img src="assets/beeld/projecten/strandpaviljoen/impressie-1-restaurant.jpg" alt="Impressie van het lichtconcept voor een strandpaviljoen" loading="lazy">
       </div>
