@@ -529,7 +529,7 @@ pagina("index.html", "Fierdesign – Licht- & interieurontwerp", "Licht- en inte
           <p>Een doordachte balans tussen daglicht en kunstlicht, binnen en buiten.</p>
         </a>
         <a class="tegel" href="interieurontwerp.html">
-          <img src="assets/beeld/home-interieurontwerp-kleur-in-nieuwbouw.jpg" alt="Woonkeuken met eettafel, groene keuken en linnen gordijnen" loading="lazy">
+          <img src="assets/beeld/home-interieurontwerp-keuken.jpg" alt="Keuken met natuurstenen kookeiland, eiken plank en geplisseerde hanglampen" loading="lazy">
           <h3><span class="kenmerk kenmerk--interieur" aria-hidden="true"></span>Interieurontwerp</h3>
           <p>Een persoonlijk, functioneel en mooi interieur, van indeling tot afwerking.</p>
         </a>
