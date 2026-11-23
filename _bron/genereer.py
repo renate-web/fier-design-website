@@ -744,7 +744,7 @@ pagina("interieurontwerp.html", "Interieurontwerp – Fierdesign light & interio
           </ul>
           <a class="lees" href="projecten/eventruimte-met-gordijnen-en-licht.html">Bekijk: Flexibele eventruimte met gordijnen en licht</a>
         </div>
-        <img src="assets/beeld/zakelijk-gordijnen-zitbank.jpg" alt="Zakelijke ruimte met linnen gordijnen, een zitbank en lijnverlichting" loading="lazy">
+        <img src="assets/beeld/projecten/strandpaviljoen/impressie-1-restaurant.jpg" alt="Impressie van het lichtconcept voor een strandpaviljoen" loading="lazy">
       </div>
     </div>
   </section>""", "interieurontwerp.html")
