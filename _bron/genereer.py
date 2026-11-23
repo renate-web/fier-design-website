@@ -566,7 +566,7 @@ pagina("index.html", "Fierdesign – Licht- & interieurontwerp", "Licht- en inte
           <p>Verbouwing, nieuwbouw of die ene ruimte die niet lekker werkt.</p>
         </a>
         <a class="tegel" href="interieurontwerp.html#zakelijk">
-          <img src="assets/beeld/zakelijk-gordijnen-zitbank.jpg" alt="Zakelijke ruimte met linnen gordijnen en lijnverlichting" loading="lazy">
+          <img src="assets/beeld/projecten/strandpaviljoen/impressie-1-restaurant.jpg" alt="Impressie van het lichtconcept voor een strandpaviljoen" loading="lazy">
           <h3>Zakelijk</h3>
           <p>Werkplekken, horeca en verhuur die er verzorgd uitzien en prettig voelen.</p>
         </a>
