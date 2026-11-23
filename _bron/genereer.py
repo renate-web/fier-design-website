@@ -541,7 +541,7 @@ pagina("index.html", "Fierdesign – Licht- & interieurontwerp", "Licht- en inte
     <div class="wrap">
       <h2 id="recent">Projecten</h2>
       <div class="raster">
-{kaarten(['jaren-50-uitbouw-gezinswoning', 'uniek-wonen-in-een-school', 'eventruimte-met-gordijnen-en-licht', 'maatwerk-en-karakter-in-split-level-woning', 'jaren-30-in-een-nieuw-jasje', 'kleur-in-nieuwbouw'])}
+{kaarten(['jaren-50-uitbouw-gezinswoning', 'uniek-wonen-in-een-school', 'loft-aan-het-water', 'maatwerk-en-karakter-in-split-level-woning', 'jaren-30-in-een-nieuw-jasje', 'kleur-in-nieuwbouw'])}
       </div>
       <p style="margin-top:2.5rem"><a class="lees" href="projecten.html">Bekijk alle projecten</a></p>
     </div>
