@@ -74,3 +74,20 @@
     if (e.key === 'ArrowRight') toon(huidig + 1);
   });
 })();
+
+// Projectfilter (Alle / Lichtontwerp / Interieurontwerp)
+(function () {
+  var knoppen = document.querySelectorAll('.filter__knop');
+  var kaarten = document.querySelectorAll('#projectraster .kaart');
+  if (!knoppen.length) return;
+  function zet(f) {
+    knoppen.forEach(function (k) { k.setAttribute('aria-pressed', k.dataset.filter === f ? 'true' : 'false'); });
+    kaarten.forEach(function (k) {
+      var v = k.dataset.vak;
+      k.hidden = !(f === 'alle' || v === f || v === 'beide');
+    });
+  }
+  knoppen.forEach(function (k) { k.addEventListener('click', function () { zet(k.dataset.filter); }); });
+  var m = location.search.match(/filter=(licht|interieur)/);
+  if (m) zet(m[1]);
+})();

@@ -12,7 +12,9 @@ ICOON = "assets/logo/fd-monogram.svg"
 ICOON_PNG = U + "2024/04/cropped-icon-1-192x192.png"
 
 MENU = [
-    ("diensten.html", "Diensten"),
+    ("index.html", "Home"),
+    ("lichtontwerp.html", "Lichtontwerp"),
+    ("interieurontwerp.html", "Interieurontwerp"),
     ("projecten.html", "Projecten"),
     ("over-mij.html", "Over Fierdesign"),
     ("contact.html", "Contact"),
@@ -354,6 +356,22 @@ P.insert(next(i for i, p in enumerate(P) if p["slug"] == "wonen-in-een-kapel"), 
 P.append(_rb)  # helemaal onderaan
 P.append(_ev)  # helemaal achteraan
 
+VAK = {
+    "lichtontwerp-strandpaviljoen": "licht",
+    "lichtplan-restaurant-brouwerij": "licht",
+    "eventruimte-met-gordijnen-en-licht": "beide",
+    "wonen-in-een-kapel": "beide",
+    "kleur-in-nieuwbouw": "beide",
+    "jaren-50-uitbouw-gezinswoning": "beide",
+    "functionele-blikvanger": "beide",
+    "duurzaam-en-elegant-verbouwen": "beide",
+    "loft-aan-het-water": "beide",
+    "maatwerk-en-karakter-in-split-level-woning": "beide",
+    "jaren-30-in-een-nieuw-jasje": "beide",
+    "uniek-wonen-in-een-school": "interieur",
+    "vakantiehuisje-in-de-duinen": "interieur",
+    "gezinswoning-met-smaak": "interieur",
+}
 PS = {p["slug"]: p for p in P}
 
 
@@ -462,7 +480,7 @@ for p in P:
 
 def kaarten(slugs, r=""):
     return "\n".join(
-        f'<a class="kaart" href="{r}projecten/{s}.html"><img src="{bron(PS[s]["kaart"], r)}" alt="" loading="lazy">'
+        f'<a class="kaart" data-vak="{VAK.get(s, "beide")}" href="{r}projecten/{s}.html"><img src="{bron(PS[s]["kaart"], r)}" alt="" loading="lazy">'
         + (f'<em class="kaart__label">{e(PS[s]["label"])}</em>' if PS[s]["label"] else "")
         + f'<span>{e(PS[s]["titel"])}</span></a>'
         for s in slugs)
@@ -473,8 +491,15 @@ pagina("projecten.html", "Projecten – Fierdesign", "Licht- en interieurontwerp
     <h1>Projecten</h1>
     <p>Van eerste schets en lichtconcept tot de oplevering: licht- en interieurontwerpen voor particuliere en zakelijke opdrachtgevers.</p>
   </div></section>
-  <section class="sectie" style="padding-top:0"><div class="wrap raster">
+  <section class="sectie" style="padding-top:0"><div class="wrap">
+    <div class="filter" role="group" aria-label="Filter projecten">
+      <button type="button" class="filter__knop" data-filter="alle" aria-pressed="true">Alle</button>
+      <button type="button" class="filter__knop" data-filter="licht" aria-pressed="false">Lichtontwerp</button>
+      <button type="button" class="filter__knop" data-filter="interieur" aria-pressed="false">Interieurontwerp</button>
+    </div>
+    <div class="raster" id="projectraster">
 {kaarten([p['slug'] for p in P])}
+    </div>
   </div></section>""", "projecten.html")
 
 # ------------------------------------------------------------------ home
@@ -487,8 +512,8 @@ slides = "\n".join(
 pagina("index.html", "Fierdesign – Licht- & interieurontwerp", "Licht- en interieurontwerp, stijlvol en doordacht: lichtontwerp dat daglicht en kunstlicht samenbrengt, en een persoonlijk interieur. Amsterdam.",
        f"""  <section class="hero" aria-labelledby="hero-titel">
     <div class="hero__tekst">
-      <h1 id="hero-titel">Licht- en interieurontwerp, stijlvol en doordacht</h1>
-      <p>Een lichtplan, een interieurontwerp of beide, voor je woning of bedrijfsruimte.</p>
+      <h1 id="hero-titel">Light &amp; interior concepts</h1>
+      <p class="hero__lead">Licht- en interieurontwerp voor woningen en bedrijven.</p>
       <p style="margin-top:.5rem"><a class="knop" href="contact.html">Plan een kennismaking</a></p>
     </div>
     <div class="hero__beeld">
@@ -500,12 +525,12 @@ pagina("index.html", "Fierdesign – Licht- & interieurontwerp", "Licht- en inte
     <div class="wrap">
       <h2 id="watikdoe" class="visueel-verborgen">Wat ik doe</h2>
       <div class="tegels">
-        <a class="tegel" href="diensten.html#lichtontwerp">
+        <a class="tegel" href="lichtontwerp.html">
           <img src="{U}2024/08/header_img_kerk.jpg" alt="Wonen in een kapel met eyecatchende armaturen" loading="lazy">
           <h3><span class="kenmerk kenmerk--licht" aria-hidden="true"></span>Lichtontwerp</h3>
           <p>Een doordachte balans tussen daglicht en kunstlicht, binnen en buiten.</p>
         </a>
-        <a class="tegel" href="diensten.html#interieurontwerp">
+        <a class="tegel" href="interieurontwerp.html">
           <img src="{U}2025/07/chiela-fierdesign-27mei-hogeresolutie37.jpg" alt="Interieur met maatwerk in een split-level woning" loading="lazy">
           <h3><span class="kenmerk kenmerk--interieur" aria-hidden="true"></span>Interieurontwerp</h3>
           <p>Een persoonlijk, functioneel en mooi interieur, van indeling tot afwerking.</p>
@@ -537,12 +562,12 @@ pagina("index.html", "Fierdesign – Licht- & interieurontwerp", "Licht- en inte
     <div class="wrap">
       <h2 id="voorwie">Voor wie</h2>
       <div class="tegels">
-        <a class="tegel" href="diensten.html#particulier">
+        <a class="tegel" href="interieurontwerp.html#particulier">
           <img src="{U}2026/11/7.interieur-ontwerp-lichtplan-gezinswoning-amsterdam.jpg" alt="Gezinswoning met kookeiland en lichtplan" loading="lazy">
           <h3>Particulier</h3>
           <p>Verbouwing, nieuwbouw of die ene ruimte die niet lekker werkt.</p>
         </a>
-        <a class="tegel" href="diensten.html#zakelijk">
+        <a class="tegel" href="interieurontwerp.html#zakelijk">
           <img src="assets/beeld/zakelijk-gordijnen-zitbank.jpg" alt="Zakelijke ruimte met linnen gordijnen en lijnverlichting" loading="lazy">
           <h3>Zakelijk</h3>
           <p>Werkplekken, horeca en verhuur die er verzorgd uitzien en prettig voelen.</p>
@@ -567,18 +592,17 @@ lichtwissel = (
     + "".join("<span></span>" for _ in LICHTBEELDEN)
     + '</div>\n        </div>')
 
-pagina("diensten.html", "Diensten: lichtontwerp en interieurontwerp – Fierdesign",
-       "Lichtontwerp en interieurontwerp volgens een helder stappenplan, van kennismaking tot oplevering.",
-       f"""  <section class="paginakop"><div class="wrap">
-    <h1>Diensten</h1>
-    <p>Een lichtplan, een interieurontwerp of beide: stijlvol en doordacht, voor particulieren en bedrijven.</p>
+pagina("lichtontwerp.html", "Lichtontwerp – Fierdesign light & interior concepts",
+       "Lichtontwerp en lichtplannen voor woningen, horeca en bedrijfsruimtes: daglicht en kunstlicht in balans, van concept tot realisatie.",
+       f"""  <section class="paginakop paginakop--avond"><div class="wrap">
+    <h1>Lichtontwerp</h1>
+    <p>Een lichtplan dat de ruimte overdag én ’s avonds laat kloppen, voor je woning of bedrijfsruimte.</p>
   </div></section>
 
-  <section class="sectie sectie--avond" id="lichtontwerp" aria-labelledby="lo-titel">
+  <section class="sectie sectie--avond" id="lichtontwerp" aria-label="Lichtontwerp">
     <div class="wrap">
       <div class="twee twee--beeld">
         <div class="tekst">
-          <h2 id="lo-titel"><span class="kenmerk kenmerk--licht" aria-hidden="true"></span>Lichtontwerp</h2>
           <p>Licht bepaalt niet alleen wat je ziet, maar ook wat je voelt. Met een doordachte balans tussen daglicht en kunstlicht creëert Fierdesign sfeer én functionaliteit, binnen en buiten, met aandacht voor techniek, esthetiek en budget.</p>
           <p>Een lichtplan maak je het best vroeg, vóór de installateur de leidingen trekt. Dat bespaart aanpassingen en oponthoud tijdens de bouw, en zorgt dat de sfeer die je voor ogen had ook precies zo wordt gerealiseerd. Ik werk daarbij graag samen met je architect, aannemer en installateur.</p>
         </div>
@@ -596,11 +620,45 @@ pagina("diensten.html", "Diensten: lichtontwerp en interieurontwerp – Fierdesi
     </div>
   </section>
 
-  <section class="sectie" id="interieurontwerp" aria-labelledby="io-titel">
+  <section class="sectie" aria-labelledby="lichtprojecten">
+    <div class="wrap">
+      <h2 id="lichtprojecten">Lichtprojecten</h2>
+      <div class="raster">
+{kaarten(['eventruimte-met-gordijnen-en-licht', 'wonen-in-een-kapel', 'kleur-in-nieuwbouw', 'jaren-50-uitbouw-gezinswoning', 'lichtontwerp-strandpaviljoen', 'lichtplan-restaurant-brouwerij'])}
+      </div>
+      <p style="margin-top:2.5rem"><a class="lees" href="projecten.html?filter=licht">Alle lichtprojecten</a></p>
+    </div>
+  </section>
+
+  <section class="sectie sectie--diep" aria-labelledby="voorwie-licht">
+    <div class="wrap">
+      <h2 id="voorwie-licht">Voor wie</h2>
+      <div class="tegels">
+        <a class="tegel" href="interieurontwerp.html#particulier">
+          <img src="{U}2026/11/7.interieur-ontwerp-lichtplan-gezinswoning-amsterdam.jpg" alt="Gezinswoning met kookeiland en lichtplan" loading="lazy">
+          <h3>Particulier</h3>
+          <p>Een lichtplan voor je woning, binnen en buiten, bij een verbouwing of nieuwbouw.</p>
+        </a>
+        <a class="tegel" href="interieurontwerp.html#zakelijk">
+          <img src="assets/beeld/zakelijk-gordijnen-zitbank.jpg" alt="Zakelijke ruimte met linnen gordijnen en lijnverlichting" loading="lazy">
+          <h3>Zakelijk</h3>
+          <p>Lichtplannen voor werkplekken, horeca en verhuur, samen met architect en installateur.</p>
+        </a>
+      </div>
+    </div>
+  </section>""", "lichtontwerp.html")
+
+pagina("interieurontwerp.html", "Interieurontwerp – Fierdesign light & interior concepts",
+       "Persoonlijk interieurontwerp voor woningen en bedrijfsruimtes, met een helder stappenplan van kennismaking tot realisatie.",
+       f"""  <section class="paginakop"><div class="wrap">
+    <h1>Interieurontwerp</h1>
+    <p>Een persoonlijk, functioneel en mooi interieur, van indeling tot afwerking.</p>
+  </div></section>
+
+  <section class="sectie" id="interieurontwerp" aria-label="Interieurontwerp">
     <div class="wrap">
       <div class="twee twee--beeld">
         <div class="tekst">
-          <h2 id="io-titel"><span class="kenmerk kenmerk--interieur" aria-hidden="true"></span>Interieurontwerp</h2>
           <p>Bij Fierdesign sta jij als opdrachtgever op de eerste plaats. Op basis van jouw wensen ontwerp ik je interieur, en samen zetten we je eigen stijl neer. Dat kan een groot of juist een klein vraagstuk zijn, voor je woning of je bedrijfsruimte.</p>
           <p>Ik luister goed naar je wensen en vertaal die naar een persoonlijk, functioneel én mooi ontwerp. Met 3D-tekeningen zie je vooraf hoe het wordt, zodat kiezen makkelijker wordt. Ook help ik je graag met de realisatie, samen met mijn netwerk van professionals.</p>
           <p>Voor grotere verbouwingen, zoals een uitbouw of een nieuwe indeling, werk ik samen met de architecten en bouwkundigen van <a href="https://xoomlab.nl">Xoomlab</a>, bijvoorbeeld voor constructieve tekeningen en vergunningaanvragen.</p>
@@ -616,6 +674,16 @@ pagina("diensten.html", "Diensten: lichtontwerp en interieurontwerp – Fierdesi
         <li><h3>Definitief ontwerp</h3><p>Tekeningen, maatwerkdetails en een overzicht met meubels, lampen en materialen, klaar voor offertes.</p></li>
         <li><h3>Realisatie</h3><p>Ik breng je in contact met vakmensen uit mijn netwerk, stem af op de bouw en adviseer over de afwerkingsdetails.</p></li>
       </ol>
+    </div>
+  </section>
+
+  <section class="sectie sectie--diep" aria-labelledby="interieurprojecten">
+    <div class="wrap">
+      <h2 id="interieurprojecten">Interieurprojecten</h2>
+      <div class="raster">
+{kaarten(['uniek-wonen-in-een-school', 'maatwerk-en-karakter-in-split-level-woning', 'jaren-30-in-een-nieuw-jasje', 'vakantiehuisje-in-de-duinen', 'functionele-blikvanger', 'gezinswoning-met-smaak'])}
+      </div>
+      <p style="margin-top:2.5rem"><a class="lees" href="projecten.html?filter=interieur">Alle interieurprojecten</a></p>
     </div>
   </section>
 
@@ -659,7 +727,7 @@ pagina("diensten.html", "Diensten: lichtontwerp en interieurontwerp – Fierdesi
         <img src="assets/beeld/zakelijk-gordijnen-zitbank.jpg" alt="Zakelijke ruimte met linnen gordijnen, een zitbank en lijnverlichting" loading="lazy">
       </div>
     </div>
-  </section>""", "diensten.html")
+  </section>""", "interieurontwerp.html")
 
 # ------------------------------------------------------------------ oude adressen: doorverwijzen
 def doorverwijzing(pad, doel, naam):
@@ -672,7 +740,8 @@ def doorverwijzing(pad, doel, naam):
 """)
 
 
-doorverwijzing("opdrachtgevers.html", "diensten.html#voor-wie", "Diensten – voor wie")
+doorverwijzing("opdrachtgevers.html", "interieurontwerp.html#particulier", "Interieurontwerp – voor wie")
+doorverwijzing("diensten.html", "lichtontwerp.html", "Lichtontwerp")
 doorverwijzing("referenties.html", "projecten.html", "Projecten")
 
 # ------------------------------------------------------------------ over mij
