@@ -592,6 +592,25 @@ lichtwissel = (
     + "".join("<span></span>" for _ in LICHTBEELDEN)
     + '</div>\n        </div>')
 
+LAGEN = [
+    ("Sfeerlicht en eyecatchers", "Armaturen met karakter die de ruimte warmte en een eigen gezicht geven.",
+     [("sfeer-1-hanglamp-hout", "Houten hanglamp als blikvanger"), ("sfeer-2-kapel-hanglamp", "Hanglamp in de hoge ruimte van een kapel"), ("sfeer-3-keuken-plisse", "Geplisseerde hanglampen boven het keukeneiland")]),
+    ("Functioneel licht", "Licht waar je het nodig hebt: om te koken, je klaar te maken of te lezen.",
+     [("functioneel-1-keuken-ledplank", "Ledverlichting onder de keukenplank"), ("functioneel-2-badkamer-spiegel", "Licht bij de badkamerspiegel"), ("functioneel-3-douche-nis", "Ledlijn in de douchenis")]),
+    ("Accentlicht", "Licht dat wanden, materialen en details in de schijnwerpers zet.",
+     [("accent-1-wandlamp", "Wandlamp met licht naar boven en beneden"), ("accent-2-wandlampen-gang", "Wandlampen als ritme in de gang"), ("accent-3-spots-rail", "Richtbare spots op rails")]),
+    ("Licht als leidraad", "Zacht oriëntatielicht dat je door trappen en gangen begeleidt.",
+     [("leidraad-1-trap-inbouw", "Inbouwlicht langs de trap"), ("leidraad-2-trap-gang", "Trap en gang met oriëntatielicht"), ("leidraad-3-gang-wandlicht", "Wandlicht aan het eind van een gang")]),
+]
+lichtlagen = "\n".join(
+    f'''      <div class="laag">
+        <div class="laag__tekst"><h3>{e(titel)}</h3><p>{e(uitleg)}</p></div>
+        <div class="laag__beelden">'''
+    + "".join(f'<button type="button" data-groot="assets/beeld/licht/{f}.jpg"><img src="assets/beeld/licht/{f}.jpg" alt="{e(alt)}" loading="lazy"></button>' for f, alt in beelden)
+    + "</div>\n      </div>"
+    for titel, uitleg, beelden in LAGEN)
+
+
 pagina("lichtontwerp.html", "Lichtontwerp – Fierdesign light & interior concepts",
        "Lichtontwerp en lichtplannen voor woningen, horeca en bedrijfsruimtes: daglicht en kunstlicht in balans, van concept tot realisatie.",
        f"""  <section class="paginakop paginakop--avond"><div class="wrap">
@@ -620,13 +639,16 @@ pagina("lichtontwerp.html", "Lichtontwerp – Fierdesign light & interior concep
     </div>
   </section>
 
-  <section class="sectie" aria-labelledby="lichtprojecten">
+  <section class="sectie" aria-labelledby="lichtinlagen">
     <div class="wrap">
-      <h2 id="lichtprojecten">Lichtprojecten</h2>
-      <div class="raster">
-{kaarten(['eventruimte-met-gordijnen-en-licht', 'wonen-in-een-kapel', 'kleur-in-nieuwbouw', 'jaren-50-uitbouw-gezinswoning', 'lichtontwerp-strandpaviljoen', 'lichtplan-restaurant-brouwerij'])}
-      </div>
-      <p style="margin-top:2.5rem"><a class="lees" href="projecten.html?filter=licht">Alle lichtprojecten</a></p>
+      <h2 id="lichtinlagen">Licht in lagen</h2>
+      <p class="tekst">Een goed lichtplan bestaat uit verschillende lagen die samen de sfeer bepalen. Zo ziet dat eruit in mijn projecten.</p>
+{lichtlagen}
+      <figure class="afstellen">
+        <button type="button" data-groot="assets/beeld/licht/afstellen-renate-wandlampen.jpg"><img src="assets/beeld/licht/afstellen-renate-wandlampen.jpg" alt="Renate stelt wandlampen af in een project" loading="lazy"></button>
+        <figcaption><strong>De laatste stap</strong>Pas als de armaturen hangen en de spots gericht zijn, klopt het licht precies zoals bedoeld. Daarom loop ik bij de oplevering graag nog even mee.</figcaption>
+      </figure>
+      <p style="margin-top:2.5rem"><a class="lees" href="projecten.html?filter=licht">Bekijk projecten met een lichtplan</a></p>
     </div>
   </section>
 

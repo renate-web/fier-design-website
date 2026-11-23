@@ -285,3 +285,23 @@ p { margin: 0 0 1rem; }
 .filter__knop { font: inherit; font-size: .95rem; padding: .45rem 1.1rem; border-radius: 999px; border: 1px solid var(--zwart); background: transparent; color: var(--zwart); cursor: pointer; }
 .filter__knop[aria-pressed="true"] { background: var(--zwart); color: var(--linnen); }
 .kaart[hidden] { display: none; }
+
+/* Licht in lagen (Lichtontwerp) */
+.laag { display: grid; grid-template-columns: 1fr 3fr; gap: 2rem; align-items: start; padding: 2.25rem 0; border-top: 1px solid var(--lijn, #ccc); }
+.laag:first-of-type { margin-top: 2rem; }
+.laag__tekst h3 { margin: 0 0 .5rem; font-size: 1.35rem; }
+.laag__tekst p { margin: 0; }
+.laag__beelden { display: grid; grid-template-columns: repeat(3, 1fr); gap: .75rem; }
+.laag__beelden button, .afstellen button { padding: 0; border: 0; background: none; cursor: zoom-in; display: block; }
+.laag__beelden img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; display: block; }
+.afstellen { margin: 2.5rem 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: center; padding-top: 2.5rem; border-top: 1px solid var(--lijn, #ccc); }
+.afstellen img { width: 100%; max-width: 26rem; aspect-ratio: 4 / 5; object-fit: cover; display: block; }
+.afstellen figcaption { font-size: 1.05rem; max-width: 30rem; }
+.afstellen figcaption strong { display: block; font-family: var(--serif); font-weight: 400; font-size: 1.35rem; margin-bottom: .5rem; }
+@media (max-width: 760px) {
+  .laag { grid-template-columns: 1fr; gap: 1rem; }
+  /* op mobiel: foto's naast elkaar om door te vegen */
+  .laag__beelden { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: .6rem; margin-right: -1.5rem; padding-right: 1.5rem; }
+  .laag__beelden button { flex: 0 0 62%; scroll-snap-align: start; }
+  .afstellen { grid-template-columns: 1fr; gap: 1.25rem; }
+}
