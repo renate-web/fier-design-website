@@ -16,11 +16,9 @@
 - Alle pagina's worden gegenereerd met `_bron/genereer.py` (teksten, projecten, beeldlijsten staan daarin).
   Pas teksten aan in dat script en draai: `python3 _bron/genereer.py .` — bewerk de HTML-bestanden niet los.
 - Opmaak in `assets/style.css`, interactie (menu, fotowissel, lightbox) in `assets/site.js`.
-- Afbeeldingen worden nu nog geladen vanaf de oude WordPress-site (fierdesign.nl/wp-content/uploads).
+- Eigen beelden staan in `assets/beeld/`; een deel van de projectfoto's wordt nog geladen vanaf de oude WordPress-site (fierdesign.nl/wp-content/uploads).
 
-## Concept 2 (in ontwikkeling)
-- Concept 1 (de huidige live site) is bewaard in de branch `concept-1`.
-- Concept 2 (menu: Home · Lichtontwerp · Interieurontwerp · Projecten · Over Fierdesign · Contact) staat in de map `concept-2/` en is te bekijken op https://renate-web.github.io/fier-design-website/concept-2/
-  (niet vindbaar in Google: noindex). Generator: `python3 _bron/concept-2/genereer.py concept-2`.
-- Concept 2 heeft een eigen kopie van `assets/` in `concept-2/assets/`; wijzigingen daar raken de live site niet.
-- Wijzigingen voor concept 2 alleen in de concept-map doen, tenzij Renate vraagt om iets op de live site aan te passen.
+## Versies
+- Sinds 23-11-2026 staat de nieuwe opzet (voorheen "concept 2") live: menu Home · Lichtontwerp · Interieurontwerp · Projecten · Over Fierdesign · Contact.
+- De vorige versie (concept 1) is bewaard in de branch `concept-1` en kan altijd worden teruggezet.
+- De oude adressen `diensten.html`, `opdrachtgevers.html` en `referenties.html` sturen automatisch door naar de nieuwe pagina's.

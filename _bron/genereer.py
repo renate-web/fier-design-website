@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""Genereert de statische Fierdesign-site in de map die als argument wordt meegegeven."""
+"""Genereert de statische Fierdesign-site in de map die als argument wordt meegegeven (gebruik: python3 _bron/genereer.py .).
+Opzet sinds 23-11-2026 (voorheen concept 2): menu Home · Lichtontwerp · Interieurontwerp · Projecten · Over Fierdesign · Contact,
+compacte homepage, Licht in lagen, referenties op de projectpagina's."""
 import os, sys, html
 
 UIT = sys.argv[1]
@@ -11,10 +13,9 @@ ICOON_PNG = U + "2024/04/cropped-icon-1-192x192.png"
 
 MENU = [
     ("index.html", "Home"),
-    ("diensten.html", "Diensten"),
-    ("opdrachtgevers.html", "Voor wie"),
+    ("lichtontwerp.html", "Lichtontwerp"),
+    ("interieurontwerp.html", "Interieurontwerp"),
     ("projecten.html", "Projecten"),
-    ("referenties.html", "Referenties"),
     ("over-mij.html", "Over Fierdesign"),
     ("contact.html", "Contact"),
 ]
@@ -23,7 +24,7 @@ e = html.escape
 
 
 import hashlib as _hl
-_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+_root = os.path.abspath(UIT)
 def _versie(f):
     # korte hash van het bestand, zodat browsers na een wijziging de nieuwe versie ophalen
     try:
@@ -353,6 +354,22 @@ P.insert(next(i for i, p in enumerate(P) if p["slug"] == "wonen-in-een-kapel"), 
 P.append(_rb)  # helemaal onderaan
 P.append(_ev)  # helemaal achteraan
 
+VAK = {
+    "lichtontwerp-strandpaviljoen": "licht",
+    "lichtplan-restaurant-brouwerij": "licht",
+    "eventruimte-met-gordijnen-en-licht": "beide",
+    "wonen-in-een-kapel": "beide",
+    "kleur-in-nieuwbouw": "beide",
+    "jaren-50-uitbouw-gezinswoning": "beide",
+    "functionele-blikvanger": "beide",
+    "duurzaam-en-elegant-verbouwen": "beide",
+    "loft-aan-het-water": "beide",
+    "maatwerk-en-karakter-in-split-level-woning": "beide",
+    "jaren-30-in-een-nieuw-jasje": "beide",
+    "uniek-wonen-in-een-school": "interieur",
+    "vakantiehuisje-in-de-duinen": "interieur",
+    "gezinswoning-met-smaak": "interieur",
+}
 PS = {p["slug"]: p for p in P}
 
 
@@ -363,6 +380,29 @@ def galerij(beelden, titel, r="../"):
     return f'<div class="galerij">\n{knoppen}\n</div>'
 
 
+REF = [
+    ("uniek-wonen-in-een-school", "Tony & Elaine",
+     "Onze woonkamer en keuken waren hard toe aan een verbouwing, maar we zaten vast in het proces. Wat wilden we nu precies, wat was er mogelijk, en hoe zou onze autistische zoon daarop reageren? Toen kwamen we in contact met Renate. Zij heeft niet alleen creatieve oplossingen gevonden voor ons huis, maar ook voor onze persoonlijke situatie, die de nodige uitdagingen met zich meebrengt.\n\nHet resultaat: een mooie, moderne woonkamer en keuken die perfect passen bij onze wensen én het unieke karakter van ons huis. We hebben Renate inmiddels al aanbevolen aan een vriend, die net zo enthousiast over haar werk is. En zodra we klaar zijn voor de volgende verbouwing, weten we haar zeker weer te vinden."),
+    ("maatwerk-en-karakter-in-split-level-woning", "Imke & Armen",
+     "Renate is van onschatbare waarde geweest voor de verbouwing van onze woning. Op basis van onze smaak en input heeft ze prachtige ontwerpen gemaakt waar we zelf nooit en te nimmer op waren gekomen. Via haar kwamen we in contact met een hele goede aannemer, die alle ideeën ook daadwerkelijk wist te realiseren. Bij iedere grote verbouwing moet soms tussentijds worden ingegrepen of bijgestuurd, maar Renate wist ons altijd tijdig te betrekken en met constructieve oplossingen te komen. Van materialen tot lichtontwerp, van kleurenpalet tot inrichting, onze woning is onherkenbaar verbeterd, maar toch voelde het meteen weer als ons thuis."),
+    ("jaren-30-in-een-nieuw-jasje", "Petra",
+     "Renate dacht écht met mij mee in de gehele aanpak en luisterde aandachtig naar mijn wensen en behoeften. De details maakten het verschil: van nieuwe keukengrepen tot maatwerk meubelontwerp en prachtige wandlampen. Haar adviezen waren waardevol gedurende het hele proces.\n\nDoor het zorgvuldig uitwerken van het kleuradvies en het lichtplan heeft mijn interieur nu precies de sfeer waarin ik me helemaal thuis voel. Dankzij Fierdesign voelt mijn huis echt als míjn plek."),
+    ("kleur-in-nieuwbouw", "Jeroen & Jiska",
+     "Vanuit twee kleine appartementen in Amsterdam gingen we samenwonen in een grote nieuwbouwwoning op IJburg, en we hadden geen idee waar te beginnen met de inrichting. Fierdesign bracht rust in dat proces, door goed te luisteren naar onze wensen en te helpen met keuzes maken. Door Renate leerden we technieken en bouwmaterialen kennen die we zelf nooit gevonden zouden hebben en durfden we te kiezen voor kleur. Ze heeft bovendien de verbouwing uitstekend voor ons begeleid. Het voelt nu echt als ons huis."),
+    ("vakantiehuisje-in-de-duinen", "Duinhuis Vlieland",
+     "Renate kwam met een goed ontwerp en goede ideeën om de vakantiewoning een eigen karakter te geven met een fijne sfeer. Ook heeft ze me enorm geholpen met de realisatie van het ontwerp en het vinden van de juiste meubels. Van de gasten krijgen we positieve reacties over het huis en de inrichting. Een gast vroeg zelfs waar de bank te koop was, omdat het de eerste bank was waar zij prettig op zat."),
+    ("wonen-in-een-kapel", "Truida",
+     "De ruimtes waren al geweldig, maar ik voelde me nog wel een beetje verloren in de proporties van de ruimtes. Door de 3D-tekeningen van het interieurontwerp kreeg ik meer gevoel bij hoe het eruit kon gaan zien en lukte het om keuzes te maken. Het behang in de keuken is nog mooier uitgevallen dan verwacht. Het lichtplan werkt geweldig en heeft mijn huis zowel functionaliteit als sfeer gegeven. Dat had ik nooit zelf kunnen bedenken, echt een toevoeging."),
+    ("functionele-blikvanger", "Jos & Merlijn",
+     "Om in ons nieuwe huis naar de woonkamer op de bovenste verdieping te komen, kom je eerst door een ruimte met een glazen dak en een trap in het midden. Het gevaar bestond dat het een soort overloop of hal zou worden. Wij wilden dat het een volwaardig deel van het huis zou zijn waar de kinderen zich konden terugtrekken. Renate van Fierdesign heeft heel goed geluisterd naar onze wensen en kwam met heel mooie ideeën om deze ruimte in te richten. Zelf hadden we dit nooit zo kunnen bedenken. Nu is het een van de blikvangers van het huis geworden waar de hele familie graag zit."),
+    ("duurzaam-en-elegant-verbouwen", "Johannes",
+     "De woning is grondig verbouwd en verduurzaamd, om daarna te kunnen verhuren. De hele benedenverdieping is tot casco gesloopt, de kans om er echt wat moois van te maken. Renate van Fierdesign heeft het interieurontwerp gemaakt en het project in heldere stappen opgebouwd: indelingsplan, materialisatie en een bijpassend licht- en schakelplan. Voor de afwerking heeft ze de tegels, het deurbeslag, de keukendetails en de kleuren aangedragen. Bij de keuken heeft ze geadviseerd over de opstelling, indeling en het materiaal. Het eindresultaat is een prachtig geheel geworden, ruimtelijk en van hoge kwaliteit en met aandacht voor details. De nieuwe bewoners zijn ontzettend blij met het eindresultaat."),
+    ("jaren-50-uitbouw-gezinswoning", "Anke & Clemens",
+     "Het sparren met Renate over het interieur en lichtplan heeft ons enorm geholpen. We wilden zelf de regie houden, en dankzij het heldere stappenplan van Fierdesign konden we onze ideeën vertalen naar een concrete aanpak en de juiste uitvoerende partijen. Het lichtplan, met prachtig gekozen armaturen, heeft ons woongenot zowel functioneel als esthetisch echt verrijkt. We zijn heel blij met het resultaat en de inspiratie die Renate ons heeft gegeven!"),
+]
+REFD = {slug: (naam, tekst) for slug, naam, tekst in REF}
+
+
 for p in P:
     blokken = [f"""  <section class="sectie" aria-labelledby="resultaat">
     <div class="wrap">
@@ -370,6 +410,16 @@ for p in P:
       {galerij(p['resultaat'][1:] or p['resultaat'], p['titel'])}
     </div>
   </section>"""]
+    if p["slug"] in REFD:
+        naam, tekst = REFD[p["slug"]]
+        blokken.append(f"""  <section class="sectie sectie--avond" aria-label="Referentie">
+    <div class="wrap">
+      <figure class="klantquote">
+        <blockquote>{alinea(tekst)}</blockquote>
+        <figcaption>{e(naam)}</figcaption>
+      </figure>
+    </div>
+  </section>""")
     if p["voorna"]:
         paren = "\n".join(
             f'<figure><img src="{bron(v, '../')}" alt="{e(p["titel"])}: voor" loading="lazy"><figcaption>Voor</figcaption></figure>'
@@ -428,7 +478,7 @@ for p in P:
 
 def kaarten(slugs, r=""):
     return "\n".join(
-        f'<a class="kaart" href="{r}projecten/{s}.html"><img src="{bron(PS[s]["kaart"], r)}" alt="" loading="lazy">'
+        f'<a class="kaart" data-vak="{VAK.get(s, "beide")}" href="{r}projecten/{s}.html"><img src="{bron(PS[s]["kaart"], r)}" alt="" loading="lazy">'
         + (f'<em class="kaart__label">{e(PS[s]["label"])}</em>' if PS[s]["label"] else "")
         + f'<span>{e(PS[s]["titel"])}</span></a>'
         for s in slugs)
@@ -439,8 +489,15 @@ pagina("projecten.html", "Projecten – Fierdesign", "Licht- en interieurontwerp
     <h1>Projecten</h1>
     <p>Van eerste schets en lichtconcept tot de oplevering: licht- en interieurontwerpen voor particuliere en zakelijke opdrachtgevers.</p>
   </div></section>
-  <section class="sectie" style="padding-top:0"><div class="wrap raster">
+  <section class="sectie" style="padding-top:0"><div class="wrap">
+    <div class="filter" role="group" aria-label="Filter projecten">
+      <button type="button" class="filter__knop" data-filter="alle" aria-pressed="true">Alle</button>
+      <button type="button" class="filter__knop" data-filter="licht" aria-pressed="false">Lichtontwerp</button>
+      <button type="button" class="filter__knop" data-filter="interieur" aria-pressed="false">Interieurontwerp</button>
+    </div>
+    <div class="raster" id="projectraster">
 {kaarten([p['slug'] for p in P])}
+    </div>
   </div></section>""", "projecten.html")
 
 # ------------------------------------------------------------------ home
@@ -453,8 +510,8 @@ slides = "\n".join(
 pagina("index.html", "Fierdesign – Licht- & interieurontwerp", "Licht- en interieurontwerp, stijlvol en doordacht: lichtontwerp dat daglicht en kunstlicht samenbrengt, en een persoonlijk interieur. Amsterdam.",
        f"""  <section class="hero" aria-labelledby="hero-titel">
     <div class="hero__tekst">
-      <h1 id="hero-titel">Licht- en interieurontwerp, stijlvol en doordacht</h1>
-      <p>Een lichtplan, een interieurontwerp of beide, voor je woning of bedrijfsruimte.</p>
+      <h1 id="hero-titel">Light &amp; interior concepts</h1>
+      <p class="hero__lead">Licht- en interieurontwerp voor woningen en bedrijven.</p>
       <p style="margin-top:.5rem"><a class="knop" href="contact.html">Plan een kennismaking</a></p>
     </div>
     <div class="hero__beeld">
@@ -462,51 +519,58 @@ pagina("index.html", "Fierdesign – Licht- & interieurontwerp", "Licht- en inte
     </div>
   </section>
 
-  <section class="sectie" id="interieur">
-    <div class="wrap twee">
-      <div class="tekst" id="lichtontwerp">
-        <h2><span class="kenmerk kenmerk--licht" aria-hidden="true"></span>Lichtontwerp</h2>
-        <p>Licht bepaalt niet alleen wat je ziet, maar ook wat je voelt. Het versterkt de beleving en emotie van een interieur. Tijdens het realiseren van verschillende interieurontwerpen ontdekte ik hoe essentieel licht is.</p>
-        <p>Daarom ben ik me verder gaan verdiepen in lichtontwerp. Na diverse opleidingen combineer ik nu licht- en interieurontwerp. Met een doordachte balans tussen daglicht en kunstlicht creëert Fierdesign sfeer én functionaliteit, zowel binnen als buiten, met aandacht voor techniek, esthetiek en budget. Een goed lichtplan bespaart aanpassingen en oponthoud tijdens de bouw en zorgt ervoor dat de sfeer die je voor ogen had, ook precies zo wordt gerealiseerd.</p>
-        <a class="lees" href="diensten.html#lichtontwerp">Zo werkt lichtontwerp</a>
-      </div>
-      <div class="tekst">
-        <h2><span class="kenmerk kenmerk--interieur" aria-hidden="true"></span>Interieurontwerp</h2>
-        <p>Bij Fierdesign sta jij als opdrachtgever op de eerste plaats: op basis van jouw wensen ontwerp ik je interieur, samen zetten we je eigen stijl neer. Dat kan een groot, maar ook een klein vraagstuk zijn.</p>
-        <p>Het proces naar het uiteindelijke ontwerp is minstens zo belangrijk als het resultaat. Met een helder stappenplan doorlopen we het proces naar jouw nieuwe interieur bij zowel residentiële als zakelijke ruimtes. Ik luister goed naar je wensen en vertaal dit naar een persoonlijk, functioneel én mooi ontwerp. Ook help ik je graag met de realisatie van het interieur, samen met mijn netwerk van professionals.</p>
-        <a class="lees" href="diensten.html#interieurontwerp">Zo werkt interieurontwerp</a>
+  <section class="sectie" aria-labelledby="watikdoe">
+    <div class="wrap">
+      <h2 id="watikdoe" class="visueel-verborgen">Wat ik doe</h2>
+      <div class="tegels">
+        <a class="tegel" href="lichtontwerp.html">
+          <img src="{U}2024/08/header_img_kerk.jpg" alt="Wonen in een kapel met eyecatchende armaturen" loading="lazy">
+          <h3><span class="kenmerk kenmerk--licht" aria-hidden="true"></span>Lichtontwerp</h3>
+          <p>Een doordachte balans tussen daglicht en kunstlicht, binnen en buiten.</p>
+        </a>
+        <a class="tegel" href="interieurontwerp.html">
+          <img src="{U}2025/07/chiela-fierdesign-27mei-hogeresolutie37.jpg" alt="Interieur met maatwerk in een split-level woning" loading="lazy">
+          <h3><span class="kenmerk kenmerk--interieur" aria-hidden="true"></span>Interieurontwerp</h3>
+          <p>Een persoonlijk, functioneel en mooi interieur, van indeling tot afwerking.</p>
+        </a>
       </div>
     </div>
-    <div class="wrap" style="margin-top:5rem">
-      <blockquote class="citaat">Goed licht brengt sfeer en functionaliteit samen.</blockquote>
+  </section>
+
+  <section class="sectie sectie--avond" aria-labelledby="recent">
+    <div class="wrap">
+      <h2 id="recent">Projecten</h2>
+      <div class="raster">
+{kaarten(['jaren-50-uitbouw-gezinswoning', 'uniek-wonen-in-een-school', 'eventruimte-met-gordijnen-en-licht', 'maatwerk-en-karakter-in-split-level-woning', 'jaren-30-in-een-nieuw-jasje', 'kleur-in-nieuwbouw'])}
+      </div>
+      <p style="margin-top:2.5rem"><a class="lees" href="projecten.html">Bekijk alle projecten</a></p>
+    </div>
+  </section>
+
+  <section class="sectie" aria-label="Wat klanten zeggen">
+    <div class="wrap">
+      <figure class="klantquote klantquote--licht">
+        <blockquote><p>Door het zorgvuldig uitwerken van het kleuradvies en het lichtplan heeft mijn interieur nu precies de sfeer waarin ik me helemaal thuis voel.</p></blockquote>
+        <figcaption>Petra · <a href="projecten/jaren-30-in-een-nieuw-jasje.html">Jaren ’30 in een nieuw jasje</a></figcaption>
+      </figure>
     </div>
   </section>
 
   <section class="sectie sectie--diep" aria-labelledby="voorwie">
     <div class="wrap">
-      <h2 id="voorwie">Voor wie ik werk</h2>
-      <div class="twee">
-        <div class="tekst">
+      <h2 id="voorwie">Voor wie</h2>
+      <div class="tegels">
+        <a class="tegel" href="interieurontwerp.html#particulier">
+          <img src="{U}2026/11/7.interieur-ontwerp-lichtplan-gezinswoning-amsterdam.jpg" alt="Gezinswoning met kookeiland en lichtplan" loading="lazy">
           <h3>Particulier</h3>
-          <p>Van verbouwing tot nieuwbouwwoning of een ruimte die niet lekker werkt: we creëren een interieur dat bij je past, goed doordacht is en een eigen karakter heeft.</p>
-          <a class="lees" href="opdrachtgevers.html#particulier">Meer voor particulieren</a>
-        </div>
-        <div class="tekst">
+          <p>Verbouwing, nieuwbouw of die ene ruimte die niet lekker werkt.</p>
+        </a>
+        <a class="tegel" href="interieurontwerp.html#zakelijk">
+          <img src="assets/beeld/zakelijk-gordijnen-zitbank.jpg" alt="Zakelijke ruimte met linnen gordijnen en lijnverlichting" loading="lazy">
           <h3>Zakelijk</h3>
-          <p>Bedrijven, verhuurwoningen, vakantiehuizen of werkplekken die er goed uitzien, prettig voelen en tegen een stootje kunnen.</p>
-          <a class="lees" href="opdrachtgevers.html#zakelijk">Meer voor bedrijven</a>
-        </div>
+          <p>Werkplekken, horeca en verhuur die er verzorgd uitzien en prettig voelen.</p>
+        </a>
       </div>
-    </div>
-  </section>
-
-  <section class="sectie" aria-labelledby="recent">
-    <div class="wrap">
-      <h2 id="recent">Recente projecten</h2>
-      <div class="raster">
-{kaarten(['jaren-50-uitbouw-gezinswoning', 'uniek-wonen-in-een-school', 'maatwerk-en-karakter-in-split-level-woning'])}
-      </div>
-      <p style="margin-top:2rem"><a class="lees" href="projecten.html">Bekijk alle projecten</a></p>
     </div>
   </section>""", "index.html")
 
@@ -526,18 +590,36 @@ lichtwissel = (
     + "".join("<span></span>" for _ in LICHTBEELDEN)
     + '</div>\n        </div>')
 
-pagina("diensten.html", "Diensten: lichtontwerp en interieurontwerp – Fierdesign",
-       "Lichtontwerp en interieurontwerp volgens een helder stappenplan, van kennismaking tot oplevering.",
-       f"""  <section class="paginakop"><div class="wrap">
-    <h1>Diensten</h1>
-    <p>Een lichtplan, een interieurontwerp of beide: stijlvol en doordacht, voor je woning of bedrijfsruimte.</p>
+LAGEN = [
+    ("Sfeerlicht en eyecatchers", "Armaturen met karakter die de ruimte warmte en een eigen gezicht geven.",
+     [("sfeer-1-hanglamp-hout", "Houten hanglamp als blikvanger"), ("sfeer-2-kapel-hanglamp", "Hanglamp in de hoge ruimte van een kapel"), ("sfeer-3-keuken-plisse", "Geplisseerde hanglampen boven het keukeneiland")]),
+    ("Functioneel licht", "Licht waar je het nodig hebt: om te koken, je klaar te maken of te lezen.",
+     [("functioneel-1-keuken-ledplank", "Ledverlichting onder de keukenplank"), ("functioneel-2-badkamer-spiegel", "Licht bij de badkamerspiegel"), ("functioneel-3-douche-nis", "Ledlijn in de douchenis")]),
+    ("Accentlicht", "Licht dat wanden, materialen en details in de schijnwerpers zet.",
+     [("accent-1-wandlamp", "Wandlamp met licht naar boven en beneden"), ("accent-2-wandlampen-gang", "Wandlampen als ritme in de gang"), ("accent-3-spots-rail", "Richtbare spots op rails")]),
+    ("Licht als leidraad", "Zacht oriëntatielicht dat je door trappen en gangen begeleidt.",
+     [("leidraad-1-trap-inbouw", "Inbouwlicht langs de trap"), ("leidraad-2-trap-gang", "Trap en gang met oriëntatielicht"), ("leidraad-3-gang-wandlicht", "Wandlicht aan het eind van een gang")]),
+]
+lichtlagen = "\n".join(
+    f'''      <div class="laag">
+        <div class="laag__tekst"><h3>{e(titel)}</h3><p>{e(uitleg)}</p></div>
+        <div class="laag__beelden">'''
+    + "".join(f'<button type="button" data-groot="assets/beeld/licht/{f}.jpg"><img src="assets/beeld/licht/{f}.jpg" alt="{e(alt)}" loading="lazy"></button>' for f, alt in beelden)
+    + "</div>\n      </div>"
+    for titel, uitleg, beelden in LAGEN)
+
+
+pagina("lichtontwerp.html", "Lichtontwerp – Fierdesign light & interior concepts",
+       "Lichtontwerp en lichtplannen voor woningen, horeca en bedrijfsruimtes: daglicht en kunstlicht in balans, van concept tot realisatie.",
+       f"""  <section class="paginakop paginakop--avond"><div class="wrap">
+    <h1>Lichtontwerp</h1>
+    <p>Een lichtplan dat de ruimte overdag én ’s avonds laat kloppen, voor je woning of bedrijfsruimte.</p>
   </div></section>
 
-  <section class="sectie sectie--avond" id="lichtontwerp" aria-labelledby="lo-titel">
+  <section class="sectie sectie--avond" id="lichtontwerp" aria-label="Lichtontwerp">
     <div class="wrap">
       <div class="twee twee--beeld">
         <div class="tekst">
-          <h2 id="lo-titel"><span class="kenmerk kenmerk--licht" aria-hidden="true"></span>Lichtontwerp</h2>
           <p>Licht bepaalt niet alleen wat je ziet, maar ook wat je voelt. Met een doordachte balans tussen daglicht en kunstlicht creëert Fierdesign sfeer én functionaliteit, binnen en buiten, met aandacht voor techniek, esthetiek en budget.</p>
           <p>Een lichtplan maak je het best vroeg, vóór de installateur de leidingen trekt. Dat bespaart aanpassingen en oponthoud tijdens de bouw, en zorgt dat de sfeer die je voor ogen had ook precies zo wordt gerealiseerd. Ik werk daarbij graag samen met je architect, aannemer en installateur.</p>
         </div>
@@ -555,11 +637,48 @@ pagina("diensten.html", "Diensten: lichtontwerp en interieurontwerp – Fierdesi
     </div>
   </section>
 
-  <section class="sectie" id="interieurontwerp" aria-labelledby="io-titel">
+  <section class="sectie" aria-labelledby="lichtinlagen">
+    <div class="wrap">
+      <h2 id="lichtinlagen">Licht in lagen</h2>
+      <p class="tekst">Een goed lichtplan bestaat uit verschillende lagen die samen de sfeer bepalen. Zo ziet dat eruit in mijn projecten.</p>
+{lichtlagen}
+      <figure class="afstellen">
+        <button type="button" data-groot="assets/beeld/licht/afstellen-renate-wandlampen.jpg"><img src="assets/beeld/licht/afstellen-renate-wandlampen.jpg" alt="Renate stelt wandlampen af in een project" loading="lazy"></button>
+        <figcaption><strong>De laatste stap</strong>Pas als de armaturen hangen en de spots gericht zijn, klopt het licht precies zoals bedoeld. Daarom loop ik bij de oplevering graag nog even mee.</figcaption>
+      </figure>
+      <p style="margin-top:2.5rem"><a class="lees" href="projecten.html?filter=licht">Bekijk projecten met een lichtplan</a></p>
+    </div>
+  </section>
+
+  <section class="sectie sectie--diep" aria-labelledby="voorwie-licht">
+    <div class="wrap">
+      <h2 id="voorwie-licht">Voor wie</h2>
+      <div class="tegels">
+        <a class="tegel" href="interieurontwerp.html#particulier">
+          <img src="{U}2026/11/7.interieur-ontwerp-lichtplan-gezinswoning-amsterdam.jpg" alt="Gezinswoning met kookeiland en lichtplan" loading="lazy">
+          <h3>Particulier</h3>
+          <p>Een lichtplan voor je woning, binnen en buiten, bij een verbouwing of nieuwbouw.</p>
+        </a>
+        <a class="tegel" href="interieurontwerp.html#zakelijk">
+          <img src="assets/beeld/zakelijk-gordijnen-zitbank.jpg" alt="Zakelijke ruimte met linnen gordijnen en lijnverlichting" loading="lazy">
+          <h3>Zakelijk</h3>
+          <p>Lichtplannen voor werkplekken, horeca en verhuur, samen met architect en installateur.</p>
+        </a>
+      </div>
+    </div>
+  </section>""", "lichtontwerp.html")
+
+pagina("interieurontwerp.html", "Interieurontwerp – Fierdesign light & interior concepts",
+       "Persoonlijk interieurontwerp voor woningen en bedrijfsruimtes, met een helder stappenplan van kennismaking tot realisatie.",
+       f"""  <section class="paginakop paginakop--avond"><div class="wrap">
+    <h1>Interieurontwerp</h1>
+    <p>Een persoonlijk, functioneel en mooi interieur, van indeling tot afwerking.</p>
+  </div></section>
+
+  <section class="sectie sectie--avond" id="interieurontwerp" aria-label="Interieurontwerp">
     <div class="wrap">
       <div class="twee twee--beeld">
         <div class="tekst">
-          <h2 id="io-titel"><span class="kenmerk kenmerk--interieur" aria-hidden="true"></span>Interieurontwerp</h2>
           <p>Bij Fierdesign sta jij als opdrachtgever op de eerste plaats. Op basis van jouw wensen ontwerp ik je interieur, en samen zetten we je eigen stijl neer. Dat kan een groot of juist een klein vraagstuk zijn, voor je woning of je bedrijfsruimte.</p>
           <p>Ik luister goed naar je wensen en vertaal die naar een persoonlijk, functioneel én mooi ontwerp. Met 3D-tekeningen zie je vooraf hoe het wordt, zodat kiezen makkelijker wordt. Ook help ik je graag met de realisatie, samen met mijn netwerk van professionals.</p>
           <p>Voor grotere verbouwingen, zoals een uitbouw of een nieuwe indeling, werk ik samen met de architecten en bouwkundigen van <a href="https://xoomlab.nl">Xoomlab</a>, bijvoorbeeld voor constructieve tekeningen en vergunningaanvragen.</p>
@@ -576,22 +695,24 @@ pagina("diensten.html", "Diensten: lichtontwerp en interieurontwerp – Fierdesi
         <li><h3>Realisatie</h3><p>Ik breng je in contact met vakmensen uit mijn netwerk, stem af op de bouw en adviseer over de afwerkingsdetails.</p></li>
       </ol>
     </div>
-  </section>""", "diensten.html")
+  </section>
 
-# ------------------------------------------------------------------ opdrachtgevers (voorbeeldteksten)
-pagina("opdrachtgevers.html", "Voor wie: particulier en zakelijk – Fierdesign",
-       "Licht- en interieurontwerp voor particulieren en bedrijven: woningen, verbouwingen, verhuurwoningen en werkplekken.",
-       f"""  <!-- Voorbeeldteksten: nog door Renate aan te passen -->
-  <section class="paginakop"><div class="wrap">
-    <h1>Voor wie</h1>
-    <p>Ik werk voor mensen die thuis willen wonen zoals het bij ze past, en voor bedrijven die een ruimte willen die werkt en indruk maakt.</p>
-  </div></section>
+  <section class="sectie sectie--diep" aria-labelledby="interieurprojecten">
+    <div class="wrap">
+      <h2 id="interieurprojecten">Interieurprojecten</h2>
+      <div class="raster">
+{kaarten(['uniek-wonen-in-een-school', 'maatwerk-en-karakter-in-split-level-woning', 'jaren-30-in-een-nieuw-jasje', 'vakantiehuisje-in-de-duinen', 'functionele-blikvanger', 'gezinswoning-met-smaak'])}
+      </div>
+      <p style="margin-top:2.5rem"><a class="lees" href="projecten.html?filter=interieur">Alle interieurprojecten</a></p>
+    </div>
+  </section>
 
+  <div id="voor-wie"></div>
   <section class="sectie sectie--avond doelgroep" id="particulier" aria-labelledby="part-titel">
     <div class="wrap">
       <div class="twee twee--beeld">
         <div class="tekst">
-          <h2 id="part-titel">Particulier</h2>
+          <h2 id="part-titel">Voor particulieren</h2>
           <p>Je gaat verbouwen, je hebt een nieuwbouwhuis gekocht of er is die ene ruimte die maar niet lekker werkt. Waar begin je? Samen brengen we rust in de keuzes. Ik luister naar hoe jij woont en vertaal dat naar een ontwerp dat persoonlijk, praktisch en mooi is.</p>
           <ul>
             <li>Totaalrenovatie, uitbouw of nieuwbouw</li>
@@ -612,7 +733,7 @@ pagina("opdrachtgevers.html", "Voor wie: particulier en zakelijk – Fierdesign"
     <div class="wrap">
       <div class="twee twee--beeld">
         <div class="tekst">
-          <h2 id="zak-titel">Zakelijk</h2>
+          <h2 id="zak-titel">Voor bedrijven</h2>
           <p>Een ruimte die goed is ingericht en goed is verlicht, werkt beter voor iedereen die er komt: gasten, huurders, klanten en medewerkers. Ik ontwerp zakelijke interieurs die er verzorgd uitzien, prettig voelen en tegen intensief gebruik kunnen.</p>
           <ul>
             <li>Vakantiewoningen en short-stay</li>
@@ -626,42 +747,22 @@ pagina("opdrachtgevers.html", "Voor wie: particulier en zakelijk – Fierdesign"
         <img src="assets/beeld/zakelijk-gordijnen-zitbank.jpg" alt="Zakelijke ruimte met linnen gordijnen, een zitbank en lijnverlichting" loading="lazy">
       </div>
     </div>
-  </section>""", "opdrachtgevers.html")
+  </section>""", "interieurontwerp.html")
 
-# ------------------------------------------------------------------ referenties
-REF = [
-    ("uniek-wonen-in-een-school", "Tony & Elaine",
-     "Onze woonkamer en keuken waren hard toe aan een verbouwing, maar we zaten vast in het proces. Wat wilden we nu precies, wat was er mogelijk, en hoe zou onze autistische zoon daarop reageren? Toen kwamen we in contact met Renate. Zij heeft niet alleen creatieve oplossingen gevonden voor ons huis, maar ook voor onze persoonlijke situatie, die de nodige uitdagingen met zich meebrengt.\n\nHet resultaat: een mooie, moderne woonkamer en keuken die perfect passen bij onze wensen én het unieke karakter van ons huis. We hebben Renate inmiddels al aanbevolen aan een vriend, die net zo enthousiast over haar werk is. En zodra we klaar zijn voor de volgende verbouwing, weten we haar zeker weer te vinden."),
-    ("maatwerk-en-karakter-in-split-level-woning", "Imke & Armen",
-     "Renate is van onschatbare waarde geweest voor de verbouwing van onze woning. Op basis van onze smaak en input heeft ze prachtige ontwerpen gemaakt waar we zelf nooit en te nimmer op waren gekomen. Via haar kwamen we in contact met een hele goede aannemer, die alle ideeën ook daadwerkelijk wist te realiseren. Bij iedere grote verbouwing moet soms tussentijds worden ingegrepen of bijgestuurd, maar Renate wist ons altijd tijdig te betrekken en met constructieve oplossingen te komen. Van materialen tot lichtontwerp, van kleurenpalet tot inrichting, onze woning is onherkenbaar verbeterd, maar toch voelde het meteen weer als ons thuis."),
-    ("jaren-30-in-een-nieuw-jasje", "Petra",
-     "Renate dacht écht met mij mee in de gehele aanpak en luisterde aandachtig naar mijn wensen en behoeften. De details maakten het verschil: van nieuwe keukengrepen tot maatwerk meubelontwerp en prachtige wandlampen. Haar adviezen waren waardevol gedurende het hele proces.\n\nDoor het zorgvuldig uitwerken van het kleuradvies en het lichtplan heeft mijn interieur nu precies de sfeer waarin ik me helemaal thuis voel. Dankzij Fierdesign voelt mijn huis echt als míjn plek."),
-    ("kleur-in-nieuwbouw", "Jeroen & Jiska",
-     "Vanuit twee kleine appartementen in Amsterdam gingen we samenwonen in een grote nieuwbouwwoning op IJburg, en we hadden geen idee waar te beginnen met de inrichting. Fierdesign bracht rust in dat proces, door goed te luisteren naar onze wensen en te helpen met keuzes maken. Door Renate leerden we technieken en bouwmaterialen kennen die we zelf nooit gevonden zouden hebben en durfden we te kiezen voor kleur. Ze heeft bovendien de verbouwing uitstekend voor ons begeleid. Het voelt nu echt als ons huis."),
-    ("vakantiehuisje-in-de-duinen", "Duinhuis Vlieland",
-     "Renate kwam met een goed ontwerp en goede ideeën om de vakantiewoning een eigen karakter te geven met een fijne sfeer. Ook heeft ze me enorm geholpen met de realisatie van het ontwerp en het vinden van de juiste meubels. Van de gasten krijgen we positieve reacties over het huis en de inrichting. Een gast vroeg zelfs waar de bank te koop was, omdat het de eerste bank was waar zij prettig op zat."),
-    ("wonen-in-een-kapel", "Truida",
-     "De ruimtes waren al geweldig, maar ik voelde me nog wel een beetje verloren in de proporties van de ruimtes. Door de 3D-tekeningen van het interieurontwerp kreeg ik meer gevoel bij hoe het eruit kon gaan zien en lukte het om keuzes te maken. Het behang in de keuken is nog mooier uitgevallen dan verwacht. Het lichtplan werkt geweldig en heeft mijn huis zowel functionaliteit als sfeer gegeven. Dat had ik nooit zelf kunnen bedenken, echt een toevoeging."),
-    ("functionele-blikvanger", "Jos & Merlijn",
-     "Om in ons nieuwe huis naar de woonkamer op de bovenste verdieping te komen, kom je eerst door een ruimte met een glazen dak en een trap in het midden. Het gevaar bestond dat het een soort overloop of hal zou worden. Wij wilden dat het een volwaardig deel van het huis zou zijn waar de kinderen zich konden terugtrekken. Renate van Fierdesign heeft heel goed geluisterd naar onze wensen en kwam met heel mooie ideeën om deze ruimte in te richten. Zelf hadden we dit nooit zo kunnen bedenken. Nu is het een van de blikvangers van het huis geworden waar de hele familie graag zit."),
-    ("duurzaam-en-elegant-verbouwen", "Johannes",
-     "De woning is grondig verbouwd en verduurzaamd, om daarna te kunnen verhuren. De hele benedenverdieping is tot casco gesloopt, de kans om er echt wat moois van te maken. Renate van Fierdesign heeft het interieurontwerp gemaakt en het project in heldere stappen opgebouwd: indelingsplan, materialisatie en een bijpassend licht- en schakelplan. Voor de afwerking heeft ze de tegels, het deurbeslag, de keukendetails en de kleuren aangedragen. Bij de keuken heeft ze geadviseerd over de opstelling, indeling en het materiaal. Het eindresultaat is een prachtig geheel geworden, ruimtelijk en van hoge kwaliteit en met aandacht voor details. De nieuwe bewoners zijn ontzettend blij met het eindresultaat."),
-    ("jaren-50-uitbouw-gezinswoning", "Anke & Clemens",
-     "Het sparren met Renate over het interieur en lichtplan heeft ons enorm geholpen. We wilden zelf de regie houden, en dankzij het heldere stappenplan van Fierdesign konden we onze ideeën vertalen naar een concrete aanpak en de juiste uitvoerende partijen. Het lichtplan, met prachtig gekozen armaturen, heeft ons woongenot zowel functioneel als esthetisch echt verrijkt. We zijn heel blij met het resultaat en de inspiratie die Renate ons heeft gegeven!"),
-]
-refs = "\n".join(f"""    <article class="referentie">
-      <a href="projecten/{s}.html"><img src="{bron(PS[s]['kaart'])}" alt="{e(PS[s]['titel'])}" loading="lazy"></a>
-      <div>
-        <h2 style="font-size:1.6rem;margin-bottom:1rem"><a href="projecten/{s}.html" style="text-decoration:none">{e(PS[s]['titel'])}</a></h2>
-        <blockquote>{alinea(t)}</blockquote>
-        <footer>{e(n)}</footer>
-      </div>
-    </article>""" for s, n, t in REF)
-pagina("referenties.html", "Referenties – Fierdesign", "Wat opdrachtgevers zeggen over het licht- en interieurontwerp van Fierdesign.",
-       f"""  <section class="paginakop"><div class="wrap"><h1>Referenties</h1></div></section>
-  <section class="sectie" style="padding-top:0"><div class="wrap">
-{refs}
-  </div></section>""", "referenties.html")
+# ------------------------------------------------------------------ oude adressen: doorverwijzen
+def doorverwijzing(pad, doel, naam):
+    with open(os.path.join(UIT, pad), "w", encoding="utf-8") as f:
+        f.write(f"""<!DOCTYPE html>
+<html lang="nl"><head><meta charset="UTF-8"><meta name="robots" content="noindex">
+<title>{naam} – Fierdesign</title>
+<meta http-equiv="refresh" content="0; url={doel}"><link rel="canonical" href="{doel}"></head>
+<body><p>Deze pagina is verhuisd naar <a href="{doel}">{naam}</a>.</p></body></html>
+""")
+
+
+doorverwijzing("opdrachtgevers.html", "interieurontwerp.html#particulier", "Interieurontwerp – voor wie")
+doorverwijzing("diensten.html", "lichtontwerp.html", "Lichtontwerp")
+doorverwijzing("referenties.html", "projecten.html", "Projecten")
 
 # ------------------------------------------------------------------ over mij
 pagina("over-mij.html", "Over Fierdesign – licht- en interieurontwerp", "Fierdesign ontwerpt licht en interieur voor woningen, horeca en bedrijfsruimtes. Ontwerper Renate Heeringa Popma combineert een achtergrond in mode met lichtontwerp.",

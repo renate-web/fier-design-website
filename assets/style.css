@@ -238,3 +238,68 @@ p { margin: 0 0 1rem; }
 
 /* ---------- Over Fierdesign: portret in verhouding tot de korte introtekst ---------- */
 .twee--beeld img.over__portret { width: 100%; height: auto; max-width: 16rem; justify-self: center; aspect-ratio: 4 / 5; object-position: center top; }
+
+/* ================= Opzet 2026: tegels, quotes, filter, licht in lagen ================= */
+.visueel-verborgen { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Beeldtegels op de homepage */
+.tegels { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+.tegel { display: block; text-decoration: none; color: inherit; }
+.tegel img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+.tegel h3 { margin: 1.1rem 0 .35rem; font-size: 1.5rem; }
+.tegel p { margin: 0; max-width: 32rem; }
+.tegel:hover h3 { text-decoration: underline; text-underline-offset: 4px; }
+
+/* Klantquote (homepage en projectpagina's) */
+.klantquote { margin: 0 auto; max-width: 46rem; text-align: center; }
+.klantquote blockquote { margin: 0; font-family: var(--serif); font-size: clamp(1.25rem, 2.4vw, 1.7rem); line-height: 1.45; }
+.klantquote blockquote p { margin: 0 0 1rem; }
+.klantquote figcaption { margin-top: 1rem; font-size: .95rem; letter-spacing: .02em; }
+.sectie--avond .klantquote figcaption a { color: inherit; }
+/* lange referenties op projectpagina's iets kleiner */
+.sectie--avond .klantquote blockquote { font-size: clamp(1.05rem, 1.8vw, 1.3rem); }
+.klantquote--licht blockquote { font-size: clamp(1.4rem, 2.8vw, 2rem); }
+
+/* Projectkaarten op zwart */
+.sectie--avond .kaart span { color: var(--linnen); }
+
+@media (max-width: 760px) {
+  .tegels { grid-template-columns: 1fr; gap: 2rem; }
+  .sectie { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+}
+
+/* Paginakop op zwart (Lichtontwerp), sluit naadloos aan op de zwarte sectie eronder */
+.paginakop--avond { background: var(--zwart); color: var(--linnen); padding-bottom: 1rem; }
+.paginakop--avond h1, .paginakop--avond p { color: var(--linnen); }
+.paginakop--avond + .sectie--avond { padding-top: 2rem; }
+.paginakop h1 .kenmerk { font-size: .55em; vertical-align: .3em; }
+.paginakop--avond .kenmerk--licht { box-shadow: inset 0 0 0 1px var(--linnen); }
+
+/* Openingszin homepage */
+.hero__lead { font-size: 1.2rem; }
+
+/* Filter op de projectenpagina */
+.filter { display: flex; flex-wrap: wrap; gap: .6rem; margin: 0 0 2rem; }
+.filter__knop { font: inherit; font-size: .95rem; padding: .45rem 1.1rem; border-radius: 999px; border: 1px solid var(--zwart); background: transparent; color: var(--zwart); cursor: pointer; }
+.filter__knop[aria-pressed="true"] { background: var(--zwart); color: var(--linnen); }
+.kaart[hidden] { display: none; }
+
+/* Licht in lagen (Lichtontwerp) */
+.laag { display: grid; grid-template-columns: 1fr 3fr; gap: 2rem; align-items: start; padding: 2.25rem 0; border-top: 1px solid var(--lijn, #ccc); }
+.laag:first-of-type { margin-top: 2rem; }
+.laag__tekst h3 { margin: 0 0 .5rem; font-size: 1.35rem; }
+.laag__tekst p { margin: 0; }
+.laag__beelden { display: grid; grid-template-columns: repeat(3, 1fr); gap: .75rem; }
+.laag__beelden button, .afstellen button { padding: 0; border: 0; background: none; cursor: zoom-in; display: block; }
+.laag__beelden img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; display: block; }
+.afstellen { margin: 2.5rem 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: center; padding-top: 2.5rem; border-top: 1px solid var(--lijn, #ccc); }
+.afstellen img { width: 100%; max-width: 26rem; aspect-ratio: 4 / 5; object-fit: cover; display: block; }
+.afstellen figcaption { font-size: 1.05rem; max-width: 30rem; }
+.afstellen figcaption strong { display: block; font-family: var(--serif); font-weight: 400; font-size: 1.35rem; margin-bottom: .5rem; }
+@media (max-width: 760px) {
+  .laag { grid-template-columns: 1fr; gap: 1rem; }
+  /* op mobiel: foto's naast elkaar om door te vegen */
+  .laag__beelden { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: .6rem; margin-right: -1.5rem; padding-right: 1.5rem; }
+  .laag__beelden button { flex: 0 0 62%; scroll-snap-align: start; }
+  .afstellen { grid-template-columns: 1fr; gap: 1.25rem; }
+}
