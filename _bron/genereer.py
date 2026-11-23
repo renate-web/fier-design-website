@@ -489,7 +489,7 @@ pagina("projecten.html", "Projecten – Fierdesign", "Licht- en interieurontwerp
     <h1>Projecten</h1>
     <p>Van eerste schets en lichtconcept tot de oplevering: licht- en interieurontwerpen voor particuliere en zakelijke opdrachtgevers.</p>
   </div></section>
-  <section class="sectie" style="padding-top:0"><div class="wrap">
+  <section class="sectie sectie--diep"><div class="wrap">
     <div class="filter" role="group" aria-label="Filter projecten">
       <button type="button" class="filter__knop" data-filter="alle" aria-pressed="true">Alle</button>
       <button type="button" class="filter__knop" data-filter="particulier" aria-pressed="false">Particulier</button>
