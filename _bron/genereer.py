@@ -501,7 +501,7 @@ pagina("projecten.html", "Projecten – Fierdesign", "Licht- en interieurontwerp
   </div></section>""", "projecten.html")
 
 # ------------------------------------------------------------------ home
-SLIDES = ["2025/07/slider-7.jpg", "2025/07/slider-5.jpg", "2025/07/slider-10.jpg", "2025/07/slider-9.jpg",
+SLIDES = ["2025/07/slider-10.jpg", "2025/07/slider-5.jpg", "2025/07/slider-9.jpg", "2025/07/slider-7.jpg",
           "2025/07/slider-8.jpg", "2024/07/slider-2.jpg", "2024/07/slider-4.jpg"]
 slides = "\n".join(
     f'<img src="{U + s}" alt=""{" class=\"zichtbaar\" fetchpriority=\"high\"" if i == 0 else " loading=\"lazy\""}>'
