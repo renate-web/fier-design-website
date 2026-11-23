@@ -806,7 +806,7 @@ pagina("contact.html", "Contact – Fierdesign", "Neem contact op met Fierdesign
        f"""  <section class="paginakop"><div class="wrap">
     <h1>Contact</h1>
   </div></section>
-  <section class="sectie" style="padding-top:0">
+  <section class="sectie sectie--diep">
     <div class="wrap twee twee--beeld">
       <div class="tekst">
         <p style="font-size:1.2rem">Fierdesign staat voor je klaar! Of je informatie wilt inwinnen, een inspiratiesessie wilt inplannen of meteen wilt praten over samenwerking, ik hoor het graag.</p>
