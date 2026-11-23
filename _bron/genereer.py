@@ -478,7 +478,7 @@ for p in P:
 
 def kaarten(slugs, r=""):
     return "\n".join(
-        f'<a class="kaart" data-vak="{VAK.get(s, "beide")}" href="{r}projecten/{s}.html"><img src="{bron(PS[s]["kaart"], r)}" alt="" loading="lazy">'
+        f'<a class="kaart" data-vak="{VAK.get(s, "beide")}" data-doel="{PS[s]["doel"]}" href="{r}projecten/{s}.html"><img src="{bron(PS[s]["kaart"], r)}" alt="" loading="lazy">'
         + (f'<em class="kaart__label">{e(PS[s]["label"])}</em>' if PS[s]["label"] else "")
         + f'<span>{e(PS[s]["titel"])}</span></a>'
         for s in slugs)
@@ -492,8 +492,8 @@ pagina("projecten.html", "Projecten – Fierdesign", "Licht- en interieurontwerp
   <section class="sectie" style="padding-top:0"><div class="wrap">
     <div class="filter" role="group" aria-label="Filter projecten">
       <button type="button" class="filter__knop" data-filter="alle" aria-pressed="true">Alle</button>
-      <button type="button" class="filter__knop" data-filter="licht" aria-pressed="false">Lichtontwerp</button>
-      <button type="button" class="filter__knop" data-filter="interieur" aria-pressed="false">Interieurontwerp</button>
+      <button type="button" class="filter__knop" data-filter="particulier" aria-pressed="false">Particulier</button>
+      <button type="button" class="filter__knop" data-filter="zakelijk" aria-pressed="false">Zakelijk</button>
     </div>
     <div class="raster" id="projectraster">
 {kaarten([p['slug'] for p in P])}
@@ -646,7 +646,7 @@ pagina("lichtontwerp.html", "Lichtontwerp – Fierdesign light & interior concep
         <button type="button" data-groot="assets/beeld/licht/afstellen-renate-wandlampen.jpg"><img src="assets/beeld/licht/afstellen-renate-wandlampen.jpg" alt="Renate stelt wandlampen af in een project" loading="lazy"></button>
         <figcaption><strong>De laatste stap</strong>Pas als de armaturen hangen en de spots gericht zijn, klopt het licht precies zoals bedoeld. Daarom loop ik bij de oplevering graag nog even mee.</figcaption>
       </figure>
-      <p style="margin-top:2.5rem"><a class="lees" href="projecten.html?filter=licht">Bekijk projecten met een lichtplan</a></p>
+      <p style="margin-top:2.5rem"><a class="lees" href="projecten.html">Bekijk alle projecten</a></p>
     </div>
   </section>
 
@@ -703,7 +703,7 @@ pagina("interieurontwerp.html", "Interieurontwerp – Fierdesign light & interio
       <div class="raster">
 {kaarten(['uniek-wonen-in-een-school', 'maatwerk-en-karakter-in-split-level-woning', 'jaren-30-in-een-nieuw-jasje', 'vakantiehuisje-in-de-duinen', 'functionele-blikvanger', 'gezinswoning-met-smaak'])}
       </div>
-      <p style="margin-top:2.5rem"><a class="lees" href="projecten.html?filter=interieur">Alle interieurprojecten</a></p>
+      <p style="margin-top:2.5rem"><a class="lees" href="projecten.html">Alle projecten</a></p>
     </div>
   </section>
 

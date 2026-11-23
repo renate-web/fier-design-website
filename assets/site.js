@@ -75,19 +75,16 @@
   });
 })();
 
-// Projectfilter (Alle / Lichtontwerp / Interieurontwerp)
+// Projectfilter (Alle / Particulier / Zakelijk)
 (function () {
   var knoppen = document.querySelectorAll('.filter__knop');
   var kaarten = document.querySelectorAll('#projectraster .kaart');
   if (!knoppen.length) return;
   function zet(f) {
     knoppen.forEach(function (k) { k.setAttribute('aria-pressed', k.dataset.filter === f ? 'true' : 'false'); });
-    kaarten.forEach(function (k) {
-      var v = k.dataset.vak;
-      k.hidden = !(f === 'alle' || v === f || v === 'beide');
-    });
+    kaarten.forEach(function (k) { k.hidden = !(f === 'alle' || k.dataset.doel === f); });
   }
   knoppen.forEach(function (k) { k.addEventListener('click', function () { zet(k.dataset.filter); }); });
-  var m = location.search.match(/filter=(licht|interieur)/);
+  var m = location.search.match(/filter=(particulier|zakelijk)/);
   if (m) zet(m[1]);
 })();
