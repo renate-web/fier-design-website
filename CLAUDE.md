@@ -17,3 +17,10 @@
   Pas teksten aan in dat script en draai: `python3 _bron/genereer.py .` — bewerk de HTML-bestanden niet los.
 - Opmaak in `assets/style.css`, interactie (menu, fotowissel, lightbox) in `assets/site.js`.
 - Afbeeldingen worden nu nog geladen vanaf de oude WordPress-site (fierdesign.nl/wp-content/uploads).
+
+## Concept 2 (in ontwikkeling)
+- Concept 1 (de huidige live site) is bewaard in de branch `concept-1`.
+- Concept 2 staat in de map `concept-2/` en is te bekijken op https://renate-web.github.io/fier-design-website/concept-2/
+  (niet vindbaar in Google: noindex). Generator: `python3 _bron/concept-2/genereer.py concept-2`.
+- Concept 2 heeft een eigen kopie van `assets/` in `concept-2/assets/`; wijzigingen daar raken de live site niet.
+- Wijzigingen voor concept 2 alleen in de concept-map doen, tenzij Renate vraagt om iets op de live site aan te passen.
