@@ -672,12 +672,12 @@ pagina("lichtontwerp.html", "Lichtontwerp – Fierdesign light & interior concep
 
 pagina("interieurontwerp.html", "Interieurontwerp – Fierdesign light & interior concepts",
        "Persoonlijk interieurontwerp voor woningen en bedrijfsruimtes, met een helder stappenplan van kennismaking tot realisatie.",
-       f"""  <section class="paginakop"><div class="wrap">
+       f"""  <section class="paginakop paginakop--avond"><div class="wrap">
     <h1>Interieurontwerp</h1>
     <p>Een persoonlijk, functioneel en mooi interieur, van indeling tot afwerking.</p>
   </div></section>
 
-  <section class="sectie" id="interieurontwerp" aria-label="Interieurontwerp">
+  <section class="sectie sectie--avond" id="interieurontwerp" aria-label="Interieurontwerp">
     <div class="wrap">
       <div class="twee twee--beeld">
         <div class="tekst">
