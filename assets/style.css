@@ -303,3 +303,6 @@ p { margin: 0 0 1rem; }
   .laag__beelden button { flex: 0 0 62%; scroll-snap-align: start; }
   .afstellen { grid-template-columns: 1fr; gap: 1.25rem; }
 }
+
+/* Homepage: merkzin in kapitalen */
+.hero h1#hero-titel { text-transform: uppercase; letter-spacing: .06em; font-size: clamp(2.1rem, 4.6vw, 3.9rem); line-height: 1.08; }
