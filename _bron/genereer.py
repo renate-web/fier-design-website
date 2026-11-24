@@ -399,6 +399,8 @@ REF = [
      "De woning is grondig verbouwd en verduurzaamd, om daarna te kunnen verhuren. De hele benedenverdieping is tot casco gesloopt, de kans om er echt wat moois van te maken. Renate van Fierdesign heeft het interieurontwerp gemaakt en het project in heldere stappen opgebouwd: indelingsplan, materialisatie en een bijpassend licht- en schakelplan. Voor de afwerking heeft ze de tegels, het deurbeslag, de keukendetails en de kleuren aangedragen. Bij de keuken heeft ze geadviseerd over de opstelling, indeling en het materiaal. Het eindresultaat is een prachtig geheel geworden, ruimtelijk en van hoge kwaliteit en met aandacht voor details. De nieuwe bewoners zijn ontzettend blij met het eindresultaat."),
     ("jaren-50-uitbouw-gezinswoning", "Anke & Clemens",
      "Het sparren met Renate over het interieur en lichtplan heeft ons enorm geholpen. We wilden zelf de regie houden, en dankzij het heldere stappenplan van Fierdesign konden we onze ideeën vertalen naar een concrete aanpak en de juiste uitvoerende partijen. Het lichtplan, met prachtig gekozen armaturen, heeft ons woongenot zowel functioneel als esthetisch echt verrijkt. We zijn heel blij met het resultaat en de inspiratie die Renate ons heeft gegeven!"),
+    ("eventruimte-met-gordijnen-en-licht", "Dave",
+     "Fierdesign maakte van onze eventruimte een multifunctionele plek met een uitstekende akoestiek en een goed lichtplan. Renate nam ook de planning en de offertes uit handen. Zeer tevreden!"),
 ]
 REFD = {slug: (naam, tekst) for slug, naam, tekst in REF}
 
