@@ -1,0 +1,59 @@
+# Eenmalig: verkleinde beelden opnieuw maken mét behoud van metadata (fotograaf, copyright) en een metadata-overzicht maken.
+name: Beeldmetadata herstellen
+on:
+  push:
+    branches: [main]
+    paths: [".github/workflows/beelden-metadata.yml"]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  herstel:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Originelen ophalen
+        run: |
+          sudo apt-get install -y -qq libimage-exiftool-perl >/dev/null
+          pip install --quiet pillow
+          mkdir -p /tmp/orig
+          while read rel; do
+            mkdir -p "/tmp/orig/$(dirname "$rel")"
+            curl -s -A "Mozilla/5.0 (fierdesign-migratie)" -o "/tmp/orig/$rel" "https://fierdesign.nl/wp-content/uploads/$rel"
+          done < _bron/oude-beelden.txt
+          (cd /tmp/orig && exiftool -q -r -csv -Artist -Copyright -Creator -Rights -Credit -By-line -CopyrightNotice -Source -UsageTerms -WebStatement -Make -Model -Software -ImageDescription -Title -CreateDate . ) > _bron/beeld-metadata-origineel.csv
+      - name: Verkleinen met behoud van metadata
+        run: |
+          python3 - <<'PY'
+          import os
+          from PIL import Image
+          n=0
+          for rel in open("_bron/oude-beelden.txt").read().split():
+              src="/tmp/orig/"+rel; doel="assets/wp/"+rel
+              if not os.path.exists(src): continue
+              if rel.lower().endswith((".jpg",".jpeg")) and os.path.getsize(src) > 600_000:
+                  im=Image.open(src)
+                  kw={}
+                  for k in ("exif","icc_profile","xmp"):
+                      v=im.info.get(k)
+                      if v: kw[k]=v
+                  if "exif" not in kw:
+                      ex=im.getexif()
+                      if ex: kw["exif"]=ex
+                  im2=im.convert("RGB"); im2.thumbnail((2400,2400))
+                  im2.save(doel,"JPEG",quality=85,optimize=True,progressive=True,**kw)
+                  n+=1
+          print("opnieuw verkleind:",n)
+          PY
+          # IPTC-blokken (Photoshop) meekopiëren
+          while read rel; do
+            case "$rel" in *.jpg|*.jpeg|*.JPG|*.JPEG) exiftool -q -overwrite_original -tagsFromFile "/tmp/orig/$rel" -IPTC:all -XMP:all -EXIF:Artist -EXIF:Copyright "assets/wp/$rel" 2>/dev/null || true;; esac
+          done < _bron/oude-beelden.txt
+      - name: Vastleggen
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add assets/wp _bron/beeld-metadata-origineel.csv
+          git diff --cached --quiet || git commit -m "Beelden oude site: metadata (fotograaf/copyright) hersteld + overzicht"
+          git pull --rebase origin main
+          git push origin HEAD:main
