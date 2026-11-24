@@ -5,7 +5,7 @@ compacte homepage, Licht in lagen, referenties op de projectpagina's."""
 import os, sys, html
 
 UIT = sys.argv[1]
-U = "https://fierdesign.nl/wp-content/uploads/"
+U = "assets/wp/"  # beelden van de oude WordPress-site, overgezet op 24-11-2026
 LOGO = "assets/logo/fd-logo-kop.svg"            # compact logo uit het briefhoofd (Illustrator-huisstijl)
 LOGO_LICHT = "assets/logo/fd-woordmerk-licht.svg"  # linnen woordmerk voor de zwarte voet
 ICOON = "assets/logo/fd-monogram.svg"
@@ -52,7 +52,7 @@ def pagina(pad, titel, beschrijving, inhoud, actief=None):
   <meta property="og:title" content="{e(titel)}">
   <meta property="og:description" content="{e(beschrijving)}">
   <link rel="icon" href="{r}{ICOON}" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="{ICOON_PNG}">
+  <link rel="apple-touch-icon" href="{r}{ICOON_PNG}">
   <link rel="preconnect" href="https://use.typekit.net" crossorigin>
   <link rel="stylesheet" href="https://use.typekit.net/ioi2olt.css">
   <link rel="stylesheet" href="{r}assets/style.css?v={VERSIE_CSS}">
@@ -114,7 +114,7 @@ P = []  # (slug, titel, kaartbeeld, quote, tekst, resultaat, ontwerp, voor, voor
 
 
 def _pad(x):
-    # Eigen beelden in de repository beginnen met "assets/"; de rest komt (nog) van de oude WordPress-site.
+    # Alle beelden staan in de repository; paden zonder "assets/" komen uit assets/wp/ (de oude WordPress-uploads).
     return x if x.startswith("assets/") else U + x
 
 
