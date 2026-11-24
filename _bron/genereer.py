@@ -504,9 +504,9 @@ pagina("projecten.html", "Projecten – Fierdesign", "Licht- en interieurontwerp
 
 # ------------------------------------------------------------------ home
 SLIDES = ["2025/07/slider-10.jpg", "2025/07/slider-5.jpg", "2025/07/slider-9.jpg", "2025/07/slider-7.jpg",
-          "2025/07/slider-8.jpg", "2024/07/slider-2.jpg", "2024/07/slider-4.jpg"]
+          "assets/beeld/home-slide-badkamer-groen.jpg", "2024/07/slider-2.jpg", "2024/07/slider-4.jpg"]
 slides = "\n".join(
-    f'<img src="{U + s}" alt=""{" class=\"zichtbaar\" fetchpriority=\"high\"" if i == 0 else " loading=\"lazy\""}>'
+    f'<img src="{_pad(s)}" alt=""{" class=\"zichtbaar\" fetchpriority=\"high\"" if i == 0 else " loading=\"lazy\""}>'
     for i, s in enumerate(SLIDES))
 
 pagina("index.html", "Fierdesign – Licht- & interieurontwerp", "Licht- en interieurontwerp, stijlvol en doordacht: lichtontwerp dat daglicht en kunstlicht samenbrengt, en een persoonlijk interieur. Amsterdam.",
